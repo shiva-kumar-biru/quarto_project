@@ -24,14 +24,14 @@ jobs:
         run: |
           pip install -r requirements.txt
         working-directory: ./  
-        
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render and Publish
         run: |
-          quarto render websiteproject
+          quarto render quartowebsite
           quarto publish gh-pages
-        working-directory: websiteproject
+        working-directory: quartowebsite
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
