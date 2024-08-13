@@ -14,22 +14,24 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Install Python and Dependencies
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
           cache: 'pip'
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-        working-directory: .
+        working-directory: ./  
+        
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
+        run: |
+          quarto render websiteproject
+          quarto publish gh-pages
+        working-directory: websiteproject
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
