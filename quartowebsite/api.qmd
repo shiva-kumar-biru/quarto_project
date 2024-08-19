@@ -1,0 +1,12 @@
+---
+title: "API Documentation"
+format: html
+toc: true
+---
+
+# API
+
+## Interface Classes
+
+```{r}
+# Placeholder for the dynamically generated API content

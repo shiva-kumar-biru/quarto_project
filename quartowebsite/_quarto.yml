@@ -1,15 +1,53 @@
 project:
   type: website
 
-
 website:
-  title: "Fraunhoferquartowebsite"
+  page-footer: "© Copyright 2022, Fraunhofer IEE."
+  back-to-top-navigation: true
+  title: Powfacpy
   navbar:
+    tools:
+     - icon: Github
+       link: https://github.com/fraunhofer-ieee/powfacpy
+    background: primary
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: About Fraunhofer
+      - text: "Home"
+        href: index.qmd
+      - text: "Tutorials"
+        href: tutorials.qmd
+
+      #   href: howto.qmd
+      - text: "API"
+        href: api.qmd
+      # - text: "How-to-contribute"
+      #   href: reference.qmd
+
+  sidebar:
+    - title: "Introduction"
+      style: "docked"
+      background: light
+      contents:
+        - index.qmd
+
+    - title: "Tutorials"
+      contents:
+        - tutorials.qmd
+        - getting_started.qmd
+        - simulation_and_plotting.qmd
+        - study_cases.qmd
+
+    - title: "API"
+      contents:
+        - api.qmd
+    #     # navigation items
+
+    # - title: "How to contribute"
+    #   contents:
+    #     - reference.qmd
+    #     # navigation items
+
+
 
 format:
   html:
@@ -17,5 +55,19 @@ format:
     css: styles.css
     toc: true
 
+metadata-files:
+  - _sidebar.yml
 
 
+quartodoc:
+  package: powfacpy
+  sidebar: _sidebar.yml
+  sections:
+    - title: Interface Classes
+      desc: Functions to inspect docstrings.
+      contents:
+        - powfacpy.PFBaseInterface
+        - powfacpy.PFStringManipuilation
+        - powfacpy.PFPlotInterface
+        - powfacpy.PFDynSimInterface
+        - powfacpy.PFStudyCases

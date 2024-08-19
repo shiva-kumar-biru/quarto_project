@@ -1,1 +1,14 @@
 /* css styles */
+.next-buttons a {
+    display: inline-block;
+    padding: 8px 13px;
+    margin: 10px;
+    background-color: #0a2f57; /* Change this color as needed */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+  
+  .next-buttons a:hover {
+    background-color: #0056b3; /* Change this color as needed */
+  }
