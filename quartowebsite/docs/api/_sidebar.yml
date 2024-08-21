@@ -1,0 +1,14 @@
+website:
+  sidebar:
+  - contents:
+    - api/index.qmd
+    - contents:
+      - api/active_project_interface.PFActiveProject.qmd
+      - api/database_interface.PFDatabaseInterface.qmd
+      - api/plot_interface.PFPlotInterface.qmd
+      - api/dyn_sim_interface.PFDynSimInterface.qmd
+      - api/case_studies.PFStudyCases.qmd
+      - api/results_interface.PFResultsInterface.qmd
+      section: Interface classes
+    id: api
+  - id: dummy-sidebar

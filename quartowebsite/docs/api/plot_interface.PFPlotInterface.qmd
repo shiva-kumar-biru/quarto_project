@@ -1,0 +1,469 @@
+# plot_interface.PFPlotInterface { #powfacpy.plot_interface.PFPlotInterface }
+
+`plot_interface.PFPlotInterface(self, app)`
+
+
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [active_graphics_page](#powfacpy.plot_interface.PFPlotInterface.active_graphics_page) | Currently active graphics page. |
+| [active_plot](#powfacpy.plot_interface.PFPlotInterface.active_plot) | Currently active plot. |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [autoscale](#powfacpy.plot_interface.PFPlotInterface.autoscale) | Autoscale all axis.  |
+| [clear_curves](#powfacpy.plot_interface.PFPlotInterface.clear_curves) | Clear all curves from active plot. |
+| [clear_curves_by_index_from_active_plot](#powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot) | Clear curves with certain index from plot (i.e. its data series). |
+| [clear_curves_from_all_plots](#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots) | Clear curves from all plots of the active study case. |
+| [clear_curves_from_curve_table_attributes_dict](#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict) | Clear curves from a dictionary with the curve table attributes (keys) |
+| [clear_graphics_board](#powfacpy.plot_interface.PFPlotInterface.clear_graphics_board) | Clear the graphics board from specific objects or from all objects. |
+| [clear_plot_pages](#powfacpy.plot_interface.PFPlotInterface.clear_plot_pages) | Deletes all graphics (plot) pages from the graphics board of  |
+| [copy_graphics_board_content](#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content) | Copy the graphics board content of a study case to another study cases. |
+| [copy_graphics_board_content_to_all_study_cases](#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases) | Copy the content of the graphics board to all study cases. |
+| [create_dummy_network](#powfacpy.plot_interface.PFPlotInterface.create_dummy_network) | Creates a network with only one terminal. |
+| [export_active_page](#powfacpy.plot_interface.PFPlotInterface.export_active_page) | Export active page (e.g. to pdf) using the 'ComWr' object. |
+| [get_curve_table_attributes](#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes) | Get dictionary with all curve table attributes (keys) and |
+| [get_curve_table_attributes_referring_to_data_source](#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source) | Get the curve table attributes referring to the data source  |
+| [get_curve_table_attributes_referring_to_visualization](#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization) | Get the curve table attributes of a plot  (i.e. its data series)  |
+| [get_data_series_of_active_plot](#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot) | Get dataseries object of the currently active plot. |
+| [get_data_series_of_plot](#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot) | Returns the data series object of a plot. If plot is None, the active plot is used. |
+| [get_or_create_graphics_board](#powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board) | Get the graphics board of the currently active study case or create |
+| [get_x_axis_of_active_plot](#powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot) | Get the x-axis of the currently active plot. |
+| [get_y_axis_of_active_plot](#powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot) | Get the y-axis of the currently active plot. |
+| [plot](#powfacpy.plot_interface.PFPlotInterface.plot) | Plots the variables of 'obj' to the currently active plot. |
+| [plot_from_comtrade](#powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade) | Plot a varibale from a COMTRADE formated file. |
+| [plot_from_csv](#powfacpy.plot_interface.PFPlotInterface.plot_from_csv) | Plot results from csv file using pyplot. |
+| [plot_from_csv_using_elm_file](#powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file) | Use an ElmFile object to plot data from csv file. |
+| [plot_monitored_variables](#powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables) | Plot varibales. Variables must have been added to the monitored |
+| [set_active_graphics_page](#powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page) | Sets the active graphics page. |
+| [set_active_plot](#powfacpy.plot_interface.PFPlotInterface.set_active_plot) | Set the currently active plot.  |
+| [set_all_fonts_of_active_plot](#powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot) | Sets the fonts of all text elements (axis labels,legend,title).  |
+| [set_curve_attributes](#powfacpy.plot_interface.PFPlotInterface.set_curve_attributes) | Set curve attributes in dataseries object of a plot. |
+| [set_curve_table_attributes](#powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes) | Set the curve table attributes of a plot  (i.e. its data series). |
+| [set_x_axis_attributes](#powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes) | Set y-axis attributes. |
+| [set_y_axis_attributes](#powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes) | Set y-axis attributes. |
+
+### autoscale { #powfacpy.plot_interface.PFPlotInterface.autoscale }
+
+`plot_interface.PFPlotInterface.autoscale()`
+
+Autoscale all axis. 
+
+ToDo: Check if this really works as excpeted.
+
+### clear_curves { #powfacpy.plot_interface.PFPlotInterface.clear_curves }
+
+`plot_interface.PFPlotInterface.clear_curves()`
+
+Clear all curves from active plot.
+
+### clear_curves_by_index_from_active_plot { #powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot }
+
+`plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot(index)`
+
+Clear curves with certain index from plot (i.e. its data series).
+IMPORTANT: Zero based indexing is used i.e. the first curve has index 0.
+The native PF API has no such functionality and can only delete all curves.
+The method works as follows: 
+ - gets the curve table attributes in a dictionary
+ - clears all curves from plot
+ - clear certain curves from the dictionary
+ - set the curve table attributes according to the dictionary
+
+ Arguments:
+  - index (int | slice): for a detailled description please have 
+    a look at clear_curves_from_curve_table_attributes_dict
+
+### clear_curves_from_all_plots { #powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots }
+
+`plot_interface.PFPlotInterface.clear_curves_from_all_plots()`
+
+Clear curves from all plots of the active study case.
+
+### clear_curves_from_curve_table_attributes_dict { #powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict }
+
+`plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict(attributes, index)`
+
+Clear curves from a dictionary with the curve table attributes (keys)
+and the entries for each curve (values).
+
+IMPORTANT: Zero based indexing is used i.e. the first curve has index 0.
+Note that this does not clear the curves from the data series in the 
+PF plot, but only from the dictionary. If you want to clear the curves
+from a plot, use clear_curves_by_index_from_active_plot
+
+Arguments: 
+  - attributes (dict): dictionary with attribute names (keys) and entries for each 
+    curve (values)
+  - index (int | slice): can be an integer or slice
+    - integer: index of one curve to be deleted
+    - slice: several curves are deleted. Examples:
+      - slices have the general form "slice(start, end, step)" (see for example https://www.programiz.com/python-programming/methods/built-in/slice) 
+      - "slice(2,4)": clear curves with index 2,3 (step=1 is default)
+      - "slice(-1,1,-1): start at the end and delete all curves larger than index 1
+
+### clear_graphics_board { #powfacpy.plot_interface.PFPlotInterface.clear_graphics_board }
+
+`plot_interface.PFPlotInterface.clear_graphics_board(obj='*')`
+
+Clear the graphics board from specific objects or from all objects.
+Objects of class SetDeskpage are closed, 
+objects of class GrpPage are removed, 
+other objects are deleted.
+
+Args:
+    obj (str, optional): Object name (can include class and placeholders). Defaults to "*".
+
+### clear_plot_pages { #powfacpy.plot_interface.PFPlotInterface.clear_plot_pages }
+
+`plot_interface.PFPlotInterface.clear_plot_pages()`
+
+Deletes all graphics (plot) pages from the graphics board of 
+the active study case.
+
+### copy_graphics_board_content { #powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content }
+
+`plot_interface.PFPlotInterface.copy_graphics_board_content(source_study_case, target_study_cases, obj_to_copy='*', clear_target_graphics_board=False)`
+
+Copy the graphics board content of a study case to another study cases.
+
+Args:
+    source_study_case (str | IntCase): Source case (path or object)
+
+    target_study_cases (str | IntCase | list[str] | list[IntCase]): Target case(s) (path(s) or object(s))
+
+    obj_to_copy (str, optional): name of objects to be copied from graphics board.(e.g. "*.GrpPage" to copy only the plot pages). Defaults to "*".
+
+    clear_target_graphics_board (bool, optional): If true, the graphics boards of the target cases are cleared before pasting the content. Defaults to False.
+
+### copy_graphics_board_content_to_all_study_cases { #powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases }
+
+`plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases(source_study_case, target_parent_folder=None, include_subfolders=True, obj_to_copy='*', clear_target_graphics_board=False)`
+
+Copy the content of the graphics board to all study cases.
+
+Args:
+    source_study_case (str | IntCase): Source case (path or object)
+
+    target_parent_folder (str | PFGeneral, optional): Parent folder of target cases. By default, the study case folder of the project is used. Any folder inside the study case folder of the project can be specified.
+
+    include_subfolders (bool, optional): Applies to search for target study cases. Defaults to True.
+
+    obj_to_copy (str, optional): name of objects to be copied from graphics board (e.g. "*.GrpPage" to copy only the plot pages). . Defaults to "*".
+
+    clear_target_graphics_board (bool, optional): If true, the graphics boards of the target cases are cleared before pasting the content. Defaults to False.
+
+### create_dummy_network { #powfacpy.plot_interface.PFPlotInterface.create_dummy_network }
+
+`plot_interface.PFPlotInterface.create_dummy_network(name='dummy_network')`
+
+Creates a network with only one terminal.
+Such a network is used for example to read in ElmFile objects.
+
+### export_active_page { #powfacpy.plot_interface.PFPlotInterface.export_active_page }
+
+`plot_interface.PFPlotInterface.export_active_page(format='pdf', path=getcwd())`
+
+Export active page (e.g. to pdf) using the 'ComWr' object.
+
+Args:
+    format (str, optional): Export format. Defaults to 'pdf'.
+    path (str, optional): Export path. Defaults to current working directory (getcwd()).
+
+### get_curve_table_attributes { #powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes }
+
+`plot_interface.PFPlotInterface.get_curve_table_attributes(plot=None, adjust_result_file=True)`
+
+Get dictionary with all curve table attributes (keys) and
+list with the attributes values for each curve (values) of a plot (i.e. its data series).
+
+Args:
+    plot (VisPlot | PltLinebarplot | PltVectorplot, optional): path or PF object. If None, the active plot is used. 
+
+    adjust_result_file (bool, optional): please see get_curve_table_attributes_referring_to_data_source
+    for a detailed description . Defaults to True.
+
+Returns:
+    dict[str, list]: curve table attributes
+
+### get_curve_table_attributes_referring_to_data_source { #powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source }
+
+`plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source(plot=None, adjust_result_file=True)`
+
+Get the curve table attributes referring to the data source 
+of the curves from a plot (i.e. its data series).
+
+These attributes are: "curveTableResultFile", "curveTableElement",
+  "curveTableVariable"
+
+Use this method if the data sources of the curves are of interest.
+If further attributes on visualisation are of interest, see also the
+methods:
+  - get_curve_table_attributes
+  - get_curve_table_attributes_referring_to_visualization
+
+Args:
+    plot (VisPlot | PltLinebarplot | PltVectorplot, optional): path or PF object. If None, the active plot is used. Defaults to None.
+
+    adjust_result_file (bool, optional): Defaults to True.
+      - If False, the list in "curveTableResultFile" is used as is
+      - If True, the list is adjusted depending on the plot settings
+        "useIndividualResults". If "useIndividualResults" is True,
+        the result files from the list "curveTableResultFile" are used
+        by default. If an element of this list is empty, the 
+        "userSelectedResultFile" is used. Note that there is a bug in
+        PF so that "autoSelectedResultFile" is always empty as described 
+        below.
+
+Returns:
+    dict: 
+      - keys: attribute names
+      - values: lists with the values for each curve
+
+### get_curve_table_attributes_referring_to_visualization { #powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization }
+
+`plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization(plot=None)`
+
+Get the curve table attributes of a plot  (i.e. its data series) 
+that refer to the visualisation. 
+
+The return value is a dictionary with 
+  - keys: attribute names
+  - values: lists with the values for each curve
+
+Use this method if the data sources of the curves are of interest.
+If further attributes on the data sources are of interest, see also the
+methods:
+  - get_curve_table_attributes
+  - get_curve_table_attributes_referring_to_data_source
+
+Args:
+    plot (VisPlot | PltLinebarplot | PltVectorplot, optional): path or PF object. If None, the active plot is used. Defaults to None.
+
+Returns:
+    dict[str, object]: dict with attributes and their values.
+
+### get_data_series_of_active_plot { #powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot }
+
+`plot_interface.PFPlotInterface.get_data_series_of_active_plot()`
+
+Get dataseries object of the currently active plot.
+
+### get_data_series_of_plot { #powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot }
+
+`plot_interface.PFPlotInterface.get_data_series_of_plot(plot=None)`
+
+Returns the data series object of a plot. If plot is None, the active plot is used.
+
+### get_or_create_graphics_board { #powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board }
+
+`plot_interface.PFPlotInterface.get_or_create_graphics_board()`
+
+Get the graphics board of the currently active study case or create
+a new graphics board if it does not exist within the study case yet.
+
+### get_x_axis_of_active_plot { #powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot }
+
+`plot_interface.PFPlotInterface.get_x_axis_of_active_plot()`
+
+Get the x-axis of the currently active plot.
+
+### get_y_axis_of_active_plot { #powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot }
+
+`plot_interface.PFPlotInterface.get_y_axis_of_active_plot()`
+
+Get the y-axis of the currently active plot.
+
+### plot { #powfacpy.plot_interface.PFPlotInterface.plot }
+
+`plot_interface.PFPlotInterface.plot(obj, variables, graphics_page=None, plot=None, **kwargs)`
+
+Plots the variables of 'obj' to the currently active plot.
+
+Also adds the variables to the results (ElmRes) object.
+The active plot can be set with the optional arguments.
+
+Args:
+
+  obj (PFGeneral): Object (e.g. of class 'Elm...') of which variables are plotted.
+
+  variables (str | list[str]): string or list of variable names 
+
+  graphics_page (str | GrpPage | SetVipage, optional): Defaults to None.
+
+  plot (str | VisPlot | PltLinebarplot | PltVectorplot, optional): Plot object. Defaults to None.
+
+  kwargs:
+
+  results_obj: result object used (object or path)
+  linestyle: int
+  linewidth: double
+  color: int
+  label: str
+
+### plot_from_comtrade { #powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade }
+
+`plot_interface.PFPlotInterface.plot_from_comtrade(file_path, variables, graphics_page=None, plot=None, parent_folder_comtrade=None, **kwargs)`
+
+Plot a varibale from a COMTRADE formated file.
+
+Creates the comtrade object (IntComtrade) and plots. For further info on the arguments see method 'plot_monitored_variables'.  
+If you want to plot from a comtrade object (IntComtrade) that already 
+exists in the PF database, use the method 'plot_monitored_variables' as shown in the code below.
+
+Args:
+    file_path (str): of comtrade file
+
+    variables (str | list[str]): The entry in the second column of a signal in .cfg
+
+    graphics_page (str | GrpPage | SetVipage, optional): _description_. Defaults to None.
+
+    plot (VisPlot | PltLinebarplot | PltVectorplot, optional): _description_. Defaults to None.
+
+    parent_folder_comtrade (str | PFGeneral, optional): FolderContainer in PF database for comtrade objects (str or PF object). Defaults to None ("Comtrade.IntFolder" in active study case is used).
+
+### plot_from_csv { #powfacpy.plot_interface.PFPlotInterface.plot_from_csv }
+
+`plot_interface.PFPlotInterface.plot_from_csv(csv_path, variables, offset=0, plot_interface=None)`
+
+Plot results from csv file using pyplot.
+
+Args:
+    csv_path (str): path of csv file
+    variables (str | list[str]): variables to be plotted
+    offset (float, optional): time offset. Defaults to 0.
+    plot_interface (object, optional): _description_. Defaults to None.
+
+Returns:
+    VisPlot | PltLinebarplot | PltVectorplot: Returns the plot.
+
+Example:
+  plot_from_csv("results.csv",
+    ["Network Model\Network Data\Grid\AC Voltage Source\s:u0",
+    "Network Model\Network Data\Grid\AC Voltage Source\m:Psum:bus1"])
+
+### plot_from_csv_using_elm_file { #powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file }
+
+`plot_interface.PFPlotInterface.plot_from_csv_using_elm_file(file_path, variable, **kwargs)`
+
+Use an ElmFile object to plot data from csv file.
+
+It is generally preferrable and more stable to use the COMTRADE format to plot external data.
+
+The ElmFile objects are stored in a dummy network because the simulation needs to be run to read the data from the csv file and is not just printed to the plot automatically.
+
+Args:
+    file_path (str): path to csv file
+    variable (str): varaible name in csv file header
+
+### plot_monitored_variables { #powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables }
+
+`plot_interface.PFPlotInterface.plot_monitored_variables(obj, variables, graphics_page=None, plot=None, **kwargs)`
+
+Plot varibales. Variables must have been added to the monitored
+variables before (e.g. using 'add_results_variable').
+
+Args:
+    obj (PFGeneral): Object (e.g. of class 'Elm...') of which variables are plotted.
+
+    variables (str | list[str]): Variable(s) to be plotted.
+
+    graphics_page (str | GrpPage | SetVipage, optional): Graphics page. Defaults to None.
+
+    plot (VisPlot | PltLinebarplot | PltVectorplot, optional): Plot object. Defaults to None.
+
+    kwargs:
+      results_obj: result object used (object or path)
+      linestyle: int
+      linewidth: double
+      color: int
+      label: str
+
+### set_active_graphics_page { #powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page }
+
+`plot_interface.PFPlotInterface.set_active_graphics_page(page)`
+
+Sets the active graphics page.
+
+Args:
+    page (str | GrpPage | SetVipage): graphics page object or name
+
+### set_active_plot { #powfacpy.plot_interface.PFPlotInterface.set_active_plot }
+
+`plot_interface.PFPlotInterface.set_active_plot(name_or_obj, graphics_page=None)`
+
+Set the currently active plot. 
+
+Adjusts the active graphics page accordingly if 'name_or_object' is a PF plot object (the graphics page cannot be infered from a string path) or if the optional argument graphics_page is given.
+
+Args:
+    name_or_obj (str): name of plot (string) or plot object
+    graphics_page (str | GrpPage | SetVipage, optional): Graphics page object or string. Defaults to None.
+
+### set_all_fonts_of_active_plot { #powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot }
+
+`plot_interface.PFPlotInterface.set_all_fonts_of_active_plot(fontsize=10, fontname='Arial', fontstyle=0)`
+
+Sets the fonts of all text elements (axis labels,legend,title). 
+
+Note that the fonts are not attributes of the PF objects (x-axis, title object,..), but can only be set using the method 'SetFont'.
+
+Args:
+    fontsize (int, optional): Defaults to 10.
+    fontname (str, optional): Defaults to "Arial".
+    fontstyle (int, optional): Defaults to 0.
+
+### set_curve_attributes { #powfacpy.plot_interface.PFPlotInterface.set_curve_attributes }
+
+`plot_interface.PFPlotInterface.set_curve_attributes(data_series=None, curve_num=-1, **kwargs)`
+
+Set curve attributes in dataseries object of a plot.
+
+Args:
+    data_series (PltDataseries, optional): data series of plot. Defaults to None (dataseries of active plot is used).
+
+    curve_num (int, optional): Curve number. Defaults to -1 (last curve).
+
+    kwargs:
+      results_obj: result object used (object or path)
+      linestyle: int
+      linewidth: double
+      color: int
+      label: str
+
+### set_curve_table_attributes { #powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes }
+
+`plot_interface.PFPlotInterface.set_curve_table_attributes(attributes, plot=None)`
+
+Set the curve table attributes of a plot  (i.e. its data series).
+
+Args:
+    attributes (dict[str, list]): a dictionary with 
+      - keys: argument names, e.g. "curveTableLabel"
+      - values: list with the values for each curve
+
+    plot (VisPlot | PltLinebarplot | PltVectorplot, optional): Plot object. Defaults to None (active plot is used).
+
+### set_x_axis_attributes { #powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes }
+
+`plot_interface.PFPlotInterface.set_x_axis_attributes(**kwargs)`
+
+Set y-axis attributes.
+
+Args:
+  kwargs:
+    key-value-pairs of axis-related PF attributes and their value.
+
+### set_y_axis_attributes { #powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes }
+
+`plot_interface.PFPlotInterface.set_y_axis_attributes(**kwargs)`
+
+Set y-axis attributes.
+
+Args:
+  kwargs:
+    key-value-pairs of axis-related PF attributes and their value.

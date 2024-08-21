@@ -1,0 +1,65 @@
+# database_interface.PFDatabaseInterface { #powfacpy.database_interface.PFDatabaseInterface }
+
+`database_interface.PFDatabaseInterface(self, app)`
+
+
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [get_object_attributes](#powfacpy.database_interface.PFDatabaseInterface.get_object_attributes) | Get dictionary with attributes of objects. |
+| [set_object_attributes](#powfacpy.database_interface.PFDatabaseInterface.set_object_attributes) | Takes a dict with keys (object paths) and values (dict with attributes  |
+
+### get_object_attributes { #powfacpy.database_interface.PFDatabaseInterface.get_object_attributes }
+
+`database_interface.PFDatabaseInterface.get_object_attributes(objs, class_attributes=None, truncated_path='', pf_obj_handling='path')`
+
+Get dictionary with attributes of objects.
+The keys of the dictionary are the paths of the objects.
+The values are dictionaries with keys (attribute names) and values (attribute
+values), see "example return dict" below. 
+
+Arguments:
+  - objs: Iterable with PF objects
+  - class_attributes: dictionary with keys (class names) and values 
+    (iterable with attribute names). To control which attributes are 
+    relevant for a class. The class names can contain wildcards ("*").
+    Example:
+      {
+        "ElmTr2": ["typ_id"],
+        "*": ["loc_name", ],
+        "ElmVac": ["bus1", "outserv"],    
+      }
+      -> "loc_name" is relevant for every class
+  - truncated_path: If specified, this path is truncated from the keys (object paths)
+    Example: truncated_path = "Network Model\Network Data"
+      -> Network Model.IntPrjfolder\Network Data.IntPrjfolder\test_database_interface\Grid.ElmNet\AC Voltage Source.ElmVac"
+      becomes "test_database_interface\Grid.ElmNet\AC Voltage Source.ElmVac" (first part truncated)
+  - pf_obj_handling: If the value of an attribute is a PF object, there are several options on 
+    how to read the attribute (please see _handle_attribute_type_for_reading)
+
+Example return dict:
+{
+  "Network Model.IntPrjfolder\Network Data.IntPrjfolder\test_database_interface\Grid.ElmNet\AC Voltage Source.ElmVac": {
+        "loc_name": "AC Voltage Source",
+        "bus1": "Network Model.IntPrjfolder\Network Data.IntPrjfolder\test_database_interface\Grid.ElmNet\Terminal HV 1.ElmTerm\Cub_1.StaCubic",
+        "outserv": 0
+  },
+  "Network Model.IntPrjfolder\Network Data.IntPrjfolder\test_database_interface\Grid.ElmNet\Terminal HV 1.ElmTerm\Cub_1.StaCubic": {
+        "loc_name": "Cub_1"
+  },
+}
+
+### set_object_attributes { #powfacpy.database_interface.PFDatabaseInterface.set_object_attributes }
+
+`database_interface.PFDatabaseInterface.set_object_attributes(obj_attr_dict, added_path='')`
+
+Takes a dict with keys (object paths) and values (dict with attributes 
+and their values) and writes the data to the PF database.
+(the dict can be created e.g. with 'get_object_attributes')
+
+Arguments:
+  - obj_attr_dict: data
+  - added_path: Assumes that the object paths are relative to a parent 
+    folder inside the project. Adds added_path to the paths.

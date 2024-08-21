@@ -6,7 +6,7 @@ format:
 jupter: python3
 ---
 
-[Home](index.qmd) /**Tutorials**
+
 
 The tutorials are Jupyter notebooks which you can find in the Tutorials section.
 

@@ -1,73 +1,149 @@
+# project:
+#   type: website
+
+# website:
+#   page-footer: "Copyright 2022, Fraunhofer IEE."
+#   back-to-top-navigation: true
+#   page-navigation: true
+#   title: Powfacpy
+
+#   navbar:
+#     background: primary
+#     search: true
+#     left:
+#       - text: "Home"
+#         href: docs/home/
+#       - text: "Tutorials"
+#         href: docs/tutorials
+#       - text: "API"
+#         href: docs/api/
+#       - text: "How-to-contribute"
+#     right:
+#       - icon: github
+#         href: https://github.com/FraunhIEE-UniKassel-PowSysStability/powfacpy
+#       - icon: mail
+#         href: simon.eberlein@iee.fraunhofer.de
+
+#   sidebar:
+#     - title: "Introduction"
+#       style: floating
+#       background: light
+#       align: left
+#       contents:
+#         - home/index.qmd
+
+#     - title: "Tutorials"
+#       contents:
+#         - tutorials/tutorials.qmd
+#         - tutorials/getting_started.qmd
+#         - tutorials/simulation_and_plotting.qmd
+#         - tutorials/study_cases.qmd
+
+# format:
+#   html:
+#     theme: cosmo
+#     css: styles.css
+#     toc: true
+
+# metadata-files: 
+#   - api/_sidebar.yml
+
+# quartodoc:
+#   style: pkgdown
+#   parser: sphinx
+#   dir: api
+#   package: powfacpy
+#   source_dir: ./src
+#   render_interlinks: true
+#   sidebar: "api/_sidebar.yml"
+#   sections:
+#     - title: Modules
+#       desc: |
+#         Below are the Modules of the Powfacpy.
+#       contents:
+#         - active_project_interface
+#         - database_interface
+#         - plot_interface
+#         - dyn_sim_interface
+#         - case_studies
+#         - results_interface
+
+
+
+
+
 project:
   type: website
 
 website:
-  page-footer: "© Copyright 2022, Fraunhofer IEE."
+  page-footer: "Copyright 2022, Fraunhofer IEE."
   back-to-top-navigation: true
+  page-navigation: true
   title: Powfacpy
   navbar:
-    tools:
-     - icon: Github
-       link: https://github.com/fraunhofer-ieee/powfacpy
+    pinned: true
     background: primary
     search: true
     left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Tutorials"
-        href: tutorials.qmd
-
-      #   href: howto.qmd
-      - text: "API"
-        href: api.qmd
-      # - text: "How-to-contribute"
-      #   href: reference.qmd
+      - file: docs/home/index.qmd
+        text: Home
+      - file: docs/tutorials/tutorials.qmd
+        text: Tutorials
+      - file: api/
+        text: API
+      - href: docs/Contribution/contribution.qmd
+        text: How-To-Contribute
+    right:
+      - icon: github
+        href: https://github.com/FraunhIEE-UniKassel-PowSysStability/powfacpy
+      - icon: mail
+        href: simon.eberlein@iee.fraunhofer.de
 
   sidebar:
     - title: "Introduction"
-      style: "docked"
+      style: floating
       background: light
+      align: left
       contents:
-        - index.qmd
+        - docs/home/index.qmd
 
     - title: "Tutorials"
       contents:
-        - tutorials.qmd
-        - getting_started.qmd
-        - simulation_and_plotting.qmd
-        - study_cases.qmd
+        - docs/tutorials/tutorials.qmd
+        - docs/tutorials/getting_started.qmd
+        - docs/tutorials/simulation_and_plotting.qmd
+        - docs/tutorials/study_cases.qmd
 
-    - title: "API"
+    - title: "How-To-Contribute"
       contents:
-        - api.qmd
-    #     # navigation items
-
-    # - title: "How to contribute"
-    #   contents:
-    #     - reference.qmd
-    #     # navigation items
-
-
+        - docs/Contribution/contribution.qmd
+  
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
 
-metadata-files:
-  - _sidebar.yml
-
+metadata-files: 
+  - api/_sidebar.yml
 
 quartodoc:
+  style: pkgdown
+  parser: sphinx
+  dir: api
   package: powfacpy
-  sidebar: _sidebar.yml
+  source_dir: ./src
+  render_interlinks: true
+  sidebar: "api/_sidebar.yml"
   sections:
-    - title: Interface Classes
-      desc: Functions to inspect docstrings.
+    - title: Modules
+      desc: |
+        Below are the Modules of the Powfacpy.
       contents:
-        - powfacpy.PFBaseInterface
-        - powfacpy.PFStringManipuilation
-        - powfacpy.PFPlotInterface
-        - powfacpy.PFDynSimInterface
-        - powfacpy.PFStudyCases
+        - active_project_interface
+        - database_interface
+        - plot_interface
+        - dyn_sim_interface
+        - case_studies
+        - results_interface

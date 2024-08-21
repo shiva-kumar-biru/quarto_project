@@ -1,0 +1,320 @@
+# active_project_interface { #powfacpy.active_project_interface }
+
+`active_project_interface`
+
+
+
+## Classes
+
+| Name | Description |
+| --- | --- |
+| [PFActiveProject](#powfacpy.active_project_interface.PFActiveProject) | Interface to the currently active project. |
+| [PFBaseInterface](#powfacpy.active_project_interface.PFBaseInterface) | Please use the class PFActiveProject instead. |
+
+### PFActiveProject { #powfacpy.active_project_interface.PFActiveProject }
+
+`active_project_interface.PFActiveProject(self, pf_app)`
+
+Interface to the currently active project.
+
+#### Methods
+
+| Name | Description |
+| --- | --- |
+| [activate_study_case](#powfacpy.active_project_interface.PFActiveProject.activate_study_case) | Activate study case under path. |
+| [add_results_variable](#powfacpy.active_project_interface.PFActiveProject.add_results_variable) | Add variable(s) of 'obj' to the monitored variables in of result object. |
+| [add_variable_selection_obj_to_results_obj](#powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj) | Add a varible selection object (IntMon) to a result object (ElmRes). |
+| [clear_elmres](#powfacpy.active_project_interface.PFActiveProject.clear_elmres) | Clear all results variables from results object (ElmRes). |
+| [clear_elmres_from_objects_with_status_deleted](#powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted) | Deletes all objects from a results object (ElmRes) that have the |
+| [create_comtrade_obj](#powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj) | Add an IntComtrade that refers to file_path (*.cfg). |
+| [create_project_version](#powfacpy.active_project_interface.PFActiveProject.create_project_version) | Create a version of current state of the project. |
+| [create_variation](#powfacpy.active_project_interface.PFActiveProject.create_variation) | Create variation (including one expansion stage). |
+| [get_active_networks](#powfacpy.active_project_interface.PFActiveProject.get_active_networks) | Get active networks/grids. |
+| [get_active_study_case](#powfacpy.active_project_interface.PFActiveProject.get_active_study_case) | Get the currently active study case. Control whether error should be raised if no case is active. |
+| [get_active_user_folder](#powfacpy.active_project_interface.PFActiveProject.get_active_user_folder) | Get folder of active user. |
+| [get_calc_relevant_obj](#powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj) | Wraps the method 'GetCalcRelevantObjects' (see PF scripting reference) and adds optional arguments similar to 'get_obj'. |
+| [get_events_folder_from_initial_conditions_calc](#powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc) | Get events folder (IntEvt) from the initial conditions calculation object (ComInc).  |
+| [get_first_level_folder](#powfacpy.active_project_interface.PFActiveProject.get_first_level_folder) | Get folder on first level of PF database. |
+| [get_from_study_case](#powfacpy.active_project_interface.PFActiveProject.get_from_study_case) | Get objects from active study case (similar to PF built-in function 'app.GetFromStudyCase()'). |
+| [get_parameter_value_string](#powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string) | Get string with parameters and their values. |
+| [get_project_version](#powfacpy.active_project_interface.PFActiveProject.get_project_version) | Get (previous) version of project. |
+| [get_results_obj_from_initial_conditions_calc](#powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc) | Get results object (ElmRes) from the initial conditions calculation object (ComInc).  |
+| [import_project](#powfacpy.active_project_interface.PFActiveProject.import_project) | Import a project (.pfd file) |
+| [insert_row_with_number_of_columns_in_csv_file](#powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file) | Gets the number of columns of the first row in a csv file and |
+| [replace_headers_of_csv_file_with_number_of_colums](#powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums) | Replaces the first row (headers) of a csv file with its number of |
+| [rollback_project_to_previous_version](#powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version) | Rollback to previous project version (IntVersion in versions folder). |
+
+##### activate_study_case { #powfacpy.active_project_interface.PFActiveProject.activate_study_case }
+
+`active_project_interface.PFActiveProject.activate_study_case(path)`
+
+Activate study case under path.
+
+##### add_results_variable { #powfacpy.active_project_interface.PFActiveProject.add_results_variable }
+
+`active_project_interface.PFActiveProject.add_results_variable(obj, variables, results_obj=None)`
+
+Add variable(s) of 'obj' to the monitored variables in of result object.
+
+Args:
+
+    obj (PFGeneral | str | list[PFGeneral | str]): PF object or its path
+
+    variables (list[str]): variable names
+
+    results_obj (ElmRes, optional): Results object. Defaults to None (ElmRes from active study case is used).
+
+Returns:
+    ElmRes: the results object
+
+##### add_variable_selection_obj_to_results_obj { #powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj }
+
+`active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj(name, results_obj, class_name=None, variables=[])`
+
+Add a varible selection object (IntMon) to a result object (ElmRes).
+
+Args:
+    name (str): Name of IntMon
+    results_obj (ElmRes): Results object
+    class_name (str, optional): 'classnm' parameter of IntMon. Defaults to None.
+    variables (list[str], optional): 'vars' parameter of IntMon. Defaults to [].
+
+Returns:
+    IntMon: varible selection object
+
+##### clear_elmres { #powfacpy.active_project_interface.PFActiveProject.clear_elmres }
+
+`active_project_interface.PFActiveProject.clear_elmres(results_obj=None)`
+
+Clear all results variables from results object (ElmRes).
+
+Args:
+    results_obj (ElmRes, optional): Results object. Defaults to None (get elmres from study case).
+
+##### clear_elmres_from_objects_with_status_deleted { #powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted }
+
+`active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted(results_obj=None)`
+
+Deletes all objects from a results object (ElmRes) that have the
+status deleted (i.e. attribute 'obj_id' is deleted).
+
+##### create_comtrade_obj { #powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj }
+
+`active_project_interface.PFActiveProject.create_comtrade_obj(file_path, parent_folder=None)`
+
+Add an IntComtrade that refers to file_path (*.cfg).
+The objects are stored in a folder "Comtrade" in the currently active
+study case, unless a parent_folder is given. A new object is only
+created if there exists no object yet that points to the same file
+('f_name' attribute is the file path). The file name is used for the
+new object name (without the .cfg ending).
+
+##### create_project_version { #powfacpy.active_project_interface.PFActiveProject.create_project_version }
+
+`active_project_interface.PFActiveProject.create_project_version(version_name, overwrite=True)`
+
+Create a version of current state of the project.
+
+Uses 'CreateVersion'. New version will be added to top level versions folder of project.
+
+Args:
+    version_name (str): Name (loc_name) of version
+
+    overwrite (bool, optional): Overwrite existing version with same name. Defaults to True.
+
+##### create_variation { #powfacpy.active_project_interface.PFActiveProject.create_variation }
+
+`active_project_interface.PFActiveProject.create_variation(name, parent_folder=None, name_expansion_stage='Expansion Stage', activationTime=0, activate=1)`
+
+Create variation (including one expansion stage).
+
+Args:
+    name (str): Name of variation
+    parent_folder (str | PFGeneral, optional): Parent folder where variation is created. Defaults to None (i.e. variations folder).
+    name_expansion_stage (str, optional): Name of. Defaults to "Expansion Stage".
+    activationTime (int, optional): UTC time
+    activate (int, optional): If 1, expansion stage is activate. If 0, expansion stage is not activated. Defaults to 1.
+
+Returns:
+    IntScheme: The created variation object
+
+##### get_active_networks { #powfacpy.active_project_interface.PFActiveProject.get_active_networks }
+
+`active_project_interface.PFActiveProject.get_active_networks(error_if_no_network_is_active=True)`
+
+Get active networks/grids.
+
+##### get_active_study_case { #powfacpy.active_project_interface.PFActiveProject.get_active_study_case }
+
+`active_project_interface.PFActiveProject.get_active_study_case(error_if_no_active_case=True)`
+
+Get the currently active study case. Control whether error should be raised if no case is active.
+
+Args:
+    error_if_no_active_case (bool, optional): If True, raise exception if no case is active. If False, return none. Defaults to True.
+
+Raises:
+    powfacpy.PFNoActiveStudyCaseError: When no case is active.
+
+Returns:
+    IntCase: The active study case | None
+
+##### get_active_user_folder { #powfacpy.active_project_interface.PFActiveProject.get_active_user_folder }
+
+`active_project_interface.PFActiveProject.get_active_user_folder()`
+
+Get folder of active user.
+
+##### get_calc_relevant_obj { #powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj }
+
+`active_project_interface.PFActiveProject.get_calc_relevant_obj(obj_str, condition=lambda x: True, error_if_non_existent=True, includeOutOfService=1, topoElementsOnly=0, bAcSchemes=0)`
+
+Wraps the method 'GetCalcRelevantObjects' (see PF scripting reference) and adds optional arguments similar to 'get_obj'.
+
+Args:
+    obj_str (str): name inlcuding class of object(s) (NOT their path)
+
+    condition (Callable, optional): See get_obj. Defaults to lambdax:True.
+
+    error_if_non_existent (bool, optional): See get_obj. Defaults to True.
+
+    From scripting reference:
+
+    includeOutOfService (int, optional): Flag whether to include out of service objects. Defaults to 1.
+
+    topoElementsOnly (int, optional): Flag to filter for topology relevant objects only. Defaults to 0.
+
+    bAcSchemes (int, optional): Flag to include hidden objects in active schemes. Defaults to 0.
+
+Returns:
+    list[PFGeneral]: Found object(s)
+
+##### get_events_folder_from_initial_conditions_calc { #powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc }
+
+`active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc()`
+
+Get events folder (IntEvt) from the initial conditions calculation object (ComInc). 
+
+This folder is used for the events in dynamic time domain simulation (RMS/EMT).
+
+Returns:
+    IntEvt: Events folder.
+
+##### get_first_level_folder { #powfacpy.active_project_interface.PFActiveProject.get_first_level_folder }
+
+`active_project_interface.PFActiveProject.get_first_level_folder(folder_type)`
+
+Get folder on first level of PF database.
+
+Args:
+    folder_type (str): The folder of the active user ('user') or the global library ('global library') can be accessed.
+
+Raises:
+    TypeError: Invalid folder_tpe input
+
+Returns:
+    PFGeneral: first level folder
+
+##### get_from_study_case { #powfacpy.active_project_interface.PFActiveProject.get_from_study_case }
+
+`active_project_interface.PFActiveProject.get_from_study_case(name, if_not_unique='warning', if_no_study_case='error')`
+
+Get objects from active study case (similar to PF built-in function 'app.GetFromStudyCase()').
+
+Additionally, this method prints a warning or raises an exception if there is more than one object found in the study case and if no study case is activated.
+
+Args:
+    name (str): class name of the object (e.g. 'ElmRes'), optionally preceded by an object name without wildcards and a dot (e.g. 'All Calcualations.ElmRes')
+
+    if_not_unique (str, optional): Warn ('warning') or raise exception ('error') if there are more than one objets of class 'class_name'. Defaults to "warning".
+
+    if_no_study_case (str, optional): Warn ('warning') or raise exception ('error') if no study case is active. Defaults to "error".
+
+Raises:
+    powfacpy.PFNoActiveStudyCaseError: No study case activated
+    TypeError: More than one object was found
+
+Returns:
+    PFGeneral: Found or created object
+
+##### get_parameter_value_string { #powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string }
+
+`active_project_interface.PFActiveProject.get_parameter_value_string(parameters, delimiter=' ')`
+
+Get string with parameters and their values.
+
+Args:
+    parameters (dict): parameters (keys) and values (values)
+    Example: {'P': 'user\project\path\to\object\m:Psum:bus1'}
+
+    delimiter (str, optional): Delimiter between parameter value pairs. Defaults to " ".
+
+Returns:
+    str: parameter value string (e.g. 'P = 2.5')
+
+##### get_project_version { #powfacpy.active_project_interface.PFActiveProject.get_project_version }
+
+`active_project_interface.PFActiveProject.get_project_version(version_name)`
+
+Get (previous) version of project.
+
+Args:
+    version_name (str): Name (loc_name) of version
+
+Returns:
+    IntVersion | None: Version object
+
+##### get_results_obj_from_initial_conditions_calc { #powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc }
+
+`active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc()`
+
+Get results object (ElmRes) from the initial conditions calculation object (ComInc). 
+
+This is the results object where results from time domain (RMS/EMT) simulation are written to.
+
+Returns:
+    ElmRes: ElmRes object
+
+##### import_project { #powfacpy.active_project_interface.PFActiveProject.import_project }
+
+`active_project_interface.PFActiveProject.import_project(file_path, target_folder_in_active_user=None, keep_current_project_activated=True)`
+
+Import a project (.pfd file)
+
+Args:
+    file_path (str): Windows path
+    target_folder_in_active_user (str | PFGeneral | None, optional): Target folder for project import in active user. Defaults to None.
+    keep_current_project_activated (bool, optional): If True, the initial project and study case remain active.If False, the imported project will be active after import. Defaults to True.
+
+Returns:
+    IntPrj: Imported project
+
+##### insert_row_with_number_of_columns_in_csv_file { #powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file }
+
+`active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file(file_path)`
+
+Gets the number of columns of the first row in a csv file and
+inserts a row (first row) with this number in the first column.
+This is needed for ElmFile to read csv files.
+
+##### replace_headers_of_csv_file_with_number_of_colums { #powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums }
+
+`active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums(file_path)`
+
+Replaces the first row (headers) of a csv file with its number of
+columns. This is needed for import of csv files to PF using ElmFile.
+
+##### rollback_project_to_previous_version { #powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version }
+
+`active_project_interface.PFActiveProject.rollback_project_to_previous_version(version_name)`
+
+Rollback to previous project version (IntVersion in versions folder).
+
+Args:
+    version_name (str): Name (loc_name) of version.
+
+### PFBaseInterface { #powfacpy.active_project_interface.PFBaseInterface }
+
+`active_project_interface.PFBaseInterface(self, pf_app)`
+
+Please use the class PFActiveProject instead.

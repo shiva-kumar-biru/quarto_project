@@ -1,0 +1,288 @@
+# case_studies.PFStudyCases { #powfacpy.case_studies.PFStudyCases }
+
+`case_studies.PFStudyCases(self, app)`
+
+
+
+## Attributes
+
+| Name | Description |
+| --- | --- |
+| [active_grids](#powfacpy.case_studies.PFStudyCases.active_grids) | Active grids for each study case (can be multiple for each). If only one is given, the same grid is active in every case. |
+| [add_scenario_to_each_case](#powfacpy.case_studies.PFStudyCases.add_scenario_to_each_case) | If True, a corresponding scenario is created for each case. |
+| [add_variation_to_each_case](#powfacpy.case_studies.PFStudyCases.add_variation_to_each_case) | If True, a corresponding variation is created for each case. |
+| [anonymous_parameters](#powfacpy.case_studies.PFStudyCases.anonymous_parameters) | Parameters for which names are not used in folder/case name strings (only the parameter values are used). |
+| [base_study_case](#powfacpy.case_studies.PFStudyCases.base_study_case) | Base study case (or its path) which is copied to create the cases. |
+| [consecutively_number_case_names](#powfacpy.case_studies.PFStudyCases.consecutively_number_case_names) | If True, numbering is added to the case names. |
+| [delimiter](#powfacpy.case_studies.PFStudyCases.delimiter) | Default delimiter used in parameter-value strings. |
+| [hierarchy](#powfacpy.case_studies.PFStudyCases.hierarchy) | Hierarchy of folders (named after the parameters) where case/scenario/varaition objects are located. |
+| [ignore_parameters_that_are_none_in_names](#powfacpy.case_studies.PFStudyCases.ignore_parameters_that_are_none_in_names) | If True, parameters with value None are ignored in names (of cases etc.). |
+| [omitted_combinations](#powfacpy.case_studies.PFStudyCases.omitted_combinations) | Omitted parameter combinations (in permutation). |
+| [overwrite_study_cases](#powfacpy.case_studies.PFStudyCases.overwrite_study_cases) | If True, existing study cases are overwriten (e.g. when calling 'create_case' one more time with the same settings). |
+| [parameter_paths](#powfacpy.case_studies.PFStudyCases.parameter_paths) | Dictionary with parameter names (keys) and their path. |
+| [parameter_values](#powfacpy.case_studies.PFStudyCases.parameter_values) | Dictionary with parameters names (keys) and lists with parameter values for each case (values). |
+| [parent_folder_scenarios](#powfacpy.case_studies.PFStudyCases.parent_folder_scenarios) | Parent folder where scenarios are created. |
+| [parent_folder_study_cases](#powfacpy.case_studies.PFStudyCases.parent_folder_study_cases) | Parent folder where study cases are created. |
+| [parent_folder_variations](#powfacpy.case_studies.PFStudyCases.parent_folder_variations) | Parent folder where variations are created. |
+| [study_cases](#powfacpy.case_studies.PFStudyCases.study_cases) | List of created study case objects when calling 'create_cases' (read-only). |
+| [title](#powfacpy.case_studies.PFStudyCases.title) | Title of the case studies. |
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [activate_grids](#powfacpy.case_studies.PFStudyCases.activate_grids) | Activate the corresponding grids of a study case. |
+| [apply_permutation](#powfacpy.case_studies.PFStudyCases.apply_permutation) | Replaces the values in 'parameter_values' with the permutation of |
+| [clear_parent_folders](#powfacpy.case_studies.PFStudyCases.clear_parent_folders) | Deletes all objects in the folders returned by |
+| [create_cases](#powfacpy.case_studies.PFStudyCases.create_cases) | Create study cases. |
+| [export_results_of_study_cases_to_csv](#powfacpy.case_studies.PFStudyCases.export_results_of_study_cases_to_csv) | Export the simulation results (ElmRes) of the study cases to csv files.  |
+| [get_case_params_value_string](#powfacpy.case_studies.PFStudyCases.get_case_params_value_string) | Get parameter-value string for a case |
+| [get_folder_path](#powfacpy.case_studies.PFStudyCases.get_folder_path) | Get folder path (inside parent folder) of a case. |
+| [get_scenarios_parent_folder](#powfacpy.case_studies.PFStudyCases.get_scenarios_parent_folder) | Get folder where scenarios are created. |
+| [get_study_case_number](#powfacpy.case_studies.PFStudyCases.get_study_case_number) | Get the number (index) of a study case object. |
+| [get_study_cases](#powfacpy.case_studies.PFStudyCases.get_study_cases) | Retrieve study case objects depending on parameter values. |
+| [get_study_cases_from_string](#powfacpy.case_studies.PFStudyCases.get_study_cases_from_string) | This method is another convenient way to get study cases according to conditions. The conditions are a simple lambda function argument string (see example below). This method is more convenient but less safe than 'self.get_study_cases' because the conditions string is evaluated and a lambda function is created from it. Using eval() statements is generally not recommended due to unforeseeable behavior. |
+| [get_study_cases_parent_folder](#powfacpy.case_studies.PFStudyCases.get_study_cases_parent_folder) | Get folder where study cases are created. |
+| [get_value_of_all_parameters_for_case](#powfacpy.case_studies.PFStudyCases.get_value_of_all_parameters_for_case) | Get the value of all paameters for a specific study case. |
+| [get_value_of_parameter_for_case](#powfacpy.case_studies.PFStudyCases.get_value_of_parameter_for_case) | Get parameter value for a certain case. |
+| [get_variations_parent_folder](#powfacpy.case_studies.PFStudyCases.get_variations_parent_folder) | Get folder where variations are created. |
+| [set_parent_folders_for_cases_scenarios_variations](#powfacpy.case_studies.PFStudyCases.set_parent_folders_for_cases_scenarios_variations) | Set the parent folder for the cases, scenarios and variations (if the folders don't exist, a new folder is created). |
+
+### activate_grids { #powfacpy.case_studies.PFStudyCases.activate_grids }
+
+`case_studies.PFStudyCases.activate_grids(case_num)`
+
+Activate the corresponding grids of a study case.
+
+If 'self.active_grids' is a list/tuple, the items correspond to
+each study case. If multiple grids are active for a case, list/tuples can be used in the elements in 'active_grids'. 
+If 'self.active_grid' is not a list/tuple, then one grid will be used
+for all cases.
+
+The grids can be thier paths or PF objects.
+
+### apply_permutation { #powfacpy.case_studies.PFStudyCases.apply_permutation }
+
+`case_studies.PFStudyCases.apply_permutation(omitted_combinations=None)`
+
+Replaces the values in 'parameter_values' with the permutation of
+their unique elements.
+
+Use this method if you want to create cases of the permutation of all
+parameters. Note that 'parameter_values' is changed irreversibly.
+
+Args:
+    omitted_combinations (list[dict[str, list]], optional): Parameter combinations that are omitted. Defaults to None.
+
+    Example:
+      omitted_combinations = [
+        {"Par 1": [1, 0], "Par 2": ["R", "T"]},
+        {"Par 3": [2], "Par 1": "all", "Par 4": "all"},
+      ]
+      Note that the 'all' keyword is used which means that all combiations with this parameter are omitted.
+
+### clear_parent_folders { #powfacpy.case_studies.PFStudyCases.clear_parent_folders }
+
+`case_studies.PFStudyCases.clear_parent_folders()`
+
+Deletes all objects in the folders returned by
+- self.get_study_cases_parent_folder
+- self.get_scenarios_parent_folder
+- self.get_variations_parent_folder
+
+### create_cases { #powfacpy.case_studies.PFStudyCases.create_cases }
+
+`case_studies.PFStudyCases.create_cases(reactivate_initially_activated_study_case=True)`
+
+Create study cases.
+
+Optionally create corresponding scenarios/variations (if add_scenario_to_each_case/add_variation_to_each_case is True).
+
+Iterates through all cases and creates study cases (and folders
+according to 'hierarchy') using parameter-value strings for the
+study cases (and folder names).
+
+### export_results_of_study_cases_to_csv { #powfacpy.case_studies.PFStudyCases.export_results_of_study_cases_to_csv }
+
+`case_studies.PFStudyCases.export_results_of_study_cases_to_csv(export_dir=None, study_cases=None, case_numbers=None, results_obj='ElmRes', results_variables=None, format_csv_file=True)`
+
+Export the simulation results (ElmRes) of the study cases to csv files. 
+The csv files are named according to the study case number (e.g. case0.csv, case1.csv,..)
+Returns the full paths of the csv files.
+
+Arguments:
+  - export_dir: directory for export (default is working directory)
+  - study_cases: study case objects
+  - case_numbers: corresponing study case numbers
+  - results_obj: string that is used in GetFromStudyCase to get the ElmRes object (e.g. 
+    'self.app.GetFromStudyCase("ElmRes")' )
+  - results_variables: if only specific variables should be export (see also 
+      export_to_csv). By default all variables are exported.
+  - format_csv_file: see export_to_csv
+
+### get_case_params_value_string { #powfacpy.case_studies.PFStudyCases.get_case_params_value_string }
+
+`case_studies.PFStudyCases.get_case_params_value_string(case_obj_or_case_num, omitted_parameters=None, delimiter=None, equals_sign=None, anonymous_parameters=None)`
+
+Get parameter-value string for a case
+
+Args:
+    case_obj_or_case_num (IntCase | int): study case
+
+    omitted_parameters (list[str], optional): parameters will not be considered. Defaults to None.
+
+    delimiter (str, optional): delimiter between parameter value pairs. Defaults to None.
+
+    equals_sign (str, optional): sign between parameter name and value. Defaults to None.
+
+    anonymous_parameters (list[str], optional): only the value of these parameters will be added (not their name). Defaults to None.
+
+Returns:
+    str: Parameters and their values
+
+### get_folder_path { #powfacpy.case_studies.PFStudyCases.get_folder_path }
+
+`case_studies.PFStudyCases.get_folder_path(case_num)`
+
+Get folder path (inside parent folder) of a case.
+
+The path corresponds to parameter-value pairs specified
+in 'self.hierarchy'.
+
+Args:
+  case_num (int): case number
+
+Returns:
+  str | None: path of study case or None if there is no hierarchy
+
+### get_scenarios_parent_folder { #powfacpy.case_studies.PFStudyCases.get_scenarios_parent_folder }
+
+`case_studies.PFStudyCases.get_scenarios_parent_folder()`
+
+Get folder where scenarios are created.
+
+Returns:
+    IntFolder | IntPrjfolder: folder
+
+### get_study_case_number { #powfacpy.case_studies.PFStudyCases.get_study_case_number }
+
+`case_studies.PFStudyCases.get_study_case_number(study_case)`
+
+Get the number (index) of a study case object.
+
+### get_study_cases { #powfacpy.case_studies.PFStudyCases.get_study_cases }
+
+`case_studies.PFStudyCases.get_study_cases(conditions, return_case_numbers=False)`
+
+Retrieve study case objects depending on parameter values.
+
+Example 1:
+  get_study_cases({"par1": lambda x: x == 2, "par2": lambda x: x>0})
+    This returns the study cases for which 'par1' equals 2 and 'par2' is 
+    positive. 
+
+Example 2 (lambda function): 
+  get_study_cases(lambda x: x[0] >= 2 and x[2] == 'A')
+
+Args:
+    conditions (dict[str, Callable] | Callable): 
+      Either a dictionary with
+        keys: parameter names
+        values: Callables with boolean return value depending on 
+          parameter (key)
+
+      or a single Callable that accepts an iterable containing all 
+        parameters.
+        Example: lambda x: x[0] >= 2 and x[2] == 'A'
+
+        Note that the order of the parameters in x must be the same as the
+        order of the keys in self.parameter_values.
+
+    return_case_numbers (bool, optional): If True, the case number are also returned. Defaults to False.
+
+Raises:
+    ValueError: If 'callable' is invalid.
+
+Returns:
+    list[IntCase] | tuple[list[IntCase], list[int]]: study case objects and case numbers (optional)
+
+### get_study_cases_from_string { #powfacpy.case_studies.PFStudyCases.get_study_cases_from_string }
+
+`case_studies.PFStudyCases.get_study_cases_from_string(conditions, return_case_numbers=False)`
+
+This method is another convenient way to get study cases according to conditions. The conditions are a simple lambda function argument string (see example below). This method is more convenient but less safe than 'self.get_study_cases' because the conditions string is evaluated and a lambda function is created from it. Using eval() statements is generally not recommended due to unforeseeable behavior.
+However, for convenience, it is used here.
+
+Args:
+  conditions (str): 
+    lambda function argument string: 
+      Example: "p HV load >= 2 and (control 1 == 'A' and control 2 != 'S')"
+
+  return_case_numbers (bool): If True, not only study case objects, but also study case numbers (indexes) are returned as a tuple.  
+
+Returns:
+    list[IntCase] | tuple[list[IntCase], list[int]]: study case objects and case numbers (optional)
+
+### get_study_cases_parent_folder { #powfacpy.case_studies.PFStudyCases.get_study_cases_parent_folder }
+
+`case_studies.PFStudyCases.get_study_cases_parent_folder()`
+
+Get folder where study cases are created.
+
+Returns:
+  IntFolder | IntPrjfolder: folder
+
+### get_value_of_all_parameters_for_case { #powfacpy.case_studies.PFStudyCases.get_value_of_all_parameters_for_case }
+
+`case_studies.PFStudyCases.get_value_of_all_parameters_for_case(case_obj_or_case_num)`
+
+Get the value of all paameters for a specific study case.
+
+Args:
+    case_obj_or_case_num (IntCase | int): study case
+
+Returns:
+    list[Any]: parameter values
+
+### get_value_of_parameter_for_case { #powfacpy.case_studies.PFStudyCases.get_value_of_parameter_for_case }
+
+`case_studies.PFStudyCases.get_value_of_parameter_for_case(par_name, case_obj_or_case_num)`
+
+Get parameter value for a certain case.
+
+Note that the values in 'parameter_values' can be 
+
+  - a list/tuple where each element corresponds to a case number
+
+  - or a single value which is used for all cases
+
+Args:
+    par_name (str): Parameter name
+
+    case_obj_or_case_num (IntCase | int): Either the case number (int) or
+    a study case PF object (then the case number/index is derived first)
+
+Raises:
+    powfacpy.PFCaseStudyParameterValueDefinitionError: If a value is not defined for a certain study case
+
+Returns:
+    Any: a parameter value for a certain case.
+
+### get_variations_parent_folder { #powfacpy.case_studies.PFStudyCases.get_variations_parent_folder }
+
+`case_studies.PFStudyCases.get_variations_parent_folder()`
+
+Get folder where variations are created.
+
+Returns:
+    IntFolder | IntPrjfolder: folder
+
+### set_parent_folders_for_cases_scenarios_variations { #powfacpy.case_studies.PFStudyCases.set_parent_folders_for_cases_scenarios_variations }
+
+`case_studies.PFStudyCases.set_parent_folders_for_cases_scenarios_variations(folder_directory='')`
+
+Set the parent folder for the cases, scenarios and variations (if the folders don't exist, a new folder is created).
+
+Args:
+    folder_directory (str, optional): 
+      directory of folders inside study case/scenarios/variations folder of the project. If it is an empty string, the default project folders are used (e.g. app.GetProjectFolder("study"))

@@ -1,0 +1,132 @@
+# results_interface.PFResultsInterface { #powfacpy.results_interface.PFResultsInterface }
+
+`results_interface.PFResultsInterface(self, app)`
+
+
+
+## Methods
+
+| Name | Description |
+| --- | --- |
+| [export_to_csv](#powfacpy.results_interface.PFResultsInterface.export_to_csv) | Exports simulation results to csv. |
+| [export_to_pandas](#powfacpy.results_interface.PFResultsInterface.export_to_pandas) | Returns pandas DataFrame of the simulation results in ElmRes. By default, all  results variables of the first ElmRes object found in the active study case are exported. A selection of specific variables can be exported using  |
+| [get_simulation_results_from_dataframe](#powfacpy.results_interface.PFResultsInterface.get_simulation_results_from_dataframe) | Get simulation results from a DataFrame (which was created using 'export_to_pandas') |
+| [replace_object_aliases](#powfacpy.results_interface.PFResultsInterface.replace_object_aliases) | Replace 'obj_name' with correponding entry in 'self.obj_aliases'. If no such key exists in 'self.obj_aliases', 'obj_name' is returned. |
+| [replace_variable_aliases](#powfacpy.results_interface.PFResultsInterface.replace_variable_aliases) | Replace 'var_name' with correponding entry in 'self.variable_aliases'. If no such key exists in 'self.variable_aliases', 'var_name' is returned. |
+
+### export_to_csv { #powfacpy.results_interface.PFResultsInterface.export_to_csv }
+
+`results_interface.PFResultsInterface.export_to_csv(dir=None, file_name='results', results_obj=None, list_of_results_objs=None, elements=None, variables=None, column_separator=',', decimal_separator='.', comres_parameters={}, format_csv_file=True)`
+
+Exports simulation results to csv.
+
+Arguments:
+  dir: export directory, if 'None' the current working directory 
+    (where script is run) is used 
+  file_name: Name of target csv file
+  results_obj: PF ElmRes or IntComtrade object, by default the first ElmRes 
+    found in the active study case is used. All variables from this object 
+    are exported.
+  list_of_results_objs: Specify if selected variables from several results
+    objects should be exported. Used in combination with arguments 
+    'elements' and 'variables'. Don't specify in combination with 'results_obj'.
+    Note that PF (i.e. ComRes objects) does not allow the combined export 
+    from ElmRes and IntComtrade objects. 
+  elements: Specify if only selected variables from the grid elements in 
+    this list (e.g. ElmTerm etc.) should be exported. Used in combination
+    with 'variables' and 'list_of_results_objs'(several different results objects)).
+  variables: Specify if only selected variables (e.g. "m:u") should be 
+    exported). Used in combination with 'elements' and 'list_of_results_objs'.
+  comres_parameters: Dictionary with parameters (and values) for the comres
+    object.  
+  format_csv_file: Format csv file so there is only one row for the header
+    (see also _format_csv_for_elmres and format_csv_for_comtrade).
+
+Returns:
+  Path of csv file.
+
+Example (export a selection of results variables): 
+  voltage_source = pfbi.get_unique_obj(r'Network Model\Network Data\test_plot_interface\Grid 1\AC Voltage Source')
+  control_model = pfbi.get_unique_obj('Network Model\Network Data\test_plot_interface\Grid 1\WECC WT Control System Type 4A\REEC_A Electrical Control Model')
+  objects =   [voltage_source, voltage_source, control_model]
+  variables = ['m:Qsum:bus1',  'm:Psum:bus1',  's:Ipcmd'    ]
+  elmres_list = [pfbi.app.GetFromStudyCase('ElmRes'),]*len(variables)
+  df = pfbi.export_to_csv(list_of_results_objs = elmres_list, 
+                          objects = objects, 
+                          variables = variables)
+
+### export_to_pandas { #powfacpy.results_interface.PFResultsInterface.export_to_pandas }
+
+`results_interface.PFResultsInterface.export_to_pandas(results_obj=None, list_of_results_objs=None, elements=None, variables=None, comres_parameters={})`
+
+Returns pandas DataFrame of the simulation results in ElmRes. By default, all  results variables of the first ElmRes object found in the active study case are exported. A selection of specific variables can be exported using 
+the optional arguments. Uses intermediate step by exporting to csv format
+with comres object.
+
+Arguments:
+  results_obj: PF ElmRes or IntComtrade object, by default the first ElmRes 
+      found in the active study case is used. All variables from this object 
+      are exported.
+    ist_of_results_objs: Specify if selected variables from several results
+      objects should be exported. Used in combination with arguments 
+      'elements' and 'variables'. Don't specify in combination with 'results_obj'.
+      Note that PF (i.e. ComRes objects) does not allow the combined export 
+      from ElmRes and IntComtrade objects. 
+    elements: Specify if only selected variables from the grid elements in 
+      this list (e.g. ElmTerm etc.) should be exported. Used in combination
+      with 'variables' and 'list_of_results_objs'(several different results objects)).
+    variables: Specify if only selected variables (e.g. "m:u") should be 
+      exported). Used in combination with 'elements' and 'list_of_results_objs'.
+    comres_parameters: Dictionary with parameters (and values) for the comres
+      object (for intermediate step to export to csv).
+
+Example (export a selection of results variables): 
+  voltage_source = pfri.get_unique_obj('Network Model\Network Data\test_plot_interface\Grid 1\AC Voltage Source')
+  control_model = pfri.get_unique_obj('Network Model\Network Data\test_plot_interface\Grid 1\WECC WT Control System Type 4A\REEC_A Electrical Control Model')
+  elements =   [voltage_source, voltage_source, control_model]
+  variables = ['m:Qsum:bus1',  'm:Psum:bus1',  's:Ipcmd'    ]
+  elmres_list = [pfri.app.GetFromStudyCase('ElmRes'),]*len(variables)
+  df = pfri.export_to_pandas(list_of_results_objs=elmres_list, 
+                            elements=elements, 
+                            variables=variables)
+
+### get_simulation_results_from_dataframe { #powfacpy.results_interface.PFResultsInterface.get_simulation_results_from_dataframe }
+
+`results_interface.PFResultsInterface.get_simulation_results_from_dataframe(df, objs, variables)`
+
+Get simulation results from a DataFrame (which was created using 'export_to_pandas')
+
+Args:
+
+    df (pd.DataFrame): DataFrame with simulation results (created using 'export_to_pandas')
+
+    objs (PFGeneral | str | Iterable[PFGeneral  |  str]): objects (for which results must be contained in the 'df')
+
+    variables (str | Iterable[str]): variables (for which results must be contained in the 'df')
+
+Returns:
+    DataFrame: DataFrame with specified results
+
+### replace_object_aliases { #powfacpy.results_interface.PFResultsInterface.replace_object_aliases }
+
+`results_interface.PFResultsInterface.replace_object_aliases(obj_name)`
+
+Replace 'obj_name' with correponding entry in 'self.obj_aliases'. If no such key exists in 'self.obj_aliases', 'obj_name' is returned.
+
+Args:
+    obj_name (str): Original name (key in 'self.obj_aliases')
+
+Returns:
+    str: Replacement (value in 'self.obj_aliases')
+
+### replace_variable_aliases { #powfacpy.results_interface.PFResultsInterface.replace_variable_aliases }
+
+`results_interface.PFResultsInterface.replace_variable_aliases(var_name)`
+
+Replace 'var_name' with correponding entry in 'self.variable_aliases'. If no such key exists in 'self.variable_aliases', 'var_name' is returned.
+
+Args:
+    var_name (str): Original name (key in 'self.variable_aliases')
+
+Returns:
+    str: Replacement (value in 'self.variable_aliases')

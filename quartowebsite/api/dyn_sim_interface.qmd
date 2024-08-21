@@ -1,0 +1,174 @@
+# dyn_sim_interface { #powfacpy.dyn_sim_interface }
+
+`dyn_sim_interface`
+
+
+
+## Classes
+
+| Name | Description |
+| --- | --- |
+| [PFDynSimInterface](#powfacpy.dyn_sim_interface.PFDynSimInterface) | Dynamic simulation interface |
+
+### PFDynSimInterface { #powfacpy.dyn_sim_interface.PFDynSimInterface }
+
+`dyn_sim_interface.PFDynSimInterface(self, app)`
+
+Dynamic simulation interface
+
+#### Methods
+
+| Name | Description |
+| --- | --- |
+| [create_dyn_sim_event](#powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event) | Creates an event for dynamic simulations (RMS/EMT) and sets the parameters in 'params'. |
+| [create_event](#powfacpy.dyn_sim_interface.PFDynSimInterface.create_event) | Creates an event and sets the parameters in 'params'. |
+| [get_dsl_model_parameter_names](#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names) | Get the parameter names of the block definition (BlkDef) |
+| [get_dsl_obj_array](#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array) | Get the array of DSL object ('Advanced 1' tab). |
+| [get_eigenvalues_of_current_state](#powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state) | Get the eigenvalues of the current state of the system. |
+| [get_parameters_of_dsl_models_in_composite_model](#powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model) | Returns a dictionary with the parameter names (of the block definition)  |
+| [initialize_and_run_sim](#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim) | Initialize and perform time domain simulation. |
+| [initialize_sim](#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim) | Initialize time domain simulation. |
+| [is_dsl_lookup_arrays_and_matrices_name](#powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name) | dsl has a special variable type for lookup tables. Such variables |
+| [run_sim](#powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim) | Perform dynamic simulation. |
+| [set_dsl_obj_array](#powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array) | Set the array of a DSL object ('Advanced 1' tab). |
+| [set_parameters_of_dsl_models_in_composite_model](#powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model) | Set the parameters of the dsl models (i.e. of its block definition) in |
+
+##### create_dyn_sim_event { #powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event }
+
+`dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event(name_incl_class, params={}, parent_folder=None, overwrite=True)`
+
+Creates an event for dynamic simulations (RMS/EMT) and sets the parameters in 'params'.
+
+Args:
+    name_incl_class (str): Event name including the class.
+    
+    params (dict, optional): Paramter-values dictionary for created event object. Defaults to {}.
+    
+    parent_folder (PFGeneral | str, optional): Folder where event is created. If None, the events folder from the initial conditions calculation (ComInc) is used. Defaults to None.
+    
+    overwrite (bool, optional): Overwrite existing event with same name. Defaults to True.
+
+##### create_event { #powfacpy.dyn_sim_interface.PFDynSimInterface.create_event }
+
+`dyn_sim_interface.PFDynSimInterface.create_event(name_incl_class, params={}, parent_folder=None, overwrite=True)`
+
+Creates an event and sets the parameters in 'params'.
+
+Arguments:
+  name_incl_class: Event name including the class.
+  params: Paramter-values dictionary.
+  parent_folder: If None, the events folder from the initial conditions calculation (ComInc) is used.
+  overwrite: Oerwrite existing event with same name.
+
+##### get_dsl_model_parameter_names { #powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names }
+
+`dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names(dsl_model)`
+
+Get the parameter names of the block definition (BlkDef)
+of a dsl model.
+
+##### get_dsl_obj_array { #powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array }
+
+`dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array(dsl_obj, array_num=None, size_included_in_array=True)`
+
+Get the array of DSL object ('Advanced 1' tab).
+The array_num specifies which array is returend (if None,
+all arays/colmns are returned).
+If size_included_in_array=True, the first row (where the size
+of the array is spedified) is included.
+
+##### get_eigenvalues_of_current_state { #powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state }
+
+`dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state(commod_parameters={})`
+
+Get the eigenvalues of the current state of the system.
+
+Uses the modal analysis command (ComMod) to calculate the eigenvalues. Eigenvectors and participation factors are omitted). The operating point of the current simulaiton time is used.
+Then uses result export (ComRes) to export the eigenvalues to csv, which is then read to a pandas DataFrame.
+
+Args:
+    commod_parameters (dict[str, str], optional): Additional parameter settings of modal analysis command (ComMod). Defaults to {}.
+
+Returns:
+    pd.DataFrame: pandas DataFrame with columns "real in 1/s", "imag in rad/s"
+
+##### get_parameters_of_dsl_models_in_composite_model { #powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model }
+
+`dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model(composite_model, single_dict_for_all_dsl_models=False)`
+
+Returns a dictionary with the parameter names (of the block definition) 
+and values of all dsl models inside a composite model.
+dsl lookup varibales (e.g. 'array_*', 'omatrix_*',.. ) are ignored.
+
+Arguments:
+  composite_model: ElmComp or its path
+  single_dict_for_all_dsl_models: 
+    - If true, a single dictionary with the parameters of all dsl models is 
+    returned (no distinction is made between the dsl models). 
+    This assumes that a parameter that occurs in several dsl
+    models has the same value.
+    Example: {"a": 1, "b":0, "c":2}
+    - If false, the returned dictionary contains dictionaries for each dsl model.
+    Example:
+      {
+      "controller_a": {"a": 1, "b":0}
+      "controller_b": {"a": 5, "c":2}
+      }
+
+##### initialize_and_run_sim { #powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim }
+
+`dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim()`
+
+Initialize and perform time domain simulation.
+
+##### initialize_sim { #powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim }
+
+`dyn_sim_interface.PFDynSimInterface.initialize_sim(param=None)`
+
+Initialize time domain simulation.
+Parameters for 'ComInc' command object can be specified in 'param' dictionary.
+
+##### is_dsl_lookup_arrays_and_matrices_name { #powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name }
+
+`dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name(string)`
+
+dsl has a special variable type for lookup tables. Such variables
+are defined using certain variable names starting with e.g. 'array_'.
+
+##### run_sim { #powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim }
+
+`dyn_sim_interface.PFDynSimInterface.run_sim(param=None)`
+
+Perform dynamic simulation.
+Parameters for 'ComSim' command object can be specified in 'param' dictionary.
+
+##### set_dsl_obj_array { #powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array }
+
+`dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array(dsl_obj, rows, array_num=None, size_included_in_array=True)`
+
+Set the array of a DSL object ('Advanced 1' tab).
+The array_num specifies which array is set (if None,
+all arrays/colums are set).
+If size_included_in_array=True, the first row (where the size
+of the array is specified) is included.
+
+##### set_parameters_of_dsl_models_in_composite_model { #powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model }
+
+`dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model(composite_model, models_params_dict, single_dict_for_all_dsl_models=False)`
+
+Set the parameters of the dsl models (i.e. of its block definition) in
+a composite model.
+Arguments:
+  composite_model: ElmComp or its path
+  models_params_dict: dictionary with model parameters and values
+  single_dict_for_all_dsl_models: 
+    - If true, models_params_dict is a single dictionary that is used to 
+    set the parameters of all dsl models.
+    Example: {"a": 1, "b":0, "c":2} -> if a dsl model has an attribute ("a","b",
+    "c"), the value is set, otherwise it is ignored.
+    - If false, models_params_dict contains dictionaries for each dsl model.
+    Example:
+      {
+      "controller_a": {"a": 1, "b":0}
+      "controller_b": {"a": 5, "c":2}
+      }
