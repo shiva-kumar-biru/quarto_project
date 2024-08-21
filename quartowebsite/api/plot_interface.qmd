@@ -1,5 +1,0 @@
-# plot_interface { #powfacpy.plot_interface }
-
-`plot_interface`
-
-Plotting interface.

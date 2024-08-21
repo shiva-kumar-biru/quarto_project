@@ -89,7 +89,7 @@ website:
         text: Home
       - file: docs/tutorials/tutorials.qmd
         text: Tutorials
-      - file: api/
+      - file: doc/api/
         text: API
       - href: docs/Contribution/contribution.qmd
         text: How-To-Contribute
@@ -126,16 +126,16 @@ format:
     toc: true
 
 metadata-files: 
-  - api/_sidebar.yml
+  - docs/api/_sidebar.yml
 
 quartodoc:
   style: pkgdown
   parser: sphinx
-  dir: api
+  dir: doc/api
   package: powfacpy
   source_dir: ./src
   render_interlinks: true
-  sidebar: "api/_sidebar.yml"
+  sidebar: "doc/api/_sidebar.yml"
   sections:
     - title: Modules
       desc: |

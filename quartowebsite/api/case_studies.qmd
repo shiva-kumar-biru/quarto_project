@@ -1,4 +1,0 @@
-# case_studies { #powfacpy.case_studies }
-
-`case_studies`
-
