@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>plot_interface.pfplotinterface – Powfacpy</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Powfacpy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/home/index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/tutorials/tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../api/"> 
+<span class="menu-text">API</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/Contribution/contribution.html"> 
+<span class="menu-text">How-To-Contribute</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/FraunhIEE-UniKassel-PowSysStability/powfacpy"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../simon.eberlein@iee.fraunhofer.de"> <i class="bi bi-mail" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface" id="toc-powfacpy.plot_interface.PFPlotInterface" class="nav-link active" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface">plot_interface.PFPlotInterface</a>
+  <ul class="collapse">
+  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.autoscale" id="toc-powfacpy.plot_interface.PFPlotInterface.autoscale" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.autoscale">autoscale</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves" id="toc-powfacpy.plot_interface.PFPlotInterface.clear_curves" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.clear_curves">clear_curves</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot">clear_curves_by_index_from_active_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots" id="toc-powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots">clear_curves_from_all_plots</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict" id="toc-powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict">clear_curves_from_curve_table_attributes_dict</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.clear_graphics_board" id="toc-powfacpy.plot_interface.PFPlotInterface.clear_graphics_board" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.clear_graphics_board">clear_graphics_board</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.clear_plot_pages" id="toc-powfacpy.plot_interface.PFPlotInterface.clear_plot_pages" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.clear_plot_pages">clear_plot_pages</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content" id="toc-powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content">copy_graphics_board_content</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases" id="toc-powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases">copy_graphics_board_content_to_all_study_cases</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.create_dummy_network" id="toc-powfacpy.plot_interface.PFPlotInterface.create_dummy_network" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.create_dummy_network">create_dummy_network</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.export_active_page" id="toc-powfacpy.plot_interface.PFPlotInterface.export_active_page" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.export_active_page">export_active_page</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes" id="toc-powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes">get_curve_table_attributes</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source" id="toc-powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source">get_curve_table_attributes_referring_to_data_source</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization" id="toc-powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization">get_curve_table_attributes_referring_to_visualization</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot">get_data_series_of_active_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot">get_data_series_of_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board" id="toc-powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board">get_or_create_graphics_board</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot">get_x_axis_of_active_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot">get_y_axis_of_active_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.plot" id="toc-powfacpy.plot_interface.PFPlotInterface.plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.plot">plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade" id="toc-powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade">plot_from_comtrade</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.plot_from_csv" id="toc-powfacpy.plot_interface.PFPlotInterface.plot_from_csv" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.plot_from_csv">plot_from_csv</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file" id="toc-powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file">plot_from_csv_using_elm_file</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables" id="toc-powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables">plot_monitored_variables</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page" id="toc-powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page">set_active_graphics_page</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_active_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.set_active_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_active_plot">set_active_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot" id="toc-powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot">set_all_fonts_of_active_plot</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_curve_attributes" id="toc-powfacpy.plot_interface.PFPlotInterface.set_curve_attributes" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_curve_attributes">set_curve_attributes</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes" id="toc-powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes">set_curve_table_attributes</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes" id="toc-powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes">set_x_axis_attributes</a></li>
+  <li><a href="#powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes" id="toc-powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes" class="nav-link" data-scroll-target="#powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes">set_y_axis_attributes</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="powfacpy.plot_interface.PFPlotInterface" class="level1">
+<h1>plot_interface.PFPlotInterface</h1>
+<p><code>plot_interface.PFPlotInterface(self, app)</code></p>
+<section id="attributes" class="level2">
+<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.active_graphics_page">active_graphics_page</a></td>
+<td>Currently active graphics page.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.active_plot">active_plot</a></td>
+<td>Currently active plot.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.autoscale">autoscale</a></td>
+<td>Autoscale all axis.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves">clear_curves</a></td>
+<td>Clear all curves from active plot.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot">clear_curves_by_index_from_active_plot</a></td>
+<td>Clear curves with certain index from plot (i.e.&nbsp;its data series).</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots">clear_curves_from_all_plots</a></td>
+<td>Clear curves from all plots of the active study case.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict">clear_curves_from_curve_table_attributes_dict</a></td>
+<td>Clear curves from a dictionary with the curve table attributes (keys)</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.clear_graphics_board">clear_graphics_board</a></td>
+<td>Clear the graphics board from specific objects or from all objects.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.clear_plot_pages">clear_plot_pages</a></td>
+<td>Deletes all graphics (plot) pages from the graphics board of</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content">copy_graphics_board_content</a></td>
+<td>Copy the graphics board content of a study case to another study cases.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases">copy_graphics_board_content_to_all_study_cases</a></td>
+<td>Copy the content of the graphics board to all study cases.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.create_dummy_network">create_dummy_network</a></td>
+<td>Creates a network with only one terminal.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.export_active_page">export_active_page</a></td>
+<td>Export active page (e.g.&nbsp;to pdf) using the ‘ComWr’ object.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes">get_curve_table_attributes</a></td>
+<td>Get dictionary with all curve table attributes (keys) and</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source">get_curve_table_attributes_referring_to_data_source</a></td>
+<td>Get the curve table attributes referring to the data source</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization">get_curve_table_attributes_referring_to_visualization</a></td>
+<td>Get the curve table attributes of a plot (i.e.&nbsp;its data series)</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot">get_data_series_of_active_plot</a></td>
+<td>Get dataseries object of the currently active plot.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot">get_data_series_of_plot</a></td>
+<td>Returns the data series object of a plot. If plot is None, the active plot is used.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board">get_or_create_graphics_board</a></td>
+<td>Get the graphics board of the currently active study case or create</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot">get_x_axis_of_active_plot</a></td>
+<td>Get the x-axis of the currently active plot.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot">get_y_axis_of_active_plot</a></td>
+<td>Get the y-axis of the currently active plot.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.plot">plot</a></td>
+<td>Plots the variables of ‘obj’ to the currently active plot.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade">plot_from_comtrade</a></td>
+<td>Plot a varibale from a COMTRADE formated file.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.plot_from_csv">plot_from_csv</a></td>
+<td>Plot results from csv file using pyplot.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file">plot_from_csv_using_elm_file</a></td>
+<td>Use an ElmFile object to plot data from csv file.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables">plot_monitored_variables</a></td>
+<td>Plot varibales. Variables must have been added to the monitored</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page">set_active_graphics_page</a></td>
+<td>Sets the active graphics page.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_active_plot">set_active_plot</a></td>
+<td>Set the currently active plot.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot">set_all_fonts_of_active_plot</a></td>
+<td>Sets the fonts of all text elements (axis labels,legend,title).</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_curve_attributes">set_curve_attributes</a></td>
+<td>Set curve attributes in dataseries object of a plot.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes">set_curve_table_attributes</a></td>
+<td>Set the curve table attributes of a plot (i.e.&nbsp;its data series).</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes">set_x_axis_attributes</a></td>
+<td>Set y-axis attributes.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes">set_y_axis_attributes</a></td>
+<td>Set y-axis attributes.</td>
+</tr>
+</tbody>
+</table>
+<section id="powfacpy.plot_interface.PFPlotInterface.autoscale" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.autoscale">autoscale</h3>
+<p><code>plot_interface.PFPlotInterface.autoscale()</code></p>
+<p>Autoscale all axis.</p>
+<p>ToDo: Check if this really works as excpeted.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.clear_curves" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.clear_curves">clear_curves</h3>
+<p><code>plot_interface.PFPlotInterface.clear_curves()</code></p>
+<p>Clear all curves from active plot.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot">clear_curves_by_index_from_active_plot</h3>
+<p><code>plot_interface.PFPlotInterface.clear_curves_by_index_from_active_plot(index)</code></p>
+<p>Clear curves with certain index from plot (i.e.&nbsp;its data series). IMPORTANT: Zero based indexing is used i.e.&nbsp;the first curve has index 0. The native PF API has no such functionality and can only delete all curves. The method works as follows: - gets the curve table attributes in a dictionary - clears all curves from plot - clear certain curves from the dictionary - set the curve table attributes according to the dictionary</p>
+<p>Arguments: - index (int | slice): for a detailled description please have a look at clear_curves_from_curve_table_attributes_dict</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.clear_curves_from_all_plots">clear_curves_from_all_plots</h3>
+<p><code>plot_interface.PFPlotInterface.clear_curves_from_all_plots()</code></p>
+<p>Clear curves from all plots of the active study case.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict">clear_curves_from_curve_table_attributes_dict</h3>
+<p><code>plot_interface.PFPlotInterface.clear_curves_from_curve_table_attributes_dict(attributes, index)</code></p>
+<p>Clear curves from a dictionary with the curve table attributes (keys) and the entries for each curve (values).</p>
+<p>IMPORTANT: Zero based indexing is used i.e.&nbsp;the first curve has index 0. Note that this does not clear the curves from the data series in the PF plot, but only from the dictionary. If you want to clear the curves from a plot, use clear_curves_by_index_from_active_plot</p>
+<p>Arguments: - attributes (dict): dictionary with attribute names (keys) and entries for each curve (values) - index (int | slice): can be an integer or slice - integer: index of one curve to be deleted - slice: several curves are deleted. Examples: - slices have the general form “slice(start, end, step)” (see for example https://www.programiz.com/python-programming/methods/built-in/slice) - “slice(2,4)”: clear curves with index 2,3 (step=1 is default) - “slice(-1,1,-1): start at the end and delete all curves larger than index 1</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.clear_graphics_board" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.clear_graphics_board">clear_graphics_board</h3>
+<p><code>plot_interface.PFPlotInterface.clear_graphics_board(obj='*')</code></p>
+<p>Clear the graphics board from specific objects or from all objects. Objects of class SetDeskpage are closed, objects of class GrpPage are removed, other objects are deleted.</p>
+<p>Args: obj (str, optional): Object name (can include class and placeholders). Defaults to “*“.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.clear_plot_pages" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.clear_plot_pages">clear_plot_pages</h3>
+<p><code>plot_interface.PFPlotInterface.clear_plot_pages()</code></p>
+<p>Deletes all graphics (plot) pages from the graphics board of the active study case.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content">copy_graphics_board_content</h3>
+<p><code>plot_interface.PFPlotInterface.copy_graphics_board_content(source_study_case, target_study_cases, obj_to_copy='*', clear_target_graphics_board=False)</code></p>
+<p>Copy the graphics board content of a study case to another study cases.</p>
+<p>Args: source_study_case (str | IntCase): Source case (path or object)</p>
+<pre><code>target_study_cases (str | IntCase | list[str] | list[IntCase]): Target case(s) (path(s) or object(s))
+
+obj_to_copy (str, optional): name of objects to be copied from graphics board.(e.g. "*.GrpPage" to copy only the plot pages). Defaults to "*".
+
+clear_target_graphics_board (bool, optional): If true, the graphics boards of the target cases are cleared before pasting the content. Defaults to False.</code></pre>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases">copy_graphics_board_content_to_all_study_cases</h3>
+<p><code>plot_interface.PFPlotInterface.copy_graphics_board_content_to_all_study_cases(source_study_case, target_parent_folder=None, include_subfolders=True, obj_to_copy='*', clear_target_graphics_board=False)</code></p>
+<p>Copy the content of the graphics board to all study cases.</p>
+<p>Args: source_study_case (str | IntCase): Source case (path or object)</p>
+<pre><code>target_parent_folder (str | PFGeneral, optional): Parent folder of target cases. By default, the study case folder of the project is used. Any folder inside the study case folder of the project can be specified.
+
+include_subfolders (bool, optional): Applies to search for target study cases. Defaults to True.
+
+obj_to_copy (str, optional): name of objects to be copied from graphics board (e.g. "*.GrpPage" to copy only the plot pages). . Defaults to "*".
+
+clear_target_graphics_board (bool, optional): If true, the graphics boards of the target cases are cleared before pasting the content. Defaults to False.</code></pre>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.create_dummy_network" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.create_dummy_network">create_dummy_network</h3>
+<p><code>plot_interface.PFPlotInterface.create_dummy_network(name='dummy_network')</code></p>
+<p>Creates a network with only one terminal. Such a network is used for example to read in ElmFile objects.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.export_active_page" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.export_active_page">export_active_page</h3>
+<p><code>plot_interface.PFPlotInterface.export_active_page(format='pdf', path=getcwd())</code></p>
+<p>Export active page (e.g.&nbsp;to pdf) using the ‘ComWr’ object.</p>
+<p>Args: format (str, optional): Export format. Defaults to ‘pdf’. path (str, optional): Export path. Defaults to current working directory (getcwd()).</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes">get_curve_table_attributes</h3>
+<p><code>plot_interface.PFPlotInterface.get_curve_table_attributes(plot=None, adjust_result_file=True)</code></p>
+<p>Get dictionary with all curve table attributes (keys) and list with the attributes values for each curve (values) of a plot (i.e.&nbsp;its data series).</p>
+<p>Args: plot (VisPlot | PltLinebarplot | PltVectorplot, optional): path or PF object. If None, the active plot is used.</p>
+<pre><code>adjust_result_file (bool, optional): please see get_curve_table_attributes_referring_to_data_source
+for a detailed description . Defaults to True.</code></pre>
+<p>Returns: dict[str, list]: curve table attributes</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source">get_curve_table_attributes_referring_to_data_source</h3>
+<p><code>plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_data_source(plot=None, adjust_result_file=True)</code></p>
+<p>Get the curve table attributes referring to the data source of the curves from a plot (i.e.&nbsp;its data series).</p>
+<p>These attributes are: “curveTableResultFile”, “curveTableElement”, “curveTableVariable”</p>
+<p>Use this method if the data sources of the curves are of interest. If further attributes on visualisation are of interest, see also the methods: - get_curve_table_attributes - get_curve_table_attributes_referring_to_visualization</p>
+<p>Args: plot (VisPlot | PltLinebarplot | PltVectorplot, optional): path or PF object. If None, the active plot is used. Defaults to None.</p>
+<pre><code>adjust_result_file (bool, optional): Defaults to True.
+  - If False, the list in "curveTableResultFile" is used as is
+  - If True, the list is adjusted depending on the plot settings
+    "useIndividualResults". If "useIndividualResults" is True,
+    the result files from the list "curveTableResultFile" are used
+    by default. If an element of this list is empty, the 
+    "userSelectedResultFile" is used. Note that there is a bug in
+    PF so that "autoSelectedResultFile" is always empty as described 
+    below.</code></pre>
+<p>Returns: dict: - keys: attribute names - values: lists with the values for each curve</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization">get_curve_table_attributes_referring_to_visualization</h3>
+<p><code>plot_interface.PFPlotInterface.get_curve_table_attributes_referring_to_visualization(plot=None)</code></p>
+<p>Get the curve table attributes of a plot (i.e.&nbsp;its data series) that refer to the visualisation.</p>
+<p>The return value is a dictionary with - keys: attribute names - values: lists with the values for each curve</p>
+<p>Use this method if the data sources of the curves are of interest. If further attributes on the data sources are of interest, see also the methods: - get_curve_table_attributes - get_curve_table_attributes_referring_to_data_source</p>
+<p>Args: plot (VisPlot | PltLinebarplot | PltVectorplot, optional): path or PF object. If None, the active plot is used. Defaults to None.</p>
+<p>Returns: dict[str, object]: dict with attributes and their values.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_data_series_of_active_plot">get_data_series_of_active_plot</h3>
+<p><code>plot_interface.PFPlotInterface.get_data_series_of_active_plot()</code></p>
+<p>Get dataseries object of the currently active plot.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_data_series_of_plot">get_data_series_of_plot</h3>
+<p><code>plot_interface.PFPlotInterface.get_data_series_of_plot(plot=None)</code></p>
+<p>Returns the data series object of a plot. If plot is None, the active plot is used.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_or_create_graphics_board">get_or_create_graphics_board</h3>
+<p><code>plot_interface.PFPlotInterface.get_or_create_graphics_board()</code></p>
+<p>Get the graphics board of the currently active study case or create a new graphics board if it does not exist within the study case yet.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_x_axis_of_active_plot">get_x_axis_of_active_plot</h3>
+<p><code>plot_interface.PFPlotInterface.get_x_axis_of_active_plot()</code></p>
+<p>Get the x-axis of the currently active plot.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.get_y_axis_of_active_plot">get_y_axis_of_active_plot</h3>
+<p><code>plot_interface.PFPlotInterface.get_y_axis_of_active_plot()</code></p>
+<p>Get the y-axis of the currently active plot.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.plot">plot</h3>
+<p><code>plot_interface.PFPlotInterface.plot(obj, variables, graphics_page=None, plot=None, **kwargs)</code></p>
+<p>Plots the variables of ‘obj’ to the currently active plot.</p>
+<p>Also adds the variables to the results (ElmRes) object. The active plot can be set with the optional arguments.</p>
+<p>Args:</p>
+<p>obj (PFGeneral): Object (e.g.&nbsp;of class ‘Elm…’) of which variables are plotted.</p>
+<p>variables (str | list[str]): string or list of variable names</p>
+<p>graphics_page (str | GrpPage | SetVipage, optional): Defaults to None.</p>
+<p>plot (str | VisPlot | PltLinebarplot | PltVectorplot, optional): Plot object. Defaults to None.</p>
+<p>kwargs:</p>
+<p>results_obj: result object used (object or path) linestyle: int linewidth: double color: int label: str</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.plot_from_comtrade">plot_from_comtrade</h3>
+<p><code>plot_interface.PFPlotInterface.plot_from_comtrade(file_path, variables, graphics_page=None, plot=None, parent_folder_comtrade=None, **kwargs)</code></p>
+<p>Plot a varibale from a COMTRADE formated file.</p>
+<p>Creates the comtrade object (IntComtrade) and plots. For further info on the arguments see method ‘plot_monitored_variables’.<br>
+If you want to plot from a comtrade object (IntComtrade) that already exists in the PF database, use the method ‘plot_monitored_variables’ as shown in the code below.</p>
+<p>Args: file_path (str): of comtrade file</p>
+<pre><code>variables (str | list[str]): The entry in the second column of a signal in .cfg
+
+graphics_page (str | GrpPage | SetVipage, optional): _description_. Defaults to None.
+
+plot (VisPlot | PltLinebarplot | PltVectorplot, optional): _description_. Defaults to None.
+
+parent_folder_comtrade (str | PFGeneral, optional): FolderContainer in PF database for comtrade objects (str or PF object). Defaults to None ("Comtrade.IntFolder" in active study case is used).</code></pre>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.plot_from_csv" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.plot_from_csv">plot_from_csv</h3>
+<p><code>plot_interface.PFPlotInterface.plot_from_csv(csv_path, variables, offset=0, plot_interface=None)</code></p>
+<p>Plot results from csv file using pyplot.</p>
+<p>Args: csv_path (str): path of csv file variables (str | list[str]): variables to be plotted offset (float, optional): time offset. Defaults to 0. plot_interface (object, optional): <em>description</em>. Defaults to None.</p>
+<p>Returns: VisPlot | PltLinebarplot | PltVectorplot: Returns the plot.</p>
+<p>Example: plot_from_csv(“results.csv”, [“Network ModelDataVoltage Source:u0”, “Network ModelDataVoltage Source:Psum:bus1”])</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.plot_from_csv_using_elm_file">plot_from_csv_using_elm_file</h3>
+<p><code>plot_interface.PFPlotInterface.plot_from_csv_using_elm_file(file_path, variable, **kwargs)</code></p>
+<p>Use an ElmFile object to plot data from csv file.</p>
+<p>It is generally preferrable and more stable to use the COMTRADE format to plot external data.</p>
+<p>The ElmFile objects are stored in a dummy network because the simulation needs to be run to read the data from the csv file and is not just printed to the plot automatically.</p>
+<p>Args: file_path (str): path to csv file variable (str): varaible name in csv file header</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.plot_monitored_variables">plot_monitored_variables</h3>
+<p><code>plot_interface.PFPlotInterface.plot_monitored_variables(obj, variables, graphics_page=None, plot=None, **kwargs)</code></p>
+<p>Plot varibales. Variables must have been added to the monitored variables before (e.g.&nbsp;using ‘add_results_variable’).</p>
+<p>Args: obj (PFGeneral): Object (e.g.&nbsp;of class ‘Elm…’) of which variables are plotted.</p>
+<pre><code>variables (str | list[str]): Variable(s) to be plotted.
+
+graphics_page (str | GrpPage | SetVipage, optional): Graphics page. Defaults to None.
+
+plot (VisPlot | PltLinebarplot | PltVectorplot, optional): Plot object. Defaults to None.
+
+kwargs:
+  results_obj: result object used (object or path)
+  linestyle: int
+  linewidth: double
+  color: int
+  label: str</code></pre>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_active_graphics_page">set_active_graphics_page</h3>
+<p><code>plot_interface.PFPlotInterface.set_active_graphics_page(page)</code></p>
+<p>Sets the active graphics page.</p>
+<p>Args: page (str | GrpPage | SetVipage): graphics page object or name</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_active_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_active_plot">set_active_plot</h3>
+<p><code>plot_interface.PFPlotInterface.set_active_plot(name_or_obj, graphics_page=None)</code></p>
+<p>Set the currently active plot.</p>
+<p>Adjusts the active graphics page accordingly if ‘name_or_object’ is a PF plot object (the graphics page cannot be infered from a string path) or if the optional argument graphics_page is given.</p>
+<p>Args: name_or_obj (str): name of plot (string) or plot object graphics_page (str | GrpPage | SetVipage, optional): Graphics page object or string. Defaults to None.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_all_fonts_of_active_plot">set_all_fonts_of_active_plot</h3>
+<p><code>plot_interface.PFPlotInterface.set_all_fonts_of_active_plot(fontsize=10, fontname='Arial', fontstyle=0)</code></p>
+<p>Sets the fonts of all text elements (axis labels,legend,title).</p>
+<p>Note that the fonts are not attributes of the PF objects (x-axis, title object,..), but can only be set using the method ‘SetFont’.</p>
+<p>Args: fontsize (int, optional): Defaults to 10. fontname (str, optional): Defaults to “Arial”. fontstyle (int, optional): Defaults to 0.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_curve_attributes" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_curve_attributes">set_curve_attributes</h3>
+<p><code>plot_interface.PFPlotInterface.set_curve_attributes(data_series=None, curve_num=-1, **kwargs)</code></p>
+<p>Set curve attributes in dataseries object of a plot.</p>
+<p>Args: data_series (PltDataseries, optional): data series of plot. Defaults to None (dataseries of active plot is used).</p>
+<pre><code>curve_num (int, optional): Curve number. Defaults to -1 (last curve).
+
+kwargs:
+  results_obj: result object used (object or path)
+  linestyle: int
+  linewidth: double
+  color: int
+  label: str</code></pre>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_curve_table_attributes">set_curve_table_attributes</h3>
+<p><code>plot_interface.PFPlotInterface.set_curve_table_attributes(attributes, plot=None)</code></p>
+<p>Set the curve table attributes of a plot (i.e.&nbsp;its data series).</p>
+<p>Args: attributes (dict[str, list]): a dictionary with - keys: argument names, e.g.&nbsp;“curveTableLabel” - values: list with the values for each curve</p>
+<pre><code>plot (VisPlot | PltLinebarplot | PltVectorplot, optional): Plot object. Defaults to None (active plot is used).</code></pre>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_x_axis_attributes">set_x_axis_attributes</h3>
+<p><code>plot_interface.PFPlotInterface.set_x_axis_attributes(**kwargs)</code></p>
+<p>Set y-axis attributes.</p>
+<p>Args: kwargs: key-value-pairs of axis-related PF attributes and their value.</p>
+</section>
+<section id="powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.plot_interface.PFPlotInterface.set_y_axis_attributes">set_y_axis_attributes</h3>
+<p><code>plot_interface.PFPlotInterface.set_y_axis_attributes(**kwargs)</code></p>
+<p>Set y-axis attributes.</p>
+<p>Args: kwargs: key-value-pairs of axis-related PF attributes and their value.</p>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/shiva-kumar-biru\.github\.io\/quarto_project\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2022, Fraunhofer IEE.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,1 +1,21 @@
 /* css styles */
+/* Navbar Font Style */
+.navbar {
+  font-family: 'Math Italic', Math Italic; /* Change to your preferred font */
+  font-weight: bold; /* Makes the font bold */
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Navbar Background and Text Color */
+.navbar .navbar-nav .nav-link {
+  color: #FFFFFF; /* Change to your preferred text color */
+}
+
+
+/* Navbar Brand (Title) Style */
+.navbar .navbar-brand {
+  font-family: ''Math Italic'', Math Italic; /* Font for the brand name */
+  font-weight: bold; /* Bold font for the brand */
+  font-size: 23px; /* Adjust size as needed */
+  color: #FFFFFF; /* Text color for the brand name */
+}

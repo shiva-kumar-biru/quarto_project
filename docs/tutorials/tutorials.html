@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>POWFACPY – Powfacpy</title>
+<title>Tutorials – Powfacpy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,58 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../docs/tutorials/getting_started.html" rel="next">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,17 +68,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Powfacpy</span>
     </a>
   </div>
@@ -122,19 +89,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./docs/home/index.html"> 
+    <a class="nav-link" href="../../docs/home/index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/tutorials/tutorials.html"> 
+    <a class="nav-link active" href="../../docs/tutorials/tutorials.html" aria-current="page"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./api/"> 
+    <a class="nav-link" href="../../api/"> 
 <span class="menu-text">API</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/Contribution/contribution.html"> 
+    <a class="nav-link" href="../../docs/Contribution/contribution.html"> 
 <span class="menu-text">How-To-Contribute</span></a>
   </li>  
 </ul>
@@ -145,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./simon.eberlein@iee.fraunhofer.de"> <i class="bi bi-mail" role="img">
+    <a class="nav-link" href="../../simon.eberlein@iee.fraunhofer.de"> <i class="bi bi-mail" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -155,20 +122,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/tutorials/tutorials.html">Tutorials</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tutorials/tutorials.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tutorials/getting_started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started with Powfacpy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tutorials/simulation_and_plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamic Simulation and plotting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/tutorials/study_cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Study cases</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#dynamic-simulation-and-plotting" id="toc-dynamic-simulation-and-plotting" class="nav-link" data-scroll-target="#dynamic-simulation-and-plotting">Dynamic Simulation and Plotting</a></li>
+  <li><a href="#study-cases" id="toc-study-cases" class="nav-link" data-scroll-target="#study-cases">Study Cases</a></li>
   </ul>
 </nav>
     </div>
@@ -177,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">POWFACPY</h1>
+<h1 class="title">Tutorials</h1>
 </div>
 
 
@@ -194,34 +201,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><strong>powfacpy</strong> is a wrapper around the Python API of PowerFactory |copy| (software for power system simulation by DIgSILENT). You can automate almost anything in PowerFactory |copy| with the native API, but the syntax can be verbose. Therefore, <em>powfacpy</em> provides features and interface classes to make your life easier.</p>
-<p>For example, setting attributes of an object in the PowerFactory |copy| database requires several lines of code with the native API. With the API of <em>powfacpy</em>, this is only one line:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">set_attr</span><span class="er">(</span><span class="ex">r</span><span class="st">"Network Model\Network Data\Grid\Terminal MV"</span><span class="ex">,</span><span class="dt">{</span><span class="st">"uknom"</span><span class="dt">:33</span><span class="op">,</span><span class="st">"outserv"</span><span class="dt">:0}</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Here we have set two attributes (uknom, outserv) of the object specified under the path “Network Mod…”.</p>
-<p>Plotting also requires many lines with the native API (need to add the variable to the monitored variables, create a plot page, add the curve,..). However, using <em>powfacpy</em> the syntax is succinct and similar to matplotlib. Just activate a plot and then plot variables of an object:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">set_active_plot</span><span class="er">(</span><span class="st">"Active power"</span><span class="ex">,</span><span class="st">"§ PV plant"</span><span class="kw">)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">plot</span><span class="er">(</span><span class="ex">r</span><span class="st">"Network Model\Network Data\Grid\PV"</span><span class="ex">,</span> <span class="st">"m:Psum:bus1"</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>powfacpy</em> will save you time and make your code more readable. Get started with the :ref:<code>tutorials</code> or see a list of classes and methods under :ref:<code>api</code>.</p>
-<p>The module is at an early stage. Contributions (new features, bug reports, feature requests, etc.) are very welcome on Github.</p>
+<p>The tutorials are Jupyter notebooks which you can find in the Tutorials section.</p>
+<p>You can use the PowerFactory project ‘powfacpy_tests’ from <code>here &lt;https://github.com/FraunhIEE-UniKassel-PowSysStability/powfacpy/tree/main/powerfactory_projects&gt;</code>_ to run the commands in the tutorials locally.</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>Start here with the <strong>Getting started with Powfacpy section</strong> . This tutorial gives an overview of the interaction with the <em>PowerFactory</em> database using <em>powfacpy</em>. The methods introduced in this tutorial serve as a basis to do more complex things and to write more readable code using less lines of code.</p>
 </section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>Using pip:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">pip</span> install powfacpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="dynamic-simulation-and-plotting" class="level2">
+<h2 class="anchored" data-anchor-id="dynamic-simulation-and-plotting">Dynamic Simulation and Plotting</h2>
+<p>The <strong>Dynamic Simulation and Plotting section</strong> shows how to conveniently simulate and plot with a syntax similar to matplotlib. It is also depicted how to export data to csv format and use external plotting libraries such as matplotlib.</p>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p><em>simon.eberlein@iee.fraunhofer.de</em></p>
-</section>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>This module is under active development.</p>
-<p><em>powfacpy</em> is an open source module which is mainly developed at Fraunhofer IEE and not associated with DIgSILENT.</p>
-<div class="next-buttons">
-<p><a href="tutorials.qmd">Next -&gt;</a></p>
-</div>
+<section id="study-cases" class="level2">
+<h2 class="anchored" data-anchor-id="study-cases">Study Cases</h2>
+<p>The <strong>Study Case section</strong> provides a flexible method to automatically create study cases from different data.</p>
 
 
 </section>
@@ -647,6 +639,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../docs/tutorials/getting_started.html" class="pagination-link" aria-label="Getting Started with Powfacpy">
+        <span class="nav-page-text">Getting Started with Powfacpy</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

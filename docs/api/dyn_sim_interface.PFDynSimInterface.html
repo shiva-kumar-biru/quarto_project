@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>POWFACPY – Powfacpy</title>
+<title>dyn_sim_interface.pfdynsiminterface – Powfacpy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,58 +20,24 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -111,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Powfacpy</span>
     </a>
   </div>
@@ -122,19 +88,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./docs/home/index.html"> 
+    <a class="nav-link" href="../../docs/home/index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/tutorials/tutorials.html"> 
+    <a class="nav-link" href="../../docs/tutorials/tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./api/"> 
+    <a class="nav-link" href="../../api/"> 
 <span class="menu-text">API</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./docs/Contribution/contribution.html"> 
+    <a class="nav-link" href="../../docs/Contribution/contribution.html"> 
 <span class="menu-text">How-To-Contribute</span></a>
   </li>  
 </ul>
@@ -145,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./simon.eberlein@iee.fraunhofer.de"> <i class="bi bi-mail" role="img">
+    <a class="nav-link" href="../../simon.eberlein@iee.fraunhofer.de"> <i class="bi bi-mail" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -165,65 +131,171 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
-  <li><a href="#about" id="toc-about" class="nav-link" data-scroll-target="#about">About</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface" class="nav-link active" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface">dyn_sim_interface.PFDynSimInterface</a>
+  <ul class="collapse">
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event">create_dyn_sim_event</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_event" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.create_event" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_event">create_event</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names">get_dsl_model_parameter_names</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array">get_dsl_obj_array</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state">get_eigenvalues_of_current_state</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model">get_parameters_of_dsl_models_in_composite_model</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim">initialize_and_run_sim</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim">initialize_sim</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name">is_dsl_lookup_arrays_and_matrices_name</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim">run_sim</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array">set_dsl_obj_array</a></li>
+  <li><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model" id="toc-powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model" class="nav-link" data-scroll-target="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model">set_parameters_of_dsl_models_in_composite_model</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">POWFACPY</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface" class="level1">
+<h1>dyn_sim_interface.PFDynSimInterface</h1>
+<p><code>dyn_sim_interface.PFDynSimInterface(self, app)</code></p>
+<p>Dynamic simulation interface</p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event">create_dyn_sim_event</a></td>
+<td>Creates an event for dynamic simulations (RMS/EMT) and sets the parameters in ‘params’.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_event">create_event</a></td>
+<td>Creates an event and sets the parameters in ‘params’.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names">get_dsl_model_parameter_names</a></td>
+<td>Get the parameter names of the block definition (BlkDef)</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array">get_dsl_obj_array</a></td>
+<td>Get the array of DSL object (‘Advanced 1’ tab).</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state">get_eigenvalues_of_current_state</a></td>
+<td>Get the eigenvalues of the current state of the system.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model">get_parameters_of_dsl_models_in_composite_model</a></td>
+<td>Returns a dictionary with the parameter names (of the block definition)</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim">initialize_and_run_sim</a></td>
+<td>Initialize and perform time domain simulation.</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim">initialize_sim</a></td>
+<td>Initialize time domain simulation.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name">is_dsl_lookup_arrays_and_matrices_name</a></td>
+<td>dsl has a special variable type for lookup tables. Such variables</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim">run_sim</a></td>
+<td>Perform dynamic simulation.</td>
+</tr>
+<tr class="odd">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array">set_dsl_obj_array</a></td>
+<td>Set the array of a DSL object (‘Advanced 1’ tab).</td>
+</tr>
+<tr class="even">
+<td><a href="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model">set_parameters_of_dsl_models_in_composite_model</a></td>
+<td>Set the parameters of the dsl models (i.e.&nbsp;of its block definition) in</td>
+</tr>
+</tbody>
+</table>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event">create_dyn_sim_event</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event(name_incl_class, params={}, parent_folder=None, overwrite=True)</code></p>
+<p>Creates an event for dynamic simulations (RMS/EMT) and sets the parameters in ‘params’.</p>
+<p>Args: name_incl_class (str): Event name including the class.</p>
+<pre><code>params (dict, optional): Paramter-values dictionary for created event object. Defaults to {}.
 
-    
-  
-    
-  </div>
-  
+parent_folder (PFGeneral | str, optional): Folder where event is created. If None, the events folder from the initial conditions calculation (ComInc) is used. Defaults to None.
 
-
-</header>
-
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><strong>powfacpy</strong> is a wrapper around the Python API of PowerFactory |copy| (software for power system simulation by DIgSILENT). You can automate almost anything in PowerFactory |copy| with the native API, but the syntax can be verbose. Therefore, <em>powfacpy</em> provides features and interface classes to make your life easier.</p>
-<p>For example, setting attributes of an object in the PowerFactory |copy| database requires several lines of code with the native API. With the API of <em>powfacpy</em>, this is only one line:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">set_attr</span><span class="er">(</span><span class="ex">r</span><span class="st">"Network Model\Network Data\Grid\Terminal MV"</span><span class="ex">,</span><span class="dt">{</span><span class="st">"uknom"</span><span class="dt">:33</span><span class="op">,</span><span class="st">"outserv"</span><span class="dt">:0}</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Here we have set two attributes (uknom, outserv) of the object specified under the path “Network Mod…”.</p>
-<p>Plotting also requires many lines with the native API (need to add the variable to the monitored variables, create a plot page, add the curve,..). However, using <em>powfacpy</em> the syntax is succinct and similar to matplotlib. Just activate a plot and then plot variables of an object:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">set_active_plot</span><span class="er">(</span><span class="st">"Active power"</span><span class="ex">,</span><span class="st">"§ PV plant"</span><span class="kw">)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">plot</span><span class="er">(</span><span class="ex">r</span><span class="st">"Network Model\Network Data\Grid\PV"</span><span class="ex">,</span> <span class="st">"m:Psum:bus1"</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>powfacpy</em> will save you time and make your code more readable. Get started with the :ref:<code>tutorials</code> or see a list of classes and methods under :ref:<code>api</code>.</p>
-<p>The module is at an early stage. Contributions (new features, bug reports, feature requests, etc.) are very welcome on Github.</p>
+overwrite (bool, optional): Overwrite existing event with same name. Defaults to True.</code></pre>
 </section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>Using pip:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>   <span class="ex">pip</span> install powfacpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.create_event" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.create_event">create_event</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.create_event(name_incl_class, params={}, parent_folder=None, overwrite=True)</code></p>
+<p>Creates an event and sets the parameters in ‘params’.</p>
+<p>Arguments: name_incl_class: Event name including the class. params: Paramter-values dictionary. parent_folder: If None, the events folder from the initial conditions calculation (ComInc) is used. overwrite: Oerwrite existing event with same name.</p>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p><em>simon.eberlein@iee.fraunhofer.de</em></p>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names">get_dsl_model_parameter_names</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names(dsl_model)</code></p>
+<p>Get the parameter names of the block definition (BlkDef) of a dsl model.</p>
 </section>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>This module is under active development.</p>
-<p><em>powfacpy</em> is an open source module which is mainly developed at Fraunhofer IEE and not associated with DIgSILENT.</p>
-<div class="next-buttons">
-<p><a href="tutorials.qmd">Next -&gt;</a></p>
-</div>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array">get_dsl_obj_array</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array(dsl_obj, array_num=None, size_included_in_array=True)</code></p>
+<p>Get the array of DSL object (‘Advanced 1’ tab). The array_num specifies which array is returend (if None, all arays/colmns are returned). If size_included_in_array=True, the first row (where the size of the array is spedified) is included.</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state">get_eigenvalues_of_current_state</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state(commod_parameters={})</code></p>
+<p>Get the eigenvalues of the current state of the system.</p>
+<p>Uses the modal analysis command (ComMod) to calculate the eigenvalues. Eigenvectors and participation factors are omitted). The operating point of the current simulaiton time is used. Then uses result export (ComRes) to export the eigenvalues to csv, which is then read to a pandas DataFrame.</p>
+<p>Args: commod_parameters (dict[str, str], optional): Additional parameter settings of modal analysis command (ComMod). Defaults to {}.</p>
+<p>Returns: pd.DataFrame: pandas DataFrame with columns “real in 1/s”, “imag in rad/s”</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model">get_parameters_of_dsl_models_in_composite_model</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model(composite_model, single_dict_for_all_dsl_models=False)</code></p>
+<p>Returns a dictionary with the parameter names (of the block definition) and values of all dsl models inside a composite model. dsl lookup varibales (e.g.&nbsp;‘array_<em>’, ’omatrix_</em>’,.. ) are ignored.</p>
+<p>Arguments: composite_model: ElmComp or its path single_dict_for_all_dsl_models: - If true, a single dictionary with the parameters of all dsl models is returned (no distinction is made between the dsl models). This assumes that a parameter that occurs in several dsl models has the same value. Example: {“a”: 1, “b”:0, “c”:2} - If false, the returned dictionary contains dictionaries for each dsl model. Example: { “controller_a”: {“a”: 1, “b”:0} “controller_b”: {“a”: 5, “c”:2} }</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim">initialize_and_run_sim</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim()</code></p>
+<p>Initialize and perform time domain simulation.</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim">initialize_sim</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.initialize_sim(param=None)</code></p>
+<p>Initialize time domain simulation. Parameters for ‘ComInc’ command object can be specified in ‘param’ dictionary.</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name">is_dsl_lookup_arrays_and_matrices_name</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name(string)</code></p>
+<p>dsl has a special variable type for lookup tables. Such variables are defined using certain variable names starting with e.g.&nbsp;‘array_’.</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim">run_sim</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.run_sim(param=None)</code></p>
+<p>Perform dynamic simulation. Parameters for ‘ComSim’ command object can be specified in ‘param’ dictionary.</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array">set_dsl_obj_array</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array(dsl_obj, rows, array_num=None, size_included_in_array=True)</code></p>
+<p>Set the array of a DSL object (‘Advanced 1’ tab). The array_num specifies which array is set (if None, all arrays/colums are set). If size_included_in_array=True, the first row (where the size of the array is specified) is included.</p>
+</section>
+<section id="powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model" class="level3">
+<h3 class="anchored" data-anchor-id="powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model">set_parameters_of_dsl_models_in_composite_model</h3>
+<p><code>dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model(composite_model, models_params_dict, single_dict_for_all_dsl_models=False)</code></p>
+<p>Set the parameters of the dsl models (i.e.&nbsp;of its block definition) in a composite model. Arguments: composite_model: ElmComp or its path models_params_dict: dictionary with model parameters and values single_dict_for_all_dsl_models: - If true, models_params_dict is a single dictionary that is used to set the parameters of all dsl models. Example: {“a”: 1, “b”:0, “c”:2} -&gt; if a dsl model has an attribute (“a”,“b”, “c”), the value is set, otherwise it is ignored. - If false, models_params_dict contains dictionaries for each dsl model. Example: { “controller_a”: {“a”: 1, “b”:0} “controller_b”: {“a”: 5, “c”:2} }</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
