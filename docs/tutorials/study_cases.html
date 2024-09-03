@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../doc/api/"> 
+    <a class="nav-link" href="../../docs/build/powfacpy/index.html"> 
 <span class="menu-text">API</span></a>
   </li>  
   <li class="nav-item">
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Parameter studies are organized in study cases, operation scenarios and variations in PowerFactory. This tutorials shows how to create parameter studies with ease and fully automated using the study cases interface of <em>powfacpy</em>.</p>
 <p>First, we activate the PowerFactory project as in the <em>getting started</em> tutorial.</p>
-<div id="2839ab4a" class="cell" data-execution_count="1">
+<div id="86e1c545" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If you use IPython/Jupyter:</span></span>
@@ -257,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Simple Parameter Study</h1>
 <p>We use the class <code>PFStudyCases</code>. This class inherits from <code>PFBaseInterface</code>, so all methods from that class are available. We want to create study case with various values for the active and reactive power of a load.</p>
 <p>First we set the attribute <code>parameter_values</code> and define a dictionary with parameter names and a list of values. Each element in the lists is used in one study case.</p>
-<div id="45b22f95" class="cell" data-execution_count="2">
+<div id="ac912f91" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pfsc <span class="op">=</span> powfacpy.PFStudyCases(app)</span>
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Here we have defined four study cases and in the first case <code>p HV load</code> equals 1 and <code>q HV load</code> equals -1. The parameter names must not contain *?=“,~|()! as these characters cannot be used for names of objects in PF.</p>
 <p>Next we connect the variables to the PF database by defining a dictionary with paths in the attribute <code>parameter_paths</code> using the same parameter names as keys. The paths include the attribute name (e.g.&nbsp;<code>plini</code> which is the active power of the load).</p>
-<div id="4e3fafa1" class="cell" data-execution_count="3">
+<div id="db4b2857" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pfsc.parameter_paths <span class="op">=</span> {</span>
@@ -281,14 +281,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>Finally we define the active grids. For now, we assume that for all cases exactly one grid is active (we look at more complicated cases later).</p>
-<div id="3097a387" class="cell" data-execution_count="4">
+<div id="cf03409b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pfsc.active_grids <span class="op">=</span> <span class="vs">r"Network Model\Network Data\test_case_studies\Grid 2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Now let’s create the study cases.</p>
-<div id="23910e72" class="cell" data-execution_count="5">
+<div id="6d34e035" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pfsc.create_cases()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -299,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The names of the study cases are created according to the parameter names and their values (“_” is used instead of “=” which is not allowed in PF object names). Furthermore, the corresponding operation scenarios are created:</p>
 <p><img src="figures/scenarios_1.png" class="img-fluid"></p>
 <p>For more complicated case studies with further parameters, it is advisable to structure the cases in folders. We define the attribute <code>hierarchy</code> using a list of parameter names (in this case with only one element) that corresponds to folder directories.</p>
-<div id="1802de87" class="cell" data-execution_count="6">
+<div id="6dc6c225" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pfsc.hierarchy <span class="op">=</span> [<span class="st">"q HV load"</span>, <span class="st">"p HV load"</span>]</span>
@@ -313,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="advanced-parameter-study" class="level1">
 <h1>Advanced Parameter Study</h1>
 <p>Let’s take a look at a more complex parameter study.</p>
-<div id="e811f1d7" class="cell" data-execution_count="7">
+<div id="8101e515" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pfsc <span class="op">=</span> powfacpy.PFStudyCases(app)</span>
@@ -335,14 +335,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>An additional parameter <code>control</code> is defined. Note that there is no parameter path defined for this parameter. The parameter can be seen as a placeholder for the study cases structure and to do more complicated things than simply setting an attribute of a PF object later (we’ll see below).</p>
 <p>By default, study cases and operation scenarios are created. If variations should be created in addition, use:</p>
-<div id="90213fe6" class="cell" data-execution_count="8">
+<div id="e6a503ba" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pfsc.add_variation_to_each_case <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>This can be necessary because some parameters, like attributes of DSL objects, are stored in variants and not in operation scenarios. Let’s again create the study cases.</p>
-<div id="c15ca6e5" class="cell" data-execution_count="9">
+<div id="f8c52aaf" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pfsc.hierarchy <span class="op">=</span> [<span class="st">"control"</span>, <span class="st">"q HV load"</span>]</span>
@@ -352,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This creates the following structure in the network variations (as well as in the scenarios and study cases):</p>
 <p><img src="figures/variations_3.png" class="img-fluid"></p>
 <p>Let’s set further parameters, add plots (using plot interface) and simulate (using dyn. simulation interface) for each study case. The study case objects are stored in the <code>study_cases</code> attribute. We can iterate through the cases and set parameters depending on the previously defined <code>control</code> parameter.</p>
-<div id="9cf6d193" class="cell" data-execution_count="10">
+<div id="b1b348c5" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pfpi <span class="op">=</span> powfacpy.PFPlotInterface(app)</span>
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="compare-study-cases" class="level1">
 <h1>Compare Study Cases</h1>
 <p>It is often required to compare the results of cases. In the following, we use the previously defined cases to compare the simulation results for cases where the parameter <code>p HV load</code> equals 1 (note that you may have to “Rebuild” <img src="figures/rebuild_button.png" class="img-fluid"> the plot in the upper left for PF to show it correctly):</p>
-<div id="a800f3d8" class="cell" data-execution_count="11">
+<div id="42e5e550" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a study case where results from other cases are compared in a plot</span></span>
@@ -412,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="figures/legend_1.png" class="img-fluid"></p>
 <p>Let’s walk through the code. After creating a study case where the results are compared in a plot, it is again iterated through all cases. For cases where <code>p HV load</code> has a certain value, the result object is fetched. Next we want to create a label for the curve in the plot. We use the method <code>get_case_params_value_string</code> with certain options for the delimiter and the equals symbol (here we have more options than for PF object names, i.e.&nbsp;<code>=</code> and <code>|</code> are allowed). Moreover, the parameter <code>p HV load</code> is omitted because it is the same for all compared cases (i.e.&nbsp;1, see condition). Further information on the variable is added to the label and the curve is finally added to the plot.</p>
 <p>An alternative to iterating through all study cases is to get certain cases using the method <code>get_study_cases</code>:</p>
-<div id="a602a112" class="cell" data-execution_count="12">
+<div id="6e7c317d" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>study_cases_p_HV_load_equals_1 <span class="op">=</span> pfsc.get_study_cases({<span class="st">"p HV load"</span>:<span class="kw">lambda</span> x: x<span class="op">==</span><span class="dv">1</span>})</span>
@@ -423,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>get_study_cases</code> takes a dictionary as input, where lambda functions with conditions for parameters are defined. Note that the methods <code>get_value_of_parameter_for_case</code> and <code>get_case_params_value_string</code> also work with study case objects as inputs instead of case numbers.</p>
 <p>A very convenient yet powerful alternative to ‘get_study_cases’ especially for complicated conditionals is ‘get_study_cases_from_string’. This method simply accepts a string which can contain complicated conditionals:</p>
-<div id="738b9e3f" class="cell" data-execution_count="13">
+<div id="2f1f7130" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>study_cases_from_conditionals <span class="op">=</span> pfsc.get_study_cases_from_string(</span>
@@ -435,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="permutation" class="level1">
 <h1>Permutation</h1>
 <p>It is also possible to create study cases for the permutation of the parameters (i.e.&nbsp;all combinations). This is achieved with the method <code>apply_permutation</code>. Define the parameter values first (and also the hierarchy if applicable) and then call the method. Make sure that the PF application is hidden to improve the performance (if not hidden, this can take minutes and otherwise only seconds):</p>
-<div id="e1ba62cd" class="cell" data-execution_count="14">
+<div id="6abb6c9e" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pfsc.app.Hide()</span>
@@ -453,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>apply_permutation</code> irreversibly replaces the values in <code>parameter_values</code> with the permutation.</p>
 <p>It may be desirable to use the permutation but omit certain combinations. These omitted combinations can be defined in a list of dictionaries and used as a keyword argument as follows:</p>
-<div id="3b988670" class="cell" data-execution_count="15">
+<div id="4f841238" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>omitted_combinations <span class="op">=</span> [</span>

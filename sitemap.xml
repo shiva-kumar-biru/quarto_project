@@ -2,90 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shiva-kumar-biru.github.io/quarto_project/index.html</loc>
-    <lastmod>2024-08-21T16:24:54.899Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/index.html</loc>
-    <lastmod>2024-08-21T16:25:52.867Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/results_interface.html</loc>
-    <lastmod>2024-08-21T16:25:52.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/plot_interface.html</loc>
-    <lastmod>2024-08-21T16:25:52.943Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/simulation_and_plotting.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/getting_started.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/home/index.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/case_studies.PFStudyCases.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/index.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/results_interface.PFResultsInterface.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/active_project_interface.PFActiveProject.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/active_project_interface.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/plot_interface.PFPlotInterface.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/dyn_sim_interface.PFDynSimInterface.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/database_interface.PFDatabaseInterface.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/Contribution/contribution.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/tutorials.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
+    <lastmod>2024-09-03T14:46:54.101Z</lastmod>
   </url>
   <url>
     <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/study_cases.html</loc>
-    <lastmod>2024-08-21T16:24:54.895Z</lastmod>
+    <lastmod>2024-09-03T14:46:54.097Z</lastmod>
   </url>
   <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/database_interface.html</loc>
-    <lastmod>2024-08-21T16:25:52.943Z</lastmod>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/tutorials.html</loc>
+    <lastmod>2024-09-03T14:46:54.097Z</lastmod>
   </url>
   <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/case_studies.html</loc>
-    <lastmod>2024-08-21T16:25:52.971Z</lastmod>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/Contribution/contribution.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
   </url>
   <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/active_project_interface.html</loc>
-    <lastmod>2024-08-21T16:25:52.939Z</lastmod>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/database_interface.PFDatabaseInterface.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
   </url>
   <url>
-    <loc>https://shiva-kumar-biru.github.io/quarto_project/doc/api/dyn_sim_interface.html</loc>
-    <lastmod>2024-08-21T16:25:52.971Z</lastmod>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/dyn_sim_interface.PFDynSimInterface.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/plot_interface.PFPlotInterface.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/active_project_interface.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/active_project_interface.PFActiveProject.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/results_interface.PFResultsInterface.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/index.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/api/case_studies.PFStudyCases.html</loc>
+    <lastmod>2024-09-03T14:46:54.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/home/index.html</loc>
+    <lastmod>2024-09-03T14:46:54.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/getting_started.html</loc>
+    <lastmod>2024-09-03T14:46:54.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shiva-kumar-biru.github.io/quarto_project/docs/tutorials/simulation_and_plotting.html</loc>
+    <lastmod>2024-09-03T14:46:54.097Z</lastmod>
   </url>
 </urlset>
