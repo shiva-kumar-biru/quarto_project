@@ -30,7 +30,6 @@ jobs:
       - name: Render and Publish
         run: |
           cd quartowebsite
-          quartodoc build
           quarto render
           quarto publish gh-pages
         env:
