@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>powfacpy.network_interface API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>powfacpy.network_interface</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="powfacpy.network_interface.PFNetworkInterface"><code class="flex name class">
+<span>class <span class="ident">PFNetworkInterface</span></span>
+<span>(</span><span>app)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interface to the currently active project.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PFNetworkInterface(powfacpy.PFActiveProject):
+    
+  def __init__(self, app):
+    super().__init__(app) 
+
+  def get_vacant_cubicle_of_terminal(self, terminal, new_cubicle_name=None):
+    &#34;&#34;&#34;Gets the first vacant cubicle found in a terminal (i.e. nothing is connected
+    to this cubicle).
+    If there is no vacant cubicle, a new cubicle is created.
+
+    Arguments:
+      terminal: ElmTerm
+      new_cubicle_name: Name  that is set for the found or created cubicle 
+    &#34;&#34;&#34;
+    terminal = self._handle_single_pf_object_or_path_input(terminal)
+    cubicles = self.get_cubicles_of_terminal(terminal)
+    for cubicle in cubicles:
+      if cubicle.obj_id == None:
+        if new_cubicle_name:
+          cubicle.loc_name = new_cubicle_name
+        return cubicle
+    if not new_cubicle_name:
+      new_cubicle_name = &#34;Cub_&#34;+str(len(cubicles)+1)     
+    return self.create_in_folder(new_cubicle_name+&#34;.StaCubic&#34;, terminal)
+
+  def get_cubicles_of_terminal(self, terminal, only_calc_relevant=False):
+    if not only_calc_relevant:
+      return self.get_obj(&#34;*&#34;, parent_folder=terminal,
+        condition=lambda x: x.GetClassName() == &#34;StaCubic&#34;)
+    else:
+      return terminal.GetCalcRelevantCubicles()
+
+  def get_elements_connected_to_terminal(self, terminal, only_calc_relevant=False):
+    cubicles = self.get_cubicles_of_terminal(terminal, only_calc_relevant=only_calc_relevant)
+    elements = []
+    for cub in cubicles:
+      if cub.obj_id is not None: 
+        elements.append(cub.obj_id)
+    return elements  
+
+  def get_connected_terminal(self, element):
+    return element.bus1.cterm 
+
+  def copy_grid(self, grid_or_path, target_folder, new_name,
+    parent_folder=None,
+    error_if_non_existent=True):
+    &#34;&#34;&#34;Copying a grid is not trivial in PF because the graphical network objects
+    need to be copied and assigned manually as this is not done automatically.
+    &#34;&#34;&#34;
+    grid_to_be_copied = self._handle_single_pf_object_or_path_input(grid_or_path)
+    new_grid = self.copy_single_obj(grid_to_be_copied, target_folder,
+      overwrite=True,
+      new_name=new_name,
+      parent_folder=parent_folder,
+      error_if_non_existent=error_if_non_existent)
+    new_network_diagram = self.copy_single_obj(grid_to_be_copied.pDiagram,
+      self.app.GetProjectFolder(&#34;dia&#34;),new_name=new_name,overwrite=True)
+    graphical_net_objects = self.get_obj(&#34;*.IntGrf&#34;,
+      parent_folder=new_network_diagram, include_subfolders=True)
+    for graphical_net_obj in graphical_net_objects:
+      element = graphical_net_obj.pDataObj
+      path_in_grid = self.get_path_between_objects(grid_to_be_copied, element)
+      graphical_net_obj.pDataObj = self.get_single_obj(path_in_grid, parent_folder=new_grid)
+    new_network_diagram.pDataFolder = new_grid
+    new_grid.pDiagram = new_network_diagram
+    return new_grid
+
+  def get_parent_grid(self, obj_or_path):
+    obj_or_path = self._handle_single_pf_object_or_path_input(obj_or_path)
+    return self.get_upstream_obj(obj_or_path, lambda x: x.GetClassName == &#34;IntNet&#34;)    </code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></li>
+<li><a title="powfacpy.folders_interface.PFFolder" href="folders_interface.html#powfacpy.folders_interface.PFFolder">PFFolder</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="powfacpy.network_interface.PFNetworkInterface.copy_grid"><code class="name flex">
+<span>def <span class="ident">copy_grid</span></span>(<span>self, grid_or_path, target_folder, new_name, parent_folder=None, error_if_non_existent=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Copying a grid is not trivial in PF because the graphical network objects
+need to be copied and assigned manually as this is not done automatically.</p></div>
+</dd>
+<dt id="powfacpy.network_interface.PFNetworkInterface.get_connected_terminal"><code class="name flex">
+<span>def <span class="ident">get_connected_terminal</span></span>(<span>self, element)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.network_interface.PFNetworkInterface.get_cubicles_of_terminal"><code class="name flex">
+<span>def <span class="ident">get_cubicles_of_terminal</span></span>(<span>self, terminal, only_calc_relevant=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.network_interface.PFNetworkInterface.get_elements_connected_to_terminal"><code class="name flex">
+<span>def <span class="ident">get_elements_connected_to_terminal</span></span>(<span>self, terminal, only_calc_relevant=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.network_interface.PFNetworkInterface.get_parent_grid"><code class="name flex">
+<span>def <span class="ident">get_parent_grid</span></span>(<span>self, obj_or_path)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.network_interface.PFNetworkInterface.get_vacant_cubicle_of_terminal"><code class="name flex">
+<span>def <span class="ident">get_vacant_cubicle_of_terminal</span></span>(<span>self, terminal, new_cubicle_name=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the first vacant cubicle found in a terminal (i.e. nothing is connected
+to this cubicle).
+If there is no vacant cubicle, a new cubicle is created.</p>
+<h2 id="arguments">Arguments</h2>
+<p>terminal: ElmTerm
+new_cubicle_name: Name
+that is set for the found or created cubicle</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></b></code>:
+<ul class="hlist">
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.activate_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.activate_study_case">activate_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_results_variable" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_results_variable">add_results_variable</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj">add_variable_selection_obj_to_results_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres">clear_elmres</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted">clear_elmres_from_objects_with_status_deleted</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.clear_folder">clear_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_obj">copy_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_single_obj">copy_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_by_path">create_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj">create_comtrade_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_directory" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_directory">create_directory</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_filter_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_filter_obj">create_filter_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_in_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_in_folder">create_in_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_project_version">create_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_variation" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_variation">create_variation</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.delete_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.delete_obj">delete_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_networks" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_networks">get_active_networks</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_active_project">get_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_study_case">get_active_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_user_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_user_folder">get_active_user_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr">get_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr_by_path">get_attr_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_by_condition" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_by_condition">get_by_condition</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj">get_calc_relevant_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc">get_events_folder_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_first_level_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_first_level_folder">get_first_level_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_from_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_from_study_case">get_from_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object">get_full_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object_with_class_names">get_full_path_of_object_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_loc_name_with_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_loc_name_with_class">get_loc_name_with_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_multiple_obj_from_similar_sub_directories" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_multiple_obj_from_similar_sub_directories">get_multiple_obj_from_similar_sub_directories</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj">get_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_including_subfolders" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_including_subfolders">get_obj_including_subfolders</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_partial" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_partial">get_obj_partial</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string">get_parameter_value_string</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_between_objects" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_between_objects">get_path_between_objects</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_obj_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_obj_with_class_names">get_path_of_obj_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object">get_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project">get_path_of_object_in_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project_with_class_names">get_path_of_object_in_active_project_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_settings" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_project_settings">get_project_settings</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_project_version">get_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc">get_results_obj_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_single_obj">get_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_unique_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_unique_obj">get_unique_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_upstream_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_upstream_obj">get_upstream_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.import_project" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.import_project">import_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file">insert_row_with_number_of_columns_in_csv_file</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_container" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_container">is_container</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_pf_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_pf_class">is_pf_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.path_exists" href="folders_interface.html#powfacpy.folders_interface.PFFolder.path_exists">path_exists</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums">replace_headers_of_csv_file_with_number_of_colums</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version">rollback_project_to_previous_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr">set_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr_by_path">set_attr_by_path</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="powfacpy" href="index.html">powfacpy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="powfacpy.network_interface.PFNetworkInterface" href="#powfacpy.network_interface.PFNetworkInterface">PFNetworkInterface</a></code></h4>
+<ul class="">
+<li><code><a title="powfacpy.network_interface.PFNetworkInterface.copy_grid" href="#powfacpy.network_interface.PFNetworkInterface.copy_grid">copy_grid</a></code></li>
+<li><code><a title="powfacpy.network_interface.PFNetworkInterface.get_connected_terminal" href="#powfacpy.network_interface.PFNetworkInterface.get_connected_terminal">get_connected_terminal</a></code></li>
+<li><code><a title="powfacpy.network_interface.PFNetworkInterface.get_cubicles_of_terminal" href="#powfacpy.network_interface.PFNetworkInterface.get_cubicles_of_terminal">get_cubicles_of_terminal</a></code></li>
+<li><code><a title="powfacpy.network_interface.PFNetworkInterface.get_elements_connected_to_terminal" href="#powfacpy.network_interface.PFNetworkInterface.get_elements_connected_to_terminal">get_elements_connected_to_terminal</a></code></li>
+<li><code><a title="powfacpy.network_interface.PFNetworkInterface.get_parent_grid" href="#powfacpy.network_interface.PFNetworkInterface.get_parent_grid">get_parent_grid</a></code></li>
+<li><code><a title="powfacpy.network_interface.PFNetworkInterface.get_vacant_cubicle_of_terminal" href="#powfacpy.network_interface.PFNetworkInterface.get_vacant_cubicle_of_terminal">get_vacant_cubicle_of_terminal</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

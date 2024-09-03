@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>powfacpy.results_interface API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>powfacpy.results_interface</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="powfacpy.results_interface.PFResultsInterface"><code class="flex name class">
+<span>class <span class="ident">PFResultsInterface</span></span>
+<span>(</span><span>app)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interface to the currently active project.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PFResultsInterface(powfacpy.PFActiveProject):
+
+  def __init__(self, app):
+    super().__init__(app)
+    self.truncate_paths_until: str = PFStringManipulation.format_full_path(str(self.network_data_folder), self.app) + &#34;\\&#34;
+    self.variable_aliases: dict[str, str] = {}
+    self.obj_aliases: dict[str, str] = {}
+
+
+  def get_list_with_results_of_variable_from_elmres(self, obj, variable, results_obj=None, load_elmres=True):
+    if not results_obj:
+      results_obj = self.app.GetFromStudyCase(&#34;ElmRes&#34;)
+    if load_elmres:  
+      results_obj.Load()  
+    obj = self._handle_single_pf_object_or_path_input(obj)  
+    column = results_obj.FindColumn(obj, variable)
+    return self.get_list_with_results_of_column(column, results_obj=results_obj, load_elmres=False)  
+
+
+  def get_list_with_results_of_column_from_elmres(self, column, results_obj=None, load_elmres=True):
+    if not results_obj:
+      results_obj = self.app.GetFromStudyCase(&#34;ElmRes&#34;)
+    if load_elmres:  
+      results_obj.Load()   
+    intvec = self.create_in_folder(&#34;test.IntVec&#34;, results_obj.GetParent(),overwrite=True) 
+    results_obj.GetColumnValues(intvec, column) 
+    list = intvec.V
+    intvec.Delete()
+    return list
+  
+
+  def export_to_csv(self,
+    dir=None,
+    file_name =&#34;results&#34;,
+    results_obj = None,
+    list_of_results_objs:list = None,
+    elements:list = None, 
+    variables:list = None,
+    column_separator:str = &#39;,&#39;,
+    decimal_separator:str = &#39;.&#39;,
+    comres_parameters:dict = {},
+    format_csv_file:bool = True,
+    ) -&gt; str:
+      &#34;&#34;&#34;Exports simulation results to csv.
+      
+      Arguments:
+        dir: export directory, if &#39;None&#39; the current working directory 
+          (where script is run) is used 
+        file_name: Name of target csv file
+        results_obj: PF ElmRes or IntComtrade object, by default the first ElmRes 
+          found in the active study case is used. All variables from this object 
+          are exported.
+        list_of_results_objs: Specify if selected variables from several results
+          objects should be exported. Used in combination with arguments 
+          &#39;elements&#39; and &#39;variables&#39;. Don&#39;t specify in combination with &#39;results_obj&#39;.
+          Note that PF (i.e. ComRes objects) does not allow the combined export 
+          from ElmRes and IntComtrade objects. 
+        elements: Specify if only selected variables from the grid elements in 
+          this list (e.g. ElmTerm etc.) should be exported. Used in combination
+          with &#39;variables&#39; and &#39;list_of_results_objs&#39;(several different results objects)).
+        variables: Specify if only selected variables (e.g. &#34;m:u&#34;) should be 
+          exported). Used in combination with &#39;elements&#39; and &#39;list_of_results_objs&#39;.
+        comres_parameters: Dictionary with parameters (and values) for the comres
+          object.  
+        format_csv_file: Format csv file so there is only one row for the header
+          (see also _format_csv_for_elmres and format_csv_for_comtrade).
+
+      Returns:
+        Path of csv file.
+              
+      Example (export a selection of results variables): 
+        voltage_source = pfbi.get_unique_obj(r&#39;Network Model\\Network Data\\test_plot_interface\\Grid 1\\AC Voltage Source&#39;)
+        control_model = pfbi.get_unique_obj(&#39;Network Model\\Network Data\\test_plot_interface\Grid 1\\WECC WT Control System Type 4A\\REEC_A Electrical Control Model&#39;)
+        objects =   [voltage_source, voltage_source, control_model]
+        variables = [&#39;m:Qsum:bus1&#39;,  &#39;m:Psum:bus1&#39;,  &#39;s:Ipcmd&#39;    ]
+        elmres_list = [pfbi.app.GetFromStudyCase(&#39;ElmRes&#39;),]*len(variables)
+        df = pfbi.export_to_csv(list_of_results_objs = elmres_list, 
+                                objects = objects, 
+                                variables = variables)    
+      &#34;&#34;&#34;
+      comres = self.app.GetFromStudyCase(&#34;ComRes&#34;)
+      if results_obj and list_of_results_objs:
+        raise ValueError(&#34;Results objects were given in &#39;results_obj&#39; and in &#34; + 
+                        &#34;&#39;list_of_results_objs&#39;. This is redundant, specifiy only one.&#34;)   
+      if elements and variables and list_of_results_objs:
+        self._add_selected_variables_for_export(comres, 
+                                                list_of_results_objs,
+                                                elements,
+                                                variables)
+        comres.iopt_csel = 1 # export selected variables
+        if not comres.timeSclObj: # Leading results object
+          comres.timeSclObj = list_of_results_objs[0]
+      elif elements or variables or list_of_results_objs:
+        raise ValueError(&#34;The arguments &#39;list_of_results_objs&#39;, &#39;elements&#39; and &#39;variables&#39; &#34; +
+                         &#34;must be specified together.&#34;)      
+      else:
+        if not results_obj:
+          if not self.app.GetActiveStudyCase():
+            raise powfacpy.PFNotActiveError(&#34;study case&#34;)
+          comres.pResult = self.get_from_study_case(&#34;ElmRes&#34;)
+        else:
+          comres.pResult = self._handle_single_pf_object_or_path_input(results_obj)
+        comres.iopt_csel = 0 # export all variables
+      
+      self._set_comres_settings_for_csv_export(comres, dir, file_name, column_separator, decimal_separator, comres_parameters)
+      export_successful = comres.Execute()
+      if export_successful != 0:
+        comres_path = self.get_path_of_object(comres)
+        raise Exception(&#34;CSV export was not successful using &#39;&#34; +
+                        str(comres_path) + &#34;&#39;&#34;)
+
+      path = self._replace_special_PF_characters_in_path_string(comres.f_name)
+      if format_csv_file:
+        num_header_rows = self._get_number_of_header_rows_of_exported_csv_file(
+          list_of_results_objs) 
+        self._format_exported_csv_file(path, comres, list_of_results_objs, num_header_rows) 
+      return path
+
+
+  def _get_number_of_header_rows_of_exported_csv_file(self, list_of_results_objs:list) -&gt; int:
+    &#34;&#34;&#34;
+    When PF exports to csv with ComRes, the number of header rows varies.
+    Dependending on a list of results objects is used and whether all elements 
+    in list_of_results_objs are the same, PF will add 3 or 2 header rows to the 
+    exported csv file.
+    &#34;&#34;&#34;  
+    if list_of_results_objs:
+      if all(i == list_of_results_objs[0] for i in list_of_results_objs):
+        return 2
+      else:
+        return 3
+    else:  
+      return 2 
+  
+
+  def _set_comres_settings_for_csv_export(self, 
+                                         comres, 
+                                         dir:str, 
+                                         file_name:str, 
+                                         column_separator:str, 
+                                         decimal_separator:str,
+                                         comres_parameters:dict) -&gt; None:
+    if not dir:
+      dir = getcwd() 
+    comres.f_name = dir + &#34;\\&#34; + file_name + &#34;.csv&#34;
+    comres.col_Sep = column_separator
+    comres.dec_Sep = decimal_separator
+    comres.iopt_exp = 6 # to export as csv
+    comres.iopt_sep = 0 # to use specified column and decimal separator symbols
+    comres.iopt_honly = 0 # to export data and not only the header
+    comres.iopt_locn = 3 # column header includes path
+    comres.ciopt_head = 1 # full variable name
+    comres.numberFormat = 1 # scientific notation  
+    _ = [comres.SetAttribute(attr, value) for attr, value in comres_parameters.items()]
+  
+
+  def _format_exported_csv_file(self, 
+                                path:str, 
+                                comres, 
+                                list_of_results_objs:list, 
+                                num_header_rows:int,
+                                ) -&gt; None:
+      &#34;&#34;&#34;
+      Format csv file depending on the type of the results objects (ElmRes or
+      IntComtrade).
+      &#34;&#34;&#34;
+      if (comres.pResult and comres.pResult.GetClassName() == &#34;ElmRes&#34;) or \
+        (list_of_results_objs and list_of_results_objs[0].GetClassName() == &#34;ElmRes&#34;):
+          self._format_csv_for_elmres(path, num_header_rows, list_of_results_objs)
+      else: # results objects are in COMTRADE format
+        self._format_csv_for_comtrade(path)
+    
+
+  def _format_csv_for_comtrade(self, file_path:str) -&gt; None:
+    &#34;&#34;&#34;Format the .csv file created (using ComRes) based on a Comtrade object (IntComtrade).
+    There is a bug in PF so that the time in the first column sometimes
+    is not monotonously increasing. This methods corrects this by checking 
+    for each time value (1. column) whether it is larger than the previous and discarding rows
+    where this is not the case.
+    &#34;&#34;&#34;
+    with open(file_path) as read_file, open(file_path + &#34;.temp&#34;, &#34;w&#34;) as write_file:
+      row = read_file.readline()
+      write_file.write(row)
+      time = inf
+      row = read_file.readline()
+      while row:
+        row_entries = row.split(&#34;,&#34;)
+        if float(row_entries[0]) &gt; time:
+          write_file.write(row)
+          time = float(row_entries[0])
+        row = read_file.readline()  
+    replace(file_path + &#34;.temp&#34;, file_path)  
+
+
+  def _format_csv_for_elmres(self, 
+                             file_path:str, 
+                             num_header_rows:int, 
+                             list_of_results_objs:list) -&gt; None:
+    &#34;&#34;&#34;Format the csv file that is exported from PF.
+    The PF exported csv uses the first rows either for
+      - result object name (e.g. ElmRes name), element name (e.g. ElmTerm), variable name (e.g. &#34;m:u&#34;)
+    or only for   
+      - element name (e.g. ElmTerm), variable name (e.g. &#34;m:u&#34;)
+    This must be specified in num_header_rows (either 2 or 3).
+    
+    The formated csv file will use only the first row as a header.
+    This row contains the path of the object and the variable name
+    without description.
+
+    Example first row of some column before formating: 
+      &#39;\\username.IntUser\\powfacpy_base.IntPrj\\Network Model.IntPrjfolder\\Network Data.IntPrjfolder\\Grid.ElmNet\\AC Voltage Source.ElmVac\\s:u0&#39;
+    Example input second row of the column before formating:
+      &#39;s:u0 in kV&#39;
+    Example first row of the column after formating:
+      &#39;Network Model\\Network Data\\Grid\\AC Voltage Source\\s:u0&#39;
+    &#34;&#34;&#34;
+    with open(file_path) as read_file, open(file_path + &#34;.temp&#34;, &#34;w&#34;) as write_file:
+      if num_header_rows == 2:
+        full_paths = read_file.readline().split(&#34;,&#34;)
+        variables = read_file.readline().split(&#34;,&#34;)
+      else:
+        read_file.readline().split(&#34;,&#34;)
+        full_paths = read_file.readline().split(&#34;,&#34;)
+        variables = read_file.readline().split(&#34;,&#34;)
+      for col, path in enumerate(full_paths):
+          is_last_column = (col == len(full_paths)-1)
+          if col &gt; 0:
+            path = self._format_path_of_obj(path)
+            variable_name = PFStringManipulation.format_variable_name(variables[col])
+            row = row + path + &#34;\\&#34; + variable_name + &#34;,&#34;*(not is_last_column) # consistently add headers to row
+          else:
+              row = &#34;time,&#34; # Header of first column
+      write_file.write(row+&#34;\n&#34;)
+      # Write remaining data rows until end of file is reached
+      while row:
+          row = read_file.readline()
+          write_file.write(row)
+    replace(file_path + &#34;.temp&#34;, file_path)  
+    if list_of_results_objs:
+      if len(list_of_results_objs) != len(full_paths) - 1: # -1 because of time in first column
+        warn(&#34;Not all specified results were exported. Some of the elements may be &#39;out of service&#39; and were not included.&#34;)
+
+
+  def _add_selected_variables_for_export(self, 
+                                         comres, 
+                                         list_of_results_objs: list, 
+                                         elements: list, 
+                                         variables: list):
+    &#34;&#34;&#34;Adds selected variables to ComRes for export.
+    The time is added by default if the variable of the first row is not the
+    simulaiton time.
+     
+    Arguments:
+      comres: Results export object
+      results_obj: list of results objects (ElmRes, IntComtrade)
+      elements: list of grid objects (e.g. terminals, dsl models, etc.) 
+      variables: list of varaibles (corresponding to elements)
+    &#34;&#34;&#34;
+    comres.iopt_csel = 1 # export only selected variables
+    elmres = list_of_results_objs[0]
+    # Insert simuation time
+    time_variable_name = self._get_time_variable_name_from_elmres(elmres)
+    first_row_is_time = variables[0] == time_variable_name
+    
+    if not first_row_is_time: # add time as first row
+      comres.resultobj = [elmres] + list_of_results_objs
+      comres.element = [elmres] + elements
+      comres.variable = [time_variable_name] + variables
+    else:
+      comres.resultobj = list_of_results_objs
+      comres.element = elements
+      comres.variable = variables
+
+
+  def export_to_pandas(self, 
+                      results_obj: ElmRes = None, 
+                      list_of_results_objs: list = None,
+                      elements: list = None, 
+                      variables: list = None,
+                      comres_parameters: dict = {},) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Returns pandas DataFrame of the simulation results in ElmRes. By default, all  results variables of the first ElmRes object found in the active study case are exported. A selection of specific variables can be exported using 
+    the optional arguments. Uses intermediate step by exporting to csv format
+    with comres object.
+    
+    Arguments:
+      results_obj: PF ElmRes or IntComtrade object, by default the first ElmRes 
+          found in the active study case is used. All variables from this object 
+          are exported.
+        ist_of_results_objs: Specify if selected variables from several results
+          objects should be exported. Used in combination with arguments 
+          &#39;elements&#39; and &#39;variables&#39;. Don&#39;t specify in combination with &#39;results_obj&#39;.
+          Note that PF (i.e. ComRes objects) does not allow the combined export 
+          from ElmRes and IntComtrade objects. 
+        elements: Specify if only selected variables from the grid elements in 
+          this list (e.g. ElmTerm etc.) should be exported. Used in combination
+          with &#39;variables&#39; and &#39;list_of_results_objs&#39;(several different results objects)).
+        variables: Specify if only selected variables (e.g. &#34;m:u&#34;) should be 
+          exported). Used in combination with &#39;elements&#39; and &#39;list_of_results_objs&#39;.
+        comres_parameters: Dictionary with parameters (and values) for the comres
+          object (for intermediate step to export to csv).
+      
+    Example (export a selection of results variables): 
+      voltage_source = pfri.get_unique_obj(&#39;Network Model\\Network Data\\test_plot_interface\\Grid 1\\AC Voltage Source&#39;)
+      control_model = pfri.get_unique_obj(&#39;Network Model\\Network Data\\test_plot_interface\\Grid 1\\WECC WT Control System Type 4A\\REEC_A Electrical Control Model&#39;)
+      elements =   [voltage_source, voltage_source, control_model]
+      variables = [&#39;m:Qsum:bus1&#39;,  &#39;m:Psum:bus1&#39;,  &#39;s:Ipcmd&#39;    ]
+      elmres_list = [pfri.app.GetFromStudyCase(&#39;ElmRes&#39;),]*len(variables)
+      df = pfri.export_to_pandas(list_of_results_objs=elmres_list, 
+                                elements=elements, 
+                                variables=variables) 
+    &#34;&#34;&#34;
+    FILE_NAME = &#39;temp&#39;
+    file_path = getcwd()
+    full_path = file_path + &#34;\\&#34; + FILE_NAME + &#34;.csv&#34;
+    
+    try:
+      self.export_to_csv(
+        dir=file_path,
+        file_name=FILE_NAME,
+        results_obj=results_obj,
+        list_of_results_objs=list_of_results_objs,
+        elements=elements,
+        variables=variables,
+        comres_parameters=comres_parameters,
+        format_csv_file=False)
+      
+      df = pd.read_csv(full_path, encoding=&#39;ISO-8859-1&#39;, header=[0,1])
+      self._format_pandas_column_headers(df, list_of_results_objs)  
+      
+      if list_of_results_objs:
+        if len(list_of_results_objs) != len(df.columns) - 1:
+          warn(&#34;Not all specified results were exported. Some of the elements may be &#39;out of service&#39; and were not included.&#34;)
+    finally:
+      remove(full_path)
+    df.set_index(&#34;time&#34;, inplace=True)  
+    return df
+  
+
+  def _format_pandas_column_headers(
+    self, 
+    df: pd.DataFrame, 
+    list_of_results_objs: list[ElmRes]) -&gt; None:
+    &#34;&#34;&#34;Format column headers of pandas DataFrame.
+    
+    Use single line column headers with path of object and results varible. 
+
+    Args:
+        df (pd.DataFrame): unformatted DataFrame.
+        list_of_results_objs (list[ElmRes]): Used to get numer of header rows of exported csv file.
+    &#34;&#34;&#34;
+    num_header_rows = self._get_number_of_header_rows_of_exported_csv_file(
+        list_of_results_objs)
+    headers = [&#34;time&#34;]
+    for col in df.columns[1:]:
+      path = self._format_path_of_obj(col[num_header_rows-2])
+      var = PFStringManipulation.format_variable_name(col[num_header_rows-1])
+      headers.append(path + &#39;\\&#39; + var)
+    df.columns = headers
+    
+  
+  def _format_path_of_obj(self, 
+                         path: str) -&gt; str:
+    &#34;&#34;&#34;Format the path of an obj.
+
+    Args:
+        path (str): unformated full path (usually created using &#39;str(obj)&#39;)
+
+    Returns:
+        str: path inside active project without class name and truncated until &#39;self.truncate_paths_until&#39;
+    &#34;&#34;&#34;
+    path = PFStringManipulation.format_full_path(path, self.app)
+    if self.truncate_paths_until:
+      path = PFStringManipulation.truncate_until(
+        path,
+        self.truncate_paths_until)  
+    return path
+  
+  
+  def replace_variable_aliases(self, var_name: str) -&gt; str:
+    &#34;&#34;&#34;Replace &#39;var_name&#39; with correponding entry in &#39;self.variable_aliases&#39;. If no such key exists in &#39;self.variable_aliases&#39;, &#39;var_name&#39; is returned.
+
+    Args:
+        var_name (str): Original name (key in &#39;self.variable_aliases&#39;)
+
+    Returns:
+        str: Replacement (value in &#39;self.variable_aliases&#39;)
+    &#34;&#34;&#34;
+    replacement = self.variable_aliases.get(var_name)
+    if replacement:
+      return replacement
+    else:
+      return var_name
+      
+      
+  def replace_object_aliases(self, obj_name: str) -&gt; str:
+    &#34;&#34;&#34;Replace &#39;obj_name&#39; with correponding entry in &#39;self.obj_aliases&#39;. If no such key exists in &#39;self.obj_aliases&#39;, &#39;obj_name&#39; is returned.
+
+    Args:
+        obj_name (str): Original name (key in &#39;self.obj_aliases&#39;)
+
+    Returns:
+        str: Replacement (value in &#39;self.obj_aliases&#39;)
+    &#34;&#34;&#34; 
+    replacement = self.obj_aliases.get(obj_name)
+    if replacement:
+      return replacement
+    else:
+      return obj_name
+  
+  
+  def get_simulation_results_from_dataframe(
+    self, 
+    df: pd.DataFrame, 
+    objs: PFGeneral | str | Iterable[PFGeneral | str], 
+    variables: str | Iterable[str]) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Get simulation results from a DataFrame (which was created using &#39;export_to_pandas&#39;)
+
+    Args:
+    
+        df (pd.DataFrame): DataFrame with simulation results (created using &#39;export_to_pandas&#39;)
+        
+        objs (PFGeneral | str | Iterable[PFGeneral  |  str]): objects (for which results must be contained in the &#39;df&#39;)
+        
+        variables (str | Iterable[str]): variables (for which results must be contained in the &#39;df&#39;)
+
+    Returns:
+        DataFrame: DataFrame with specified results
+    &#34;&#34;&#34;
+    objs = self._handle_pf_object_or_path_input(objs)
+    if isinstance(variables, str):
+      variables = [variables]
+    obj_and_var_strings = []
+    for obj in objs:
+      obj_and_var_string = self._format_path_of_obj(PFStringManipulation.remove_html_tags_from_path(str(obj)))
+      for var in variables:
+        obj_and_var_string += &#34;\\&#34; + var
+        obj_and_var_strings.append(obj_and_var_string) 
+    return df[obj_and_var_strings]  
+    
+      
+  def _get_time_variable_name_from_elmres(self,elmres) -&gt; str:
+    &#34;&#34;&#34;Returns the variable name of simulation time in an ElmRes object. 
+    Different PF simulation types (RMS, quasi-static,..) 
+    have different names for the time variable.
+    &#34;&#34;&#34;
+    if elmres.calTp == 0: # RMS/EMT
+      return &#39;b:tnow&#39;
+    elif elmres.calTp == 29: # quasi-static
+      return &#39;b:ucttime&#39;
+    else:
+      elmres_path = self.get_path_of_object(elmres)
+      raise Exception(f&#34;&#34;&#34;The PF simulation type number &#39;{elmres.calTp}&#39; of the results object 
+      &#39;{elmres_path}&#39; 
+      (attribute &#39;calTp&#39; of ElmRes object) is not known or has not been implemented yet. Consider changes in the source code to 
+      _get_time_variable_name_from_elmres (or open an issue: https://github.com/FraunhIEE-UniKassel-PowSysStability/powfacpy/).&#34;&#34;&#34;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></li>
+<li><a title="powfacpy.folders_interface.PFFolder" href="folders_interface.html#powfacpy.folders_interface.PFFolder">PFFolder</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="powfacpy.results_interface.PFResultsInterface.export_to_csv"><code class="name flex">
+<span>def <span class="ident">export_to_csv</span></span>(<span>self, dir=None, file_name='results', results_obj=None, list_of_results_objs: list = None, elements: list = None, variables: list = None, column_separator: str = ',', decimal_separator: str = '.', comres_parameters: dict = {}, format_csv_file: bool = True) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exports simulation results to csv.</p>
+<h2 id="arguments">Arguments</h2>
+<p>dir: export directory, if 'None' the current working directory
+(where script is run) is used
+file_name: Name of target csv file
+results_obj: PF ElmRes or IntComtrade object, by default the first ElmRes
+found in the active study case is used. All variables from this object
+are exported.
+list_of_results_objs: Specify if selected variables from several results
+objects should be exported. Used in combination with arguments
+'elements' and 'variables'. Don't specify in combination with 'results_obj'.
+Note that PF (i.e. ComRes objects) does not allow the combined export
+from ElmRes and IntComtrade objects.
+elements: Specify if only selected variables from the grid elements in
+this list (e.g. ElmTerm etc.) should be exported. Used in combination
+with 'variables' and 'list_of_results_objs'(several different results objects)).
+variables: Specify if only selected variables (e.g. "m:u") should be
+exported). Used in combination with 'elements' and 'list_of_results_objs'.
+comres_parameters: Dictionary with parameters (and values) for the comres
+object.<br>
+format_csv_file: Format csv file so there is only one row for the header
+(see also _format_csv_for_elmres and format_csv_for_comtrade).</p>
+<h2 id="returns">Returns</h2>
+<p>Path of csv file.
+Example (export a selection of results variables):
+voltage_source = pfbi.get_unique_obj(r'Network Model\Network Data\test_plot_interface\Grid 1\AC Voltage Source')
+control_model = pfbi.get_unique_obj('Network Model\Network Data\test_plot_interface\Grid 1\WECC WT Control System Type 4A\REEC_A Electrical Control Model')
+objects =
+[voltage_source, voltage_source, control_model]
+variables = ['m:Qsum:bus1',
+'m:Psum:bus1',
+'s:Ipcmd'
+]
+elmres_list = [pfbi.app.GetFromStudyCase('ElmRes'),]*len(variables)
+df = pfbi.export_to_csv(list_of_results_objs = elmres_list,
+objects = objects,
+variables = variables)</p></div>
+</dd>
+<dt id="powfacpy.results_interface.PFResultsInterface.export_to_pandas"><code class="name flex">
+<span>def <span class="ident">export_to_pandas</span></span>(<span>self, results_obj: <a title="powfacpy.pf_class_protocols.ElmRes" href="pf_class_protocols.html#powfacpy.pf_class_protocols.ElmRes">ElmRes</a> = None, list_of_results_objs: list = None, elements: list = None, variables: list = None, comres_parameters: dict = {}) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns pandas DataFrame of the simulation results in ElmRes. By default, all
+results variables of the first ElmRes object found in the active study case are exported. A selection of specific variables can be exported using
+the optional arguments. Uses intermediate step by exporting to csv format
+with comres object.</p>
+<h2 id="arguments">Arguments</h2>
+<p>results_obj: PF ElmRes or IntComtrade object, by default the first ElmRes
+found in the active study case is used. All variables from this object
+are exported.
+ist_of_results_objs: Specify if selected variables from several results
+objects should be exported. Used in combination with arguments
+'elements' and 'variables'. Don't specify in combination with 'results_obj'.
+Note that PF (i.e. ComRes objects) does not allow the combined export
+from ElmRes and IntComtrade objects.
+elements: Specify if only selected variables from the grid elements in
+this list (e.g. ElmTerm etc.) should be exported. Used in combination
+with 'variables' and 'list_of_results_objs'(several different results objects)).
+variables: Specify if only selected variables (e.g. "m:u") should be
+exported). Used in combination with 'elements' and 'list_of_results_objs'.
+comres_parameters: Dictionary with parameters (and values) for the comres
+object (for intermediate step to export to csv).</p>
+<p>Example (export a selection of results variables):
+voltage_source = pfri.get_unique_obj('Network Model\Network Data\test_plot_interface\Grid 1\AC Voltage Source')
+control_model = pfri.get_unique_obj('Network Model\Network Data\test_plot_interface\Grid 1\WECC WT Control System Type 4A\REEC_A Electrical Control Model')
+elements =
+[voltage_source, voltage_source, control_model]
+variables = ['m:Qsum:bus1',
+'m:Psum:bus1',
+'s:Ipcmd'
+]
+elmres_list = [pfri.app.GetFromStudyCase('ElmRes'),]*len(variables)
+df = pfri.export_to_pandas(list_of_results_objs=elmres_list,
+elements=elements,
+variables=variables)</p></div>
+</dd>
+<dt id="powfacpy.results_interface.PFResultsInterface.get_list_with_results_of_column_from_elmres"><code class="name flex">
+<span>def <span class="ident">get_list_with_results_of_column_from_elmres</span></span>(<span>self, column, results_obj=None, load_elmres=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.results_interface.PFResultsInterface.get_list_with_results_of_variable_from_elmres"><code class="name flex">
+<span>def <span class="ident">get_list_with_results_of_variable_from_elmres</span></span>(<span>self, obj, variable, results_obj=None, load_elmres=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.results_interface.PFResultsInterface.get_simulation_results_from_dataframe"><code class="name flex">
+<span>def <span class="ident">get_simulation_results_from_dataframe</span></span>(<span>self, df: pandas.core.frame.DataFrame, objs: Union[<a title="powfacpy.pf_class_protocols.PFGeneral" href="pf_class_protocols.html#powfacpy.pf_class_protocols.PFGeneral">PFGeneral</a>, str, Iterable[<a title="powfacpy.pf_class_protocols.PFGeneral" href="pf_class_protocols.html#powfacpy.pf_class_protocols.PFGeneral">PFGeneral</a> | str]], variables: Union[str, Iterable[str]]) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get simulation results from a DataFrame (which was created using 'export_to_pandas')</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame with simulation results (created using 'export_to_pandas')</dd>
+<dt><strong><code>objs</code></strong> :&ensp;<code>PFGeneral | str | Iterable[PFGeneral
+|
+str]</code></dt>
+<dd>objects (for which results must be contained in the 'df')</dd>
+<dt><strong><code>variables</code></strong> :&ensp;<code>str | Iterable[str]</code></dt>
+<dd>variables (for which results must be contained in the 'df')</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>DataFrame</code></dt>
+<dd>DataFrame with specified results</dd>
+</dl></div>
+</dd>
+<dt id="powfacpy.results_interface.PFResultsInterface.replace_object_aliases"><code class="name flex">
+<span>def <span class="ident">replace_object_aliases</span></span>(<span>self, obj_name: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replace 'obj_name' with correponding entry in 'self.obj_aliases'. If no such key exists in 'self.obj_aliases', 'obj_name' is returned.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>obj_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Original name (key in 'self.obj_aliases')</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Replacement (value in 'self.obj_aliases')</dd>
+</dl></div>
+</dd>
+<dt id="powfacpy.results_interface.PFResultsInterface.replace_variable_aliases"><code class="name flex">
+<span>def <span class="ident">replace_variable_aliases</span></span>(<span>self, var_name: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replace 'var_name' with correponding entry in 'self.variable_aliases'. If no such key exists in 'self.variable_aliases', 'var_name' is returned.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>var_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Original name (key in 'self.variable_aliases')</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Replacement (value in 'self.variable_aliases')</dd>
+</dl></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></b></code>:
+<ul class="hlist">
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.activate_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.activate_study_case">activate_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_results_variable" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_results_variable">add_results_variable</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj">add_variable_selection_obj_to_results_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres">clear_elmres</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted">clear_elmres_from_objects_with_status_deleted</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.clear_folder">clear_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_obj">copy_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_single_obj">copy_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_by_path">create_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj">create_comtrade_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_directory" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_directory">create_directory</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_filter_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_filter_obj">create_filter_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_in_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_in_folder">create_in_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_project_version">create_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_variation" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_variation">create_variation</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.delete_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.delete_obj">delete_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_networks" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_networks">get_active_networks</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_active_project">get_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_study_case">get_active_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_user_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_user_folder">get_active_user_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr">get_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr_by_path">get_attr_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_by_condition" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_by_condition">get_by_condition</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj">get_calc_relevant_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc">get_events_folder_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_first_level_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_first_level_folder">get_first_level_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_from_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_from_study_case">get_from_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object">get_full_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object_with_class_names">get_full_path_of_object_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_loc_name_with_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_loc_name_with_class">get_loc_name_with_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_multiple_obj_from_similar_sub_directories" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_multiple_obj_from_similar_sub_directories">get_multiple_obj_from_similar_sub_directories</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj">get_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_including_subfolders" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_including_subfolders">get_obj_including_subfolders</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_partial" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_partial">get_obj_partial</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string">get_parameter_value_string</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_between_objects" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_between_objects">get_path_between_objects</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_obj_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_obj_with_class_names">get_path_of_obj_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object">get_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project">get_path_of_object_in_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project_with_class_names">get_path_of_object_in_active_project_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_settings" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_project_settings">get_project_settings</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_project_version">get_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc">get_results_obj_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_single_obj">get_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_unique_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_unique_obj">get_unique_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_upstream_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_upstream_obj">get_upstream_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.import_project" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.import_project">import_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file">insert_row_with_number_of_columns_in_csv_file</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_container" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_container">is_container</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_pf_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_pf_class">is_pf_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.path_exists" href="folders_interface.html#powfacpy.folders_interface.PFFolder.path_exists">path_exists</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums">replace_headers_of_csv_file_with_number_of_colums</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version">rollback_project_to_previous_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr">set_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr_by_path">set_attr_by_path</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="powfacpy" href="index.html">powfacpy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="powfacpy.results_interface.PFResultsInterface" href="#powfacpy.results_interface.PFResultsInterface">PFResultsInterface</a></code></h4>
+<ul class="">
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.export_to_csv" href="#powfacpy.results_interface.PFResultsInterface.export_to_csv">export_to_csv</a></code></li>
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.export_to_pandas" href="#powfacpy.results_interface.PFResultsInterface.export_to_pandas">export_to_pandas</a></code></li>
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.get_list_with_results_of_column_from_elmres" href="#powfacpy.results_interface.PFResultsInterface.get_list_with_results_of_column_from_elmres">get_list_with_results_of_column_from_elmres</a></code></li>
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.get_list_with_results_of_variable_from_elmres" href="#powfacpy.results_interface.PFResultsInterface.get_list_with_results_of_variable_from_elmres">get_list_with_results_of_variable_from_elmres</a></code></li>
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.get_simulation_results_from_dataframe" href="#powfacpy.results_interface.PFResultsInterface.get_simulation_results_from_dataframe">get_simulation_results_from_dataframe</a></code></li>
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.replace_object_aliases" href="#powfacpy.results_interface.PFResultsInterface.replace_object_aliases">replace_object_aliases</a></code></li>
+<li><code><a title="powfacpy.results_interface.PFResultsInterface.replace_variable_aliases" href="#powfacpy.results_interface.PFResultsInterface.replace_variable_aliases">replace_variable_aliases</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

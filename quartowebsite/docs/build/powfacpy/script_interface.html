@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>powfacpy.script_interface API documentation</title>
+<meta name="description" content="Provides classes to interface python script objects (ComPython)
+and to create an embedded script in the PF database based on a
+python package. Used …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>powfacpy.script_interface</code></h1>
+</header>
+<section id="section-intro">
+<p>Provides classes to interface python script objects (ComPython)
+and to create an embedded script in the PF database based on a
+python package. Used for example to add powfacpy to the embedded
+script of a ComPython object to avoid having to install powfacpy,
+which is an obstacle for some users without experience in coding
+or with pip.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="powfacpy.script_interface.PFComPythonObjectInterface"><code class="flex name class">
+<span>class <span class="ident">PFComPythonObjectInterface</span></span>
+<span>(</span><span>app)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interface to python script objects.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PFComPythonObjectInterface(powfacpy.PFActiveProject):
+  &#34;&#34;&#34;Interface to python script objects.
+  &#34;&#34;&#34;
+
+  def __init__(self, app): 
+    super().__init__(app) 
+
+  def create_file_from_embedded_script(self, out_file, compython):
+    &#34;&#34;&#34;Create a .py file from an embedded script.
+    &#34;&#34;&#34;
+    compython = self._handle_single_pf_object_or_path_input(compython)
+    # The xScript attribute is a list with all lines of the script
+    TextFileProcessor.create_file_from_list_of_lines(out_file, compython.xScript)
+
+  def set_embedded_script_from_file(self, compython, file):
+    &#34;&#34;&#34;Set the embedded script based on a .py file.
+    &#34;&#34;&#34;
+    compython = self._handle_single_pf_object_or_path_input(compython)
+    compython.xScript = TextFileProcessor.get_list_of_lines_of_file(file)
+
+  def merge_file_into_embedded_script(self,
+    compython,
+    inserted_file:str,
+    start_after_line,
+    end_before_line):
+    &#34;&#34;&#34;Merge a file into an embedded script between the starting 
+    and ending lines.
+    The start and end lines can either be integers (line numbers) or
+    string matches.
+    &#34;&#34;&#34;
+    compython = self._handle_single_pf_object_or_path_input(compython)
+    temporary_dir = &#34;powfacpy_temp&#34;
+    os.makedirs(temporary_dir, exist_ok=True)
+    try:
+      embedded_script_original_file = temporary_dir + r&#34;\embedded_script_original.py&#34;
+      self.create_file_from_embedded_script(embedded_script_original_file, compython)
+      merged_file = temporary_dir + r&#34;\merged.py&#34;
+      TextFileProcessor.merge_into_file(embedded_script_original_file,
+        inserted_file, merged_file, start_after_line, end_before_line)
+      self.set_embedded_script_from_file(compython, merged_file)  
+    finally:
+      # Delete temporary directory
+      shutil.rmtree(temporary_dir)  
+
+  def merge_package_into_embedded_script(self,
+    compython,
+    init_file,
+    start_after_line,
+    end_before_line):
+    &#34;&#34;&#34;Merge a whole package into an embedded script between the starting 
+    and ending lines.
+    The start and end lines can either be integers (line numbers) or
+    string matches.
+    &#34;&#34;&#34;
+    temporary_dir = &#34;powfacpy_temp&#34;  
+    os.makedirs(temporary_dir)
+    try:
+      compython = self._handle_single_pf_object_or_path_input(compython)
+      merged_package_file = temporary_dir + r&#34;\merged_package.py&#34;
+      PythonFileInterface.merge_package_into_single_file(init_file, merged_package_file)
+      original_embedded_script_file = temporary_dir + r&#34;\original_embedded_script.py&#34;
+      self.create_file_from_embedded_script(original_embedded_script_file, compython)
+      merged_package_into_embedded_file = temporary_dir + r&#34;\merged_package_into_embedded.py&#34;
+      TextFileProcessor.merge_into_file(original_embedded_script_file,
+        merged_package_file,
+        merged_package_into_embedded_file,
+        start_after_line,
+        end_before_line)
+      self.set_embedded_script_from_file(compython, merged_package_into_embedded_file)  
+    finally:
+      # Delete temporary directory
+      shutil.rmtree(temporary_dir)
+
+  def merge_powfacpy_package_into_single_file(self, out_file):
+    init_file = os.path.dirname(__file__) + r&#34;\__init__.py&#34;
+    PythonFileInterface.merge_package_into_single_file(init_file, out_file)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></li>
+<li><a title="powfacpy.folders_interface.PFFolder" href="folders_interface.html#powfacpy.folders_interface.PFFolder">PFFolder</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="powfacpy.script_interface.PFComPythonObjectInterface.create_file_from_embedded_script"><code class="name flex">
+<span>def <span class="ident">create_file_from_embedded_script</span></span>(<span>self, out_file, compython)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a .py file from an embedded script.</p></div>
+</dd>
+<dt id="powfacpy.script_interface.PFComPythonObjectInterface.merge_file_into_embedded_script"><code class="name flex">
+<span>def <span class="ident">merge_file_into_embedded_script</span></span>(<span>self, compython, inserted_file: str, start_after_line, end_before_line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merge a file into an embedded script between the starting
+and ending lines.
+The start and end lines can either be integers (line numbers) or
+string matches.</p></div>
+</dd>
+<dt id="powfacpy.script_interface.PFComPythonObjectInterface.merge_package_into_embedded_script"><code class="name flex">
+<span>def <span class="ident">merge_package_into_embedded_script</span></span>(<span>self, compython, init_file, start_after_line, end_before_line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merge a whole package into an embedded script between the starting
+and ending lines.
+The start and end lines can either be integers (line numbers) or
+string matches.</p></div>
+</dd>
+<dt id="powfacpy.script_interface.PFComPythonObjectInterface.merge_powfacpy_package_into_single_file"><code class="name flex">
+<span>def <span class="ident">merge_powfacpy_package_into_single_file</span></span>(<span>self, out_file)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.script_interface.PFComPythonObjectInterface.set_embedded_script_from_file"><code class="name flex">
+<span>def <span class="ident">set_embedded_script_from_file</span></span>(<span>self, compython, file)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the embedded script based on a .py file.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></b></code>:
+<ul class="hlist">
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.activate_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.activate_study_case">activate_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_results_variable" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_results_variable">add_results_variable</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj">add_variable_selection_obj_to_results_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres">clear_elmres</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted">clear_elmres_from_objects_with_status_deleted</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.clear_folder">clear_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_obj">copy_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_single_obj">copy_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_by_path">create_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj">create_comtrade_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_directory" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_directory">create_directory</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_filter_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_filter_obj">create_filter_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_in_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_in_folder">create_in_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_project_version">create_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_variation" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_variation">create_variation</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.delete_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.delete_obj">delete_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_networks" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_networks">get_active_networks</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_active_project">get_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_study_case">get_active_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_user_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_user_folder">get_active_user_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr">get_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr_by_path">get_attr_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_by_condition" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_by_condition">get_by_condition</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj">get_calc_relevant_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc">get_events_folder_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_first_level_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_first_level_folder">get_first_level_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_from_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_from_study_case">get_from_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object">get_full_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object_with_class_names">get_full_path_of_object_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_loc_name_with_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_loc_name_with_class">get_loc_name_with_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_multiple_obj_from_similar_sub_directories" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_multiple_obj_from_similar_sub_directories">get_multiple_obj_from_similar_sub_directories</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj">get_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_including_subfolders" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_including_subfolders">get_obj_including_subfolders</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_partial" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_partial">get_obj_partial</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string">get_parameter_value_string</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_between_objects" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_between_objects">get_path_between_objects</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_obj_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_obj_with_class_names">get_path_of_obj_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object">get_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project">get_path_of_object_in_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project_with_class_names">get_path_of_object_in_active_project_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_settings" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_project_settings">get_project_settings</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_project_version">get_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc">get_results_obj_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_single_obj">get_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_unique_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_unique_obj">get_unique_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_upstream_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_upstream_obj">get_upstream_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.import_project" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.import_project">import_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file">insert_row_with_number_of_columns_in_csv_file</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_container" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_container">is_container</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_pf_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_pf_class">is_pf_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.path_exists" href="folders_interface.html#powfacpy.folders_interface.PFFolder.path_exists">path_exists</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums">replace_headers_of_csv_file_with_number_of_colums</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version">rollback_project_to_previous_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr">set_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr_by_path">set_attr_by_path</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="powfacpy.script_interface.PythonFileInterface"><code class="flex name class">
+<span>class <span class="ident">PythonFileInterface</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Interface for .py files and python packages.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PythonFileInterface():
+  &#34;&#34;&#34;Interface for .py files and python packages.
+  &#34;&#34;&#34;
+  # ToDo: Convert notebooks to scripts (delete magic etc.)
+
+  @staticmethod
+  def read_init_file_of_package(path_of_init_file: str):
+    &#34;&#34;&#34;Reads the __init__.py file of a python package and returns
+    the paths of the .py files the package uses and the name of the package.
+    For now, only lines with the syntax
+      &#39;from example import *&#39;
+    are considered (i.e. this method does not work with all packages, but for example 
+    with powfacpy)    
+    &#34;&#34;&#34;
+    # The dir of the __init__.py file is also the directory of the files of the packages
+    dir_of_all_files,_ = os_path.split(path_of_init_file)
+    # The name of the package is the name of the parent folder of the __init__.py file 
+    name_of_package = dir_of_all_files.split(&#34;\\&#34;)[-1] 
+    file_paths= []
+    with open(path_of_init_file, &#39;r&#39;) as init_file:
+      for line in init_file:
+        if line.startswith(&#34;from &#34;):
+          line = line.replace(&#34;from &#34;,&#34;&#34;).replace(&#34;.&#34;,&#34;&#34;)
+          file, imported_content = line.split(&#34; import &#34;)
+          if not &#34;*&#34; in imported_content:
+            falsely_read_line = line.split(&#34;import&#34;)[0] + &#34;import *&#34;
+            warnings.warn(f&#34;Cannot read &lt;{line}&gt;. Instead &lt;{falsely_read_line}&gt; is read.&#34;)
+          file_paths.append(dir_of_all_files + &#34;\\&#34; + file + &#34;.py&#34;)
+    return file_paths, name_of_package
+
+  @staticmethod
+  def merge_package_into_single_file(init_file:str, out_file:str):
+    &#34;&#34;&#34;Merges all .py files of a package into a single file.
+    Arguments:
+      init_file: path of __init__.py of package
+      out_file: path of file created  
+    &#34;&#34;&#34;
+    package_files, package_name = PythonFileInterface.read_init_file_of_package(init_file)     
+    merged_package_file = out_file
+    replaced_chars = {package_name + &#34;.&#34;:&#34;&#34;}
+    ignored_lines = {&#34;import &#34; + package_name:&#34;&#34;} 
+    TextFileProcessor.merge_files(package_files,
+      merged_package_file,
+      ignored_lines,
+      replaced_chars)</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="powfacpy.script_interface.PythonFileInterface.merge_package_into_single_file"><code class="name flex">
+<span>def <span class="ident">merge_package_into_single_file</span></span>(<span>init_file: str, out_file: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merges all .py files of a package into a single file.</p>
+<h2 id="arguments">Arguments</h2>
+<p>init_file: path of <strong>init</strong>.py of package
+out_file: path of file created</p></div>
+</dd>
+<dt id="powfacpy.script_interface.PythonFileInterface.read_init_file_of_package"><code class="name flex">
+<span>def <span class="ident">read_init_file_of_package</span></span>(<span>path_of_init_file: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads the <strong>init</strong>.py file of a python package and returns
+the paths of the .py files the package uses and the name of the package.
+For now, only lines with the syntax
+'from example import *'
+are considered (i.e. this method does not work with all packages, but for example
+with powfacpy)</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="powfacpy.script_interface.TextFileProcessor"><code class="flex name class">
+<span>class <span class="ident">TextFileProcessor</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Processes plain text files (e.g. .txt or .py)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TextFileProcessor():
+  &#34;&#34;&#34;Processes plain text files (e.g. .txt or .py)
+  &#34;&#34;&#34;
+  
+  @staticmethod
+  def merge_files(
+    in_files: list,
+    out_file: str,
+    replace_line_if_startswith: dict = None,
+    replace_chars: dict = None):
+    &#34;&#34;&#34;Merges several files into one. 
+    Optionally replaces lines and chars.
+    Arguments:
+      in_files: list of input file paths
+      out_file: output file path
+      replace_line_if_startswith: dict to replace lines that 
+        start with key with value
+      replace_chars: dict to replace chars in key with value 
+    &#34;&#34;&#34;
+    if not out_file.endswith(&#34;.py&#34;):
+      out_file = out_file + &#34;.py&#34;
+    with open(out_file, &#39;w&#39;) as outfile:
+      for fname in in_files:
+        with open(fname) as infile:
+          for line in infile:
+            line = TextFileProcessor._replace_line(line,
+              replace_line_if_startswith, replace_chars)
+            if line:
+              outfile.write(line)
+          outfile.write(&#34;\n \n&#34;)
+
+  @staticmethod
+  def _replace_line(
+    line: str,
+    replace_line_if_startswith: dict = None,
+    replace_chars: dict = None):
+    &#34;&#34;&#34;Handle replacements in line.
+    &#34;&#34;&#34;
+    if replace_line_if_startswith:
+      for start, replacement in replace_line_if_startswith.items():
+        if line.startswith(start):
+          line = replacement
+          break
+    if replace_chars:
+      for replaced_char, replacement in replace_chars.items():
+        line = line.replace(replaced_char, replacement)
+    return line    
+
+  @staticmethod
+  def merge_into_file(
+    target_file:str,
+    inserted_file:str,
+    out_file:str,
+    start_after_line,
+    end_before_line):
+    &#34;&#34;&#34;
+    Creates a new file where one file is merged into another.
+    Searches for start_after_line and end_before_line in target_file
+    and replaces everything in between with inserted_file.
+    The start and end lines can either be integers (line numbers) or
+    string matches.
+    &#34;&#34;&#34;
+    with open(out_file, &#39;w&#39;) as outfile:
+      with open(target_file,&#39;r&#39;) as sourcefile:
+        start_line_was_reached = False
+        end_line_was_reached = False
+        line_count = 0
+        for line in sourcefile:
+          line_count = line_count + 1
+          if not start_line_was_reached:
+            outfile.write(line)
+            if TextFileProcessor._line_is_reached(line, line_count, start_after_line):
+              with open(inserted_file,&#39;r&#39;) as insfile:
+                outfile.write(insfile.read())
+              outfile.write(&#34;\n&#34;)       
+              start_line_was_reached = True
+          elif TextFileProcessor._line_is_reached(line, line_count, end_before_line):           
+            end_line_was_reached = True
+          if end_line_was_reached:
+            outfile.write(line)                 
+    if not start_line_was_reached:
+      raise Exception(f&#34;The spefified starting line for merging \n&#34; +
+        f&#34;\&#34;\n{start_after_line}\&#34; \n was not found in the file {target_file}.&#34;)
+
+
+  @staticmethod
+  def _line_is_reached(current_line: str,
+                      current_line_count:int,
+                      condition):
+    &#34;&#34;&#34;Checks if a line is reached based upon a condition that can
+    either be a line number or a string match.
+    &#34;&#34;&#34;
+    if isinstance(condition, int):
+      if current_line_count == condition:
+        return True
+      else:
+        return False
+    elif isinstance(condition, str):
+      if current_line.rstrip() == condition:
+        return True
+      else:
+        return False                    
+
+  @staticmethod
+  def get_list_of_lines_of_file(file):
+    &#34;&#34;&#34;Reads all lines into a python list.
+    &#34;&#34;&#34;
+    lines = []
+    with open(file,&#39;r&#39;) as f:
+      for line in f:
+        lines.append(line.rstrip()) # Omit line break and whitespace at the end 
+    return lines
+
+  @staticmethod
+  def create_file_from_list_of_lines(out_file, lines):
+    
+    with open(out_file,&#34;w&#34;) as f:
+      for line in lines:
+        f.write(line + &#34;\n&#34;)  
+
+  @staticmethod
+  def process_file(
+    in_file: str,
+    out_file: str,
+    replace_line_if_startswith: dict = None,
+    replace_chars: dict = None,
+    ):
+    &#34;&#34;&#34;Replaces chars and lines that start with a certain string.
+    &#34;&#34;&#34;
+    with open(in_file,&#34;r&#34;) as infile:
+      with open(out_file,&#34;w&#34;) as outfile:
+        for line in infile:
+          line = TextFileProcessor._replace_line(
+              line,
+              replace_line_if_startswith,
+              replace_chars)
+          if line:
+            outfile.write(line)
+
+  @staticmethod
+  def extract_from_file(
+    source_file: str,
+    out_file: str,
+    start_after_line,
+    end_before_line):
+    &#34;&#34;&#34;Extracts the content between two lines from a file and writes
+    to a new file.
+    The start and end lines can either be integers (line numbers) or
+    string matches.
+    &#34;&#34;&#34;
+    with open(source_file,&#34;r&#34;) as sourcefile:
+      with open(out_file,&#34;w&#34;) as outfile:
+        start_line_was_reached = False
+        end_line_was_reached = False
+        line_count = 0
+        for line in sourcefile:
+          line_count = line_count + 1
+          if not start_line_was_reached:
+            if TextFileProcessor._line_is_reached(line, line_count, start_after_line):
+              start_line_was_reached = True
+          elif not end_line_was_reached:
+            if TextFileProcessor._line_is_reached(line, line_count, end_before_line):           
+              end_line_was_reached = True
+            else:
+              outfile.write(line)</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="powfacpy.script_interface.TextFileProcessor.create_file_from_list_of_lines"><code class="name flex">
+<span>def <span class="ident">create_file_from_list_of_lines</span></span>(<span>out_file, lines)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.script_interface.TextFileProcessor.extract_from_file"><code class="name flex">
+<span>def <span class="ident">extract_from_file</span></span>(<span>source_file: str, out_file: str, start_after_line, end_before_line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extracts the content between two lines from a file and writes
+to a new file.
+The start and end lines can either be integers (line numbers) or
+string matches.</p></div>
+</dd>
+<dt id="powfacpy.script_interface.TextFileProcessor.get_list_of_lines_of_file"><code class="name flex">
+<span>def <span class="ident">get_list_of_lines_of_file</span></span>(<span>file)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reads all lines into a python list.</p></div>
+</dd>
+<dt id="powfacpy.script_interface.TextFileProcessor.merge_files"><code class="name flex">
+<span>def <span class="ident">merge_files</span></span>(<span>in_files: list, out_file: str, replace_line_if_startswith: dict = None, replace_chars: dict = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merges several files into one.
+Optionally replaces lines and chars.</p>
+<h2 id="arguments">Arguments</h2>
+<p>in_files: list of input file paths
+out_file: output file path
+replace_line_if_startswith: dict to replace lines that
+start with key with value
+replace_chars: dict to replace chars in key with value</p></div>
+</dd>
+<dt id="powfacpy.script_interface.TextFileProcessor.merge_into_file"><code class="name flex">
+<span>def <span class="ident">merge_into_file</span></span>(<span>target_file: str, inserted_file: str, out_file: str, start_after_line, end_before_line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates a new file where one file is merged into another.
+Searches for start_after_line and end_before_line in target_file
+and replaces everything in between with inserted_file.
+The start and end lines can either be integers (line numbers) or
+string matches.</p></div>
+</dd>
+<dt id="powfacpy.script_interface.TextFileProcessor.process_file"><code class="name flex">
+<span>def <span class="ident">process_file</span></span>(<span>in_file: str, out_file: str, replace_line_if_startswith: dict = None, replace_chars: dict = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replaces chars and lines that start with a certain string.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="powfacpy" href="index.html">powfacpy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="powfacpy.script_interface.PFComPythonObjectInterface" href="#powfacpy.script_interface.PFComPythonObjectInterface">PFComPythonObjectInterface</a></code></h4>
+<ul class="">
+<li><code><a title="powfacpy.script_interface.PFComPythonObjectInterface.create_file_from_embedded_script" href="#powfacpy.script_interface.PFComPythonObjectInterface.create_file_from_embedded_script">create_file_from_embedded_script</a></code></li>
+<li><code><a title="powfacpy.script_interface.PFComPythonObjectInterface.merge_file_into_embedded_script" href="#powfacpy.script_interface.PFComPythonObjectInterface.merge_file_into_embedded_script">merge_file_into_embedded_script</a></code></li>
+<li><code><a title="powfacpy.script_interface.PFComPythonObjectInterface.merge_package_into_embedded_script" href="#powfacpy.script_interface.PFComPythonObjectInterface.merge_package_into_embedded_script">merge_package_into_embedded_script</a></code></li>
+<li><code><a title="powfacpy.script_interface.PFComPythonObjectInterface.merge_powfacpy_package_into_single_file" href="#powfacpy.script_interface.PFComPythonObjectInterface.merge_powfacpy_package_into_single_file">merge_powfacpy_package_into_single_file</a></code></li>
+<li><code><a title="powfacpy.script_interface.PFComPythonObjectInterface.set_embedded_script_from_file" href="#powfacpy.script_interface.PFComPythonObjectInterface.set_embedded_script_from_file">set_embedded_script_from_file</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="powfacpy.script_interface.PythonFileInterface" href="#powfacpy.script_interface.PythonFileInterface">PythonFileInterface</a></code></h4>
+<ul class="">
+<li><code><a title="powfacpy.script_interface.PythonFileInterface.merge_package_into_single_file" href="#powfacpy.script_interface.PythonFileInterface.merge_package_into_single_file">merge_package_into_single_file</a></code></li>
+<li><code><a title="powfacpy.script_interface.PythonFileInterface.read_init_file_of_package" href="#powfacpy.script_interface.PythonFileInterface.read_init_file_of_package">read_init_file_of_package</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="powfacpy.script_interface.TextFileProcessor" href="#powfacpy.script_interface.TextFileProcessor">TextFileProcessor</a></code></h4>
+<ul class="">
+<li><code><a title="powfacpy.script_interface.TextFileProcessor.create_file_from_list_of_lines" href="#powfacpy.script_interface.TextFileProcessor.create_file_from_list_of_lines">create_file_from_list_of_lines</a></code></li>
+<li><code><a title="powfacpy.script_interface.TextFileProcessor.extract_from_file" href="#powfacpy.script_interface.TextFileProcessor.extract_from_file">extract_from_file</a></code></li>
+<li><code><a title="powfacpy.script_interface.TextFileProcessor.get_list_of_lines_of_file" href="#powfacpy.script_interface.TextFileProcessor.get_list_of_lines_of_file">get_list_of_lines_of_file</a></code></li>
+<li><code><a title="powfacpy.script_interface.TextFileProcessor.merge_files" href="#powfacpy.script_interface.TextFileProcessor.merge_files">merge_files</a></code></li>
+<li><code><a title="powfacpy.script_interface.TextFileProcessor.merge_into_file" href="#powfacpy.script_interface.TextFileProcessor.merge_into_file">merge_into_file</a></code></li>
+<li><code><a title="powfacpy.script_interface.TextFileProcessor.process_file" href="#powfacpy.script_interface.TextFileProcessor.process_file">process_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

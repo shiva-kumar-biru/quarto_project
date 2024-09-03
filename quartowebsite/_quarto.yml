@@ -70,8 +70,6 @@
 
 
 
-
-
 project:
   type: website
 
@@ -89,7 +87,7 @@ website:
         text: Home
       - file: docs/tutorials/tutorials.qmd
         text: Tutorials
-      - file: doc/api/
+      - file: docs/build/powfacpy/index.html
         text: API
       - href: docs/Contribution/contribution.qmd
         text: How-To-Contribute
@@ -118,32 +116,10 @@ website:
       contents:
         - docs/Contribution/contribution.qmd
   
-
 format:
   html:
     theme: flatly
     css: styles.css
     toc: true
-
-metadata-files: 
-  - docs/api/_sidebar.yml
-
-quartodoc:
-  style: pkgdown
-  parser: sphinx
-  dir: doc/api
-  package: powfacpy
-  source_dir: ./src
-  render_interlinks: true
-  sidebar: "doc/api/_sidebar.yml"
-  sections:
-    - title: Modules
-      desc: |
-        Below are the Modules of the Powfacpy.
-      contents:
-        - active_project_interface
-        - database_interface
-        - plot_interface
-        - dyn_sim_interface
-        - case_studies
-        - results_interface
+resources: 
+  - docs/build/powfacpy/**

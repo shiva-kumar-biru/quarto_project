@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>powfacpy.dyn_sim_interface API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>powfacpy.dyn_sim_interface</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface"><code class="flex name class">
+<span>class <span class="ident">PFDynSimInterface</span></span>
+<span>(</span><span>app)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Dynamic simulation interface</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PFDynSimInterface(powfacpy.PFActiveProject):
+  &#34;&#34;&#34;Dynamic simulation interface&#34;&#34;&#34;
+  
+  def __init__(self, app): 
+    super().__init__(app) 
+ 
+
+  def initialize_sim(self, param=None):
+    &#34;&#34;&#34;
+    Initialize time domain simulation.
+    Parameters for &#39;ComInc&#39; command object can be specified in &#39;param&#39; dictionary.
+    &#34;&#34;&#34;
+    cominc = self.app.GetFromStudyCase(&#34;ComInc&#34;)
+    if param is not None:
+      self.set_attr(cominc, param)
+    cominc.Execute()
+
+
+  def run_sim(self, param=None):
+    &#34;&#34;&#34;
+    Perform dynamic simulation.
+    Parameters for &#39;ComSim&#39; command object can be specified in &#39;param&#39; dictionary.
+    &#34;&#34;&#34;
+    comsim = self.app.GetFromStudyCase(&#34;ComSim&#34;)
+    if param is not None:
+      self.set_attr(comsim, param)
+    comsim.Execute()
+
+
+  def initialize_and_run_sim(self):
+    &#34;&#34;&#34;Initialize and perform time domain simulation.&#34;&#34;&#34;
+    self.initialize_sim()
+    self.run_sim()
+    
+    
+  def get_eigenvalues_of_current_state(
+    self, 
+    commod_parameters: dict[str, object] = {}) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Get the eigenvalues of the current state of the system.
+    
+    Uses the modal analysis command (ComMod) to calculate the eigenvalues. Eigenvectors and participation factors are omitted). The operating point of the current simulaiton time is used.
+    Then uses result export (ComRes) to export the eigenvalues to csv, which is then read to a pandas DataFrame.
+
+    Args:
+        commod_parameters (dict[str, str], optional): Additional parameter settings of modal analysis command (ComMod). Defaults to {}.
+
+    Returns:
+        pd.DataFrame: pandas DataFrame with columns &#34;real in 1/s&#34;, &#34;imag in rad/s&#34;
+    &#34;&#34;&#34;
+    commod: ComMod = self.get_from_study_case(&#34;ComMod&#34;)
+    commod.iLeft = False
+    commod.iRight = False
+    commod.iPart = False
+    commod.initMode = 0
+    if commod_parameters:
+      self.set_attr(commod, commod_parameters)
+    commod.Execute()
+    
+    elmres: ElmRes = commod.ResultFile
+    comres: ComRes = self.app.GetFromStudyCase(&#34;ComRes&#34;)      
+    comres.pResult = elmres
+    comres.iopt_csel = 0 # export all variables
+    comres.f_name = getcwd() + &#34;\\temp.csv&#34;
+    try:
+      comres.Execute()
+      df = pd.read_csv(comres.f_name, encoding=&#39;ISO-8859-1&#39;, header=[0,1], index_col=0)
+    finally:
+      remove(comres.f_name)  
+    df.columns = [&#34;real in 1/s&#34;, &#34;imag in rad/s&#34;]  
+    return df   
+
+
+  def create_dyn_sim_event(self, 
+                   name_incl_class: str, 
+                   params: dict[str, object] = {}, 
+                   parent_folder: PFGeneral | str = None, 
+                   overwrite: bool = True):
+    &#34;&#34;&#34;Creates an event for dynamic simulations (RMS/EMT) and sets the parameters in &#39;params&#39;.
+
+    Args:
+        name_incl_class (str): Event name including the class.
+        
+        params (dict, optional): Paramter-values dictionary for created event object. Defaults to {}.
+        
+        parent_folder (PFGeneral | str, optional): Folder where event is created. If None, the events folder from the initial conditions calculation (ComInc) is used. Defaults to None.
+        
+        overwrite (bool, optional): Overwrite existing event with same name. Defaults to True.
+    &#34;&#34;&#34;
+    if not parent_folder:
+      parent_folder = self.get_events_folder_from_initial_conditions_calc()
+    event_obj = self.create_in_folder(name_incl_class, parent_folder, overwrite=overwrite)
+    self.set_attr(event_obj, params)  
+    return event_obj
+    
+      
+  def create_event(self, 
+                   name_incl_class, 
+                   params={}, 
+                   parent_folder=None, 
+                   overwrite=True):
+    &#34;&#34;&#34;Creates an event and sets the parameters in &#39;params&#39;.
+    
+    Arguments:
+      name_incl_class: Event name including the class.
+      params: Paramter-values dictionary.
+      parent_folder: If None, the events folder from the initial conditions calculation (ComInc) is used.
+      overwrite: Oerwrite existing event with same name.
+    &#34;&#34;&#34;
+    warn(f&#39;{self.create_event.__name__} will be deprecated. Please use the method create_dyn_sim_event instead.&#39;,
+             DeprecationWarning, stacklevel=2)
+    return self.create_dyn_sim_event(name_incl_class, 
+                              params, 
+                              parent_folder,
+                              overwrite) 
+   
+
+  def get_dsl_model_parameter_names(self, dsl_model):
+    &#34;&#34;&#34;
+    Get the parameter names of the block definition (BlkDef)
+    of a dsl model.
+    &#34;&#34;&#34;
+    dsl_model = self._handle_single_pf_object_or_path_input(dsl_model)
+    try: 
+      parameter_names = dsl_model.typ_id.sParams
+      if parameter_names:
+        return parameter_names[0].split(&#34;,&#34;)
+    except AttributeError:
+      msg = &#34;Attribute &#39;typ_id&#39; is of type &#39;None&#39;&#34;
+      raise powfacpy.PFObjectAttributeTypeError(dsl_model, msg, self)
+  
+  
+  def get_dsl_models_inside_composite_model(self, composite_model):
+    return self.get_obj(&#34;*.ElmDsl&#34;, 
+                        parent_folder=composite_model,
+                        include_subfolders=True)
+  
+  
+  def get_parameters_of_dsl_models_in_composite_model(
+      self, 
+      composite_model,
+      single_dict_for_all_dsl_models = False,
+      ):
+    &#34;&#34;&#34;
+    Returns a dictionary with the parameter names (of the block definition) 
+    and values of all dsl models inside a composite model.
+    dsl lookup varibales (e.g. &#39;array_*&#39;, &#39;omatrix_*&#39;,.. ) are ignored.
+    
+    Arguments:
+      composite_model: ElmComp or its path
+      single_dict_for_all_dsl_models: 
+        - If true, a single dictionary with the parameters of all dsl models is 
+        returned (no distinction is made between the dsl models). 
+        This assumes that a parameter that occurs in several dsl
+        models has the same value.
+        Example: {&#34;a&#34;: 1, &#34;b&#34;:0, &#34;c&#34;:2}
+        - If false, the returned dictionary contains dictionaries for each dsl model.
+        Example:
+          {
+          &#34;controller_a&#34;: {&#34;a&#34;: 1, &#34;b&#34;:0}
+          &#34;controller_b&#34;: {&#34;a&#34;: 5, &#34;c&#34;:2}
+          } 
+    &#34;&#34;&#34;
+    composite_model = self._handle_single_pf_object_or_path_input(composite_model)
+    dsl_models = self.get_dsl_models_inside_composite_model(composite_model)
+    all_models_params_dict = {}
+    for dsl_model in dsl_models:
+      parameter_names_incl_dsl_lookup = self.get_dsl_model_parameter_names(dsl_model)
+      # Ignore dsl lookup arrays/matrices
+      parameter_names = []
+      if parameter_names_incl_dsl_lookup:
+        for parameter_name in parameter_names_incl_dsl_lookup:
+          if not PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name(parameter_name):
+            parameter_names.append(parameter_name)
+              
+      if parameter_names:       
+        parameter_names_and_values = self.get_attr(
+          dsl_model, 
+          parameter_names)
+        if single_dict_for_all_dsl_models: 
+          # Check if 
+          for param_name in parameter_names:
+            if param_name in all_models_params_dict:
+              if all_models_params_dict[param_name] != parameter_names_and_values[param_name]:
+                raise powfacpy.PFInconsistentParamValueOfDSLModelInCompositeModel(param_name,
+                                                                          composite_model)
+          all_models_params_dict = {**all_models_params_dict, 
+                                    **parameter_names_and_values}
+        else:
+          all_models_params_dict[dsl_model.loc_name] = parameter_names_and_values
+      elif not single_dict_for_all_dsl_models:
+        all_models_params_dict[dsl_model.loc_name] = {}  
+    return all_models_params_dict
+
+
+  def set_parameters_of_dsl_models_in_composite_model(
+      self, 
+      composite_model,
+      models_params_dict,
+      single_dict_for_all_dsl_models = False,
+      ):
+    &#34;&#34;&#34;
+    Set the parameters of the dsl models (i.e. of its block definition) in
+    a composite model.
+    Arguments:
+      composite_model: ElmComp or its path
+      models_params_dict: dictionary with model parameters and values
+      single_dict_for_all_dsl_models: 
+        - If true, models_params_dict is a single dictionary that is used to 
+        set the parameters of all dsl models.
+        Example: {&#34;a&#34;: 1, &#34;b&#34;:0, &#34;c&#34;:2} -&gt; if a dsl model has an attribute (&#34;a&#34;,&#34;b&#34;,
+        &#34;c&#34;), the value is set, otherwise it is ignored.
+        - If false, models_params_dict contains dictionaries for each dsl model.
+        Example:
+          {
+          &#34;controller_a&#34;: {&#34;a&#34;: 1, &#34;b&#34;:0}
+          &#34;controller_b&#34;: {&#34;a&#34;: 5, &#34;c&#34;:2}
+          } 
+    &#34;&#34;&#34;
+    composite_model = self._handle_single_pf_object_or_path_input(composite_model)
+    if not single_dict_for_all_dsl_models:
+      for dsl_model, parameter_value_dict in models_params_dict.items():
+        dsl_model = self.get_unique_obj(dsl_model+&#34;.ElmDsl&#34;, 
+                                        parent_folder=composite_model,
+                                        include_subfolders=True)
+        self.set_attr(dsl_model, parameter_value_dict)
+    else:
+      dsl_models = self.get_dsl_models_inside_composite_model(composite_model)
+      for dsl_model in dsl_models:
+        for param_name, value in models_params_dict.items(): 
+          if dsl_model.HasAttribute(param_name):
+            dsl_model.SetAttribute(param_name, value)   
+
+
+  @staticmethod
+  def is_dsl_lookup_arrays_and_matrices_name(string: str):
+    &#34;&#34;&#34;
+    dsl has a special variable type for lookup tables. Such variables
+    are defined using certain variable names starting with e.g. &#39;array_&#39;.
+    &#34;&#34;&#34;
+    is_dsl_lookup = False
+    for dsl_lookup_name in PFDynSimInterface.get_dsl_lookup_arrays_and_matrices_names():
+      if dsl_lookup_name in string:
+        is_dsl_lookup = True
+    return is_dsl_lookup    
+
+
+  @staticmethod
+  def get_dsl_lookup_arrays_and_matrices_names():
+    return [&#34;oarray_&#34;, &#34;array_&#34;, &#34;matrix&#34;, &#34;omatrix&#34;]
+
+
+  @staticmethod 
+  def set_dsl_obj_array(dsl_obj,
+                        rows,
+                        array_num=None,
+                        size_included_in_array=True): 
+    &#34;&#34;&#34;Set the array of a DSL object (&#39;Advanced 1&#39; tab).
+    The array_num specifies which array is set (if None,
+    all arrays/colums are set).
+    If size_included_in_array=True, the first row (where the size
+    of the array is specified) is included.
+    &#34;&#34;&#34;  
+    if not size_included_in_array:
+      if not array_num:
+        dsl_obj.SetAttribute(&#34;matrix:0&#34;,[len(rows)]*len(rows[0]))
+      else:
+        complete_row = dsl_obj.GetAttribute(&#34;matrix:0&#34;)
+        complete_row[(array_num-1)*2] = len(rows)
+        dsl_obj.SetAttribute(&#34;matrix:0&#34;, complete_row)                                              
+    for row_num, row in enumerate(rows):
+      if not size_included_in_array:
+        attrib = &#34;matrix:&#34; + str(row_num+1)
+      else:
+        attrib = &#34;matrix:&#34; + str(row_num)
+      if not array_num:
+        dsl_obj.SetAttribute(attrib, row)
+      else:
+        complete_row = dsl_obj.GetAttribute(attrib)
+        complete_row[(array_num-1)*2] = row[0]
+        complete_row[(array_num-1)*2+1] = row[1]
+        dsl_obj.SetAttribute(attrib, complete_row)
+
+
+  @staticmethod 
+  def get_dsl_obj_array(dsl_obj,
+                        array_num=None,
+                        size_included_in_array=True):
+    &#34;&#34;&#34;Get the array of DSL object (&#39;Advanced 1&#39; tab).
+    The array_num specifies which array is returend (if None,
+    all arays/colmns are returned).
+    If size_included_in_array=True, the first row (where the size
+    of the array is spedified) is included.
+    &#34;&#34;&#34;                    
+    if not array_num:
+      number_of_rows = int(max(dsl_obj.GetAttribute(&#34;matrix:0&#34;))) + 1
+    else:
+      number_of_rows = int(dsl_obj.GetAttribute(&#34;matrix:0&#34;)[(array_num-1)*2]) + 1   
+    array = []
+    for row_num in range(number_of_rows):
+      if row_num == 0 and not size_included_in_array:
+        continue
+      attrib = &#34;matrix:&#34; + str(row_num)
+      row = dsl_obj.GetAttribute(attrib)
+      if array_num:
+        row = [row[(array_num-1)*2], row[(array_num-1)*2+1]]  
+      array.append(row)
+    return array</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></li>
+<li><a title="powfacpy.folders_interface.PFFolder" href="folders_interface.html#powfacpy.folders_interface.PFFolder">PFFolder</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_lookup_arrays_and_matrices_names"><code class="name flex">
+<span>def <span class="ident">get_dsl_lookup_arrays_and_matrices_names</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array"><code class="name flex">
+<span>def <span class="ident">get_dsl_obj_array</span></span>(<span>dsl_obj, array_num=None, size_included_in_array=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the array of DSL object ('Advanced 1' tab).
+The array_num specifies which array is returend (if None,
+all arays/colmns are returned).
+If size_included_in_array=True, the first row (where the size
+of the array is spedified) is included.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name"><code class="name flex">
+<span>def <span class="ident">is_dsl_lookup_arrays_and_matrices_name</span></span>(<span>string: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>dsl has a special variable type for lookup tables. Such variables
+are defined using certain variable names starting with e.g. 'array_'.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array"><code class="name flex">
+<span>def <span class="ident">set_dsl_obj_array</span></span>(<span>dsl_obj, rows, array_num=None, size_included_in_array=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the array of a DSL object ('Advanced 1' tab).
+The array_num specifies which array is set (if None,
+all arrays/colums are set).
+If size_included_in_array=True, the first row (where the size
+of the array is specified) is included.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event"><code class="name flex">
+<span>def <span class="ident">create_dyn_sim_event</span></span>(<span>self, name_incl_class: str, params: dict[str, object] = {}, parent_folder: <a title="powfacpy.pf_class_protocols.PFGeneral" href="pf_class_protocols.html#powfacpy.pf_class_protocols.PFGeneral">PFGeneral</a> | str = None, overwrite: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an event for dynamic simulations (RMS/EMT) and sets the parameters in 'params'.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name_incl_class</code></strong> :&ensp;<code>str</code></dt>
+<dd>Event name including the class.</dd>
+<dt><strong><code>params</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Paramter-values dictionary for created event object. Defaults to {}.</dd>
+<dt><strong><code>parent_folder</code></strong> :&ensp;<code>PFGeneral | str</code>, optional</dt>
+<dd>Folder where event is created. If None, the events folder from the initial conditions calculation (ComInc) is used. Defaults to None.</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Overwrite existing event with same name. Defaults to True.</dd>
+</dl></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.create_event"><code class="name flex">
+<span>def <span class="ident">create_event</span></span>(<span>self, name_incl_class, params={}, parent_folder=None, overwrite=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates an event and sets the parameters in 'params'.</p>
+<h2 id="arguments">Arguments</h2>
+<p>name_incl_class: Event name including the class.
+params: Paramter-values dictionary.
+parent_folder: If None, the events folder from the initial conditions calculation (ComInc) is used.
+overwrite: Oerwrite existing event with same name.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names"><code class="name flex">
+<span>def <span class="ident">get_dsl_model_parameter_names</span></span>(<span>self, dsl_model)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the parameter names of the block definition (BlkDef)
+of a dsl model.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_models_inside_composite_model"><code class="name flex">
+<span>def <span class="ident">get_dsl_models_inside_composite_model</span></span>(<span>self, composite_model)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state"><code class="name flex">
+<span>def <span class="ident">get_eigenvalues_of_current_state</span></span>(<span>self, commod_parameters: dict[str, object] = {}) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the eigenvalues of the current state of the system.</p>
+<p>Uses the modal analysis command (ComMod) to calculate the eigenvalues. Eigenvectors and participation factors are omitted). The operating point of the current simulaiton time is used.
+Then uses result export (ComRes) to export the eigenvalues to csv, which is then read to a pandas DataFrame.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>commod_parameters</code></strong> :&ensp;<code>dict[str, str]</code>, optional</dt>
+<dd>Additional parameter settings of modal analysis command (ComMod). Defaults to {}.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>pandas DataFrame with columns "real in 1/s", "imag in rad/s"</dd>
+</dl></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model"><code class="name flex">
+<span>def <span class="ident">get_parameters_of_dsl_models_in_composite_model</span></span>(<span>self, composite_model, single_dict_for_all_dsl_models=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a dictionary with the parameter names (of the block definition)
+and values of all dsl models inside a composite model.
+dsl lookup varibales (e.g. 'array_<em>', 'omatrix_</em>',.. ) are ignored.</p>
+<h2 id="arguments">Arguments</h2>
+<p>composite_model: ElmComp or its path
+single_dict_for_all_dsl_models:
+- If true, a single dictionary with the parameters of all dsl models is
+returned (no distinction is made between the dsl models).
+This assumes that a parameter that occurs in several dsl
+models has the same value.
+Example: {"a": 1, "b":0, "c":2}
+- If false, the returned dictionary contains dictionaries for each dsl model.
+Example:
+{
+"controller_a": {"a": 1, "b":0}
+"controller_b": {"a": 5, "c":2}
+}</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim"><code class="name flex">
+<span>def <span class="ident">initialize_and_run_sim</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initialize and perform time domain simulation.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim"><code class="name flex">
+<span>def <span class="ident">initialize_sim</span></span>(<span>self, param=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initialize time domain simulation.
+Parameters for 'ComInc' command object can be specified in 'param' dictionary.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim"><code class="name flex">
+<span>def <span class="ident">run_sim</span></span>(<span>self, param=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform dynamic simulation.
+Parameters for 'ComSim' command object can be specified in 'param' dictionary.</p></div>
+</dd>
+<dt id="powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model"><code class="name flex">
+<span>def <span class="ident">set_parameters_of_dsl_models_in_composite_model</span></span>(<span>self, composite_model, models_params_dict, single_dict_for_all_dsl_models=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set the parameters of the dsl models (i.e. of its block definition) in
+a composite model.</p>
+<h2 id="arguments">Arguments</h2>
+<p>composite_model: ElmComp or its path
+models_params_dict: dictionary with model parameters and values
+single_dict_for_all_dsl_models:
+- If true, models_params_dict is a single dictionary that is used to
+set the parameters of all dsl models.
+Example: {"a": 1, "b":0, "c":2} -&gt; if a dsl model has an attribute ("a","b",
+"c"), the value is set, otherwise it is ignored.
+- If false, models_params_dict contains dictionaries for each dsl model.
+Example:
+{
+"controller_a": {"a": 1, "b":0}
+"controller_b": {"a": 5, "c":2}
+}</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="powfacpy.active_project_interface.PFActiveProject" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject">PFActiveProject</a></b></code>:
+<ul class="hlist">
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.activate_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.activate_study_case">activate_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_results_variable" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_results_variable">add_results_variable</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.add_variable_selection_obj_to_results_obj">add_variable_selection_obj_to_results_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres">clear_elmres</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.clear_elmres_from_objects_with_status_deleted">clear_elmres_from_objects_with_status_deleted</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.clear_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.clear_folder">clear_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_obj">copy_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.copy_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.copy_single_obj">copy_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_by_path">create_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_comtrade_obj">create_comtrade_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_directory" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_directory">create_directory</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_filter_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_filter_obj">create_filter_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_in_folder" href="folders_interface.html#powfacpy.folders_interface.PFFolder.create_in_folder">create_in_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_project_version">create_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.create_variation" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.create_variation">create_variation</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.delete_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.delete_obj">delete_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_networks" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_networks">get_active_networks</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_active_project">get_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_study_case">get_active_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_active_user_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_active_user_folder">get_active_user_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr">get_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_attr_by_path">get_attr_by_path</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_by_condition" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_by_condition">get_by_condition</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_calc_relevant_obj">get_calc_relevant_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_events_folder_from_initial_conditions_calc">get_events_folder_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_first_level_folder" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_first_level_folder">get_first_level_folder</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_from_study_case" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_from_study_case">get_from_study_case</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object">get_full_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_full_path_of_object_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_full_path_of_object_with_class_names">get_full_path_of_object_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_loc_name_with_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_loc_name_with_class">get_loc_name_with_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_multiple_obj_from_similar_sub_directories" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_multiple_obj_from_similar_sub_directories">get_multiple_obj_from_similar_sub_directories</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj">get_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_including_subfolders" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_including_subfolders">get_obj_including_subfolders</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_obj_partial" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_obj_partial">get_obj_partial</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_parameter_value_string">get_parameter_value_string</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_between_objects" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_between_objects">get_path_between_objects</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_obj_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_obj_with_class_names">get_path_of_obj_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object">get_path_of_object</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project">get_path_of_object_in_active_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_path_of_object_in_active_project_with_class_names" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_path_of_object_in_active_project_with_class_names">get_path_of_object_in_active_project_with_class_names</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_settings" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_project_settings">get_project_settings</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_project_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_project_version">get_project_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.get_results_obj_from_initial_conditions_calc">get_results_obj_from_initial_conditions_calc</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_single_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_single_obj">get_single_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_unique_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_unique_obj">get_unique_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.get_upstream_obj" href="folders_interface.html#powfacpy.folders_interface.PFFolder.get_upstream_obj">get_upstream_obj</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.import_project" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.import_project">import_project</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.insert_row_with_number_of_columns_in_csv_file">insert_row_with_number_of_columns_in_csv_file</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_container" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_container">is_container</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.is_pf_class" href="folders_interface.html#powfacpy.folders_interface.PFFolder.is_pf_class">is_pf_class</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.path_exists" href="folders_interface.html#powfacpy.folders_interface.PFFolder.path_exists">path_exists</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.replace_headers_of_csv_file_with_number_of_colums">replace_headers_of_csv_file_with_number_of_colums</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version" href="active_project_interface.html#powfacpy.active_project_interface.PFActiveProject.rollback_project_to_previous_version">rollback_project_to_previous_version</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr">set_attr</a></code></li>
+<li><code><a title="powfacpy.active_project_interface.PFActiveProject.set_attr_by_path" href="folders_interface.html#powfacpy.folders_interface.PFFolder.set_attr_by_path">set_attr_by_path</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="powfacpy" href="index.html">powfacpy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface" href="#powfacpy.dyn_sim_interface.PFDynSimInterface">PFDynSimInterface</a></code></h4>
+<ul class="">
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_dyn_sim_event">create_dyn_sim_event</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.create_event" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.create_event">create_event</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_lookup_arrays_and_matrices_names" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_lookup_arrays_and_matrices_names">get_dsl_lookup_arrays_and_matrices_names</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_model_parameter_names">get_dsl_model_parameter_names</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_models_inside_composite_model" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_models_inside_composite_model">get_dsl_models_inside_composite_model</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_dsl_obj_array">get_dsl_obj_array</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_eigenvalues_of_current_state">get_eigenvalues_of_current_state</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.get_parameters_of_dsl_models_in_composite_model">get_parameters_of_dsl_models_in_composite_model</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_and_run_sim">initialize_and_run_sim</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.initialize_sim">initialize_sim</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.is_dsl_lookup_arrays_and_matrices_name">is_dsl_lookup_arrays_and_matrices_name</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.run_sim">run_sim</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_dsl_obj_array">set_dsl_obj_array</a></code></li>
+<li><code><a title="powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model" href="#powfacpy.dyn_sim_interface.PFDynSimInterface.set_parameters_of_dsl_models_in_composite_model">set_parameters_of_dsl_models_in_composite_model</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
