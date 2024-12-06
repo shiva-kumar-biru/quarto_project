@@ -27,6 +27,28 @@ The documentation is styled and structured for clarity, ensuring users can easil
 
 ---
 
+
+## Continuous Integration and Deployment (CI/CD)
+
+This project uses **CI/CD** practices to automate the build and deployment of the documentation. With the help of **GitHub Actions**, any updates to the repository are automatically rendered and deployed to **GitHub Pages**.
+
+### Workflow Overview
+The CI/CD pipeline performs the following steps:
+1. **Checkout Repository:** Clones the latest code from the `main` branch.
+2. **Install Dependencies:** Installs Quarto CLI and Python requirements.
+3. **Build Documentation:** Runs the `quarto render` command to build the documentation.
+4. **Deploy to GitHub Pages:** Publishes the built documentation to the `_site` directory.
+
+You can view the workflow file here:  
+**[GitHub Actions Workflow File](https://github.com/shiva-kumar-biru/quarto_project/blob/main/.github/workflows/publish.yml)**
+
+### Benefits of CI/CD in This Project
+- **Automated Updates:** Reduces manual intervention by automating the build and deployment process.  
+- **Reliable Deployment:** Ensures the hosted documentation is always up-to-date.  
+- **Streamlined Workflow:** Simplifies collaboration and scaling for larger projects.  
+
+---
+
 ## How to View the Documentation
 
 To access the live documentation:  
